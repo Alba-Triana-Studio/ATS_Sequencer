@@ -228,7 +228,7 @@
 				"box" : {
 					"id" : "obj-11",
 					"maxclass" : "newobj",
-					"text" : "node.script migrador_presets.js",
+					"text" : "node.script migrador_presets.js @autostart 1",
 					"patching_rect" : [ 20.0, 280.0, 200.0, 22.0 ],
 					"numinlets" : 1,
 					"numoutlets" : 2,

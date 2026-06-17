@@ -6,15 +6,24 @@ let newPath = '';
 let toggles = [0, 0, 0, 0];
 let oldPresetsData = [null, null, null, null];
 
+function getValidPath(p) {
+    if (fs.existsSync(p)) return p;
+    if (p.includes(':/')) {
+        const fixed = p.substring(p.indexOf(':/') + 1);
+        if (fs.existsSync(fixed)) return fixed;
+    }
+    return p;
+}
+
 maxApi.addHandler('toggle', (idx, state) => {
     toggles[idx] = state;
 });
 
 maxApi.addHandler('old_file', (p) => {
-    oldPath = p;
+    oldPath = getValidPath(p);
     try {
         if (!fs.existsSync(oldPath)) {
-            maxApi.outlet('error', 'El archivo antiguo no existe.');
+            maxApi.outlet('error', 'El archivo antiguo no existe: ' + oldPath);
             return;
         }
         const oldPatch = JSON.parse(fs.readFileSync(oldPath, 'utf8'));
@@ -52,7 +61,7 @@ maxApi.addHandler('old_file', (p) => {
 });
 
 maxApi.addHandler('new_file', (p) => {
-    newPath = p;
+    newPath = getValidPath(p);
     maxApi.outlet('success', '2. Archivo nuevo seleccionado.');
 });
 
