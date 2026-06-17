@@ -30,6 +30,10 @@ La pieza está compuesta por canales o *Setups* en paralelo. Cada bloque contien
 
 #### B. Matriz de Presets (El Secuenciador)
 - **Matriz de columnas 1 a 10:** Es el cerebro del secuenciador individual. Cada columna en esta cuadrícula (`preset`) corresponde a un modo o "preset" almacenado. Las filas controlan los modos de vibración y la matriz guarda toda la configuración de estados (frecuencias, amplitudes, curvas) para ser llamados durante el avance temporal de la secuencia.
+- **Gestión de Archivos (Novedad):** Cada matriz ahora cuenta con un sistema robusto de almacenamiento en disco:
+  - **Guardar:** Permite exportar el banco completo de presets de ese canal a un archivo externo en formato JSON o de texto, para respaldarlo o transferirlo a otra sesión.
+  - **Cargar:** Permite importar un archivo de presets previamente guardado.
+  - **Clear all presets:** Botón de emergencia para borrar inmediatamente todas las celdas guardadas en la matriz y comenzar desde cero.
 
 #### C. Moldeado de Onda (Envolventes)
 Para crear transiciones de sonido suaves a nivel percusivo o continuo, cada setup tiene generadores de envolventes:
@@ -55,3 +59,19 @@ Al lado de cada sistema de control, hay herramientas visuales para corroborar qu
 3. **Comportamiento Temporal:** Ajustar **Time (ms)** y **Curve**, luego pulsar el botón **Draw** para dibujar la trayectoria y transiciones paramétricas.
 4. **Almacenamiento:** Guardar dicho estado en la **Matriz** del canal (columnas 1 al 10) para crear la progresión o paso deseado.
 5. **Ejecución:** Finalmente, presionar **Play Full Piece** para correr las progresiones y observar en tiempo real la salida de los monitores de tiempo (*Time Domain*) y frecuencia (*Freq Domain*).
+
+---
+
+### 3. Migración y Rescate de Presets (Novedad)
+
+Si posees archivos `.maxpat` de versiones antiguas del secuenciador (anteriores a la existencia de los botones "Guardar/Cargar") y deseas rescatar los presets que quedaron incrustados en su código, se ha creado la utilidad complementaria **`Migrador_de_Presets.maxpat`**.
+
+#### Cómo utilizar el Migrador:
+1. **Precaución:** Asegúrate de cerrar tu parche principal (`ATS_Sequencer.maxpat`) antes de proceder.
+2. Abre la utilidad **`Migrador_de_Presets.maxpat`**.
+3. Haz clic en **1. Seleccionar archivo ANTIGUO** y localiza tu `.maxpat` de la versión previa.
+   * El sistema escaneará automáticamente el archivo. Si detecta presets guardados en alguna de las 4 matrices, encenderá la casilla (**M1, M2, M3 o M4**) correspondiente.
+4. Haz clic en **2. Seleccionar archivo NUEVO** y localiza la nueva versión de tu parche.
+5. Selecciona en las casillas encendidas cuáles matrices deseas rescatar y cuáles deseas ignorar (puedes desmarcarlas con un clic).
+6. Presiona **3. Migrar Seleccionados**. La utilidad inyectará silenciosa y quirúrgicamente los presets elegidos en el nuevo archivo.
+7. Abre nuevamente tu `ATS_Sequencer.maxpat` y usa los botones de **Guardar** para respaldar tus presets rescatados como archivos JSON individuales.
