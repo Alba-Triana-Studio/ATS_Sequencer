@@ -20028,51 +20028,12 @@
             {
                 "box": {
                     "maxclass": "newobj",
-                    "text": "sel 1",
-                    "id": "obj-fp-guard-sel-on",
+                    "text": "== 0",
+                    "id": "obj-fp-guard-inv",
                     "patching_rect": [
                         700,
                         1028,
-                        40,
-                        22
-                    ]
-                }
-            },
-            {
-                "box": {
-                    "maxclass": "message",
-                    "text": "0",
-                    "id": "obj-fp-guard-msg-block",
-                    "patching_rect": [
-                        700,
-                        1056,
-                        25,
-                        22
-                    ]
-                }
-            },
-            {
-                "box": {
-                    "maxclass": "newobj",
-                    "text": "delay 200",
-                    "id": "obj-fp-guard-delay-re",
-                    "patching_rect": [
-                        760,
-                        1056,
-                        65,
-                        22
-                    ]
-                }
-            },
-            {
-                "box": {
-                    "maxclass": "message",
-                    "text": "1",
-                    "id": "obj-fp-guard-msg-renable",
-                    "patching_rect": [
-                        760,
-                        1084,
-                        25,
+                        35,
                         22
                     ]
                 }
@@ -20083,8 +20044,8 @@
                     "text": "s fp_block",
                     "id": "obj-fp-guard-block-send",
                     "patching_rect": [
-                        715,
-                        1112,
+                        700,
+                        1056,
                         70,
                         22
                     ]
@@ -20096,8 +20057,8 @@
                     "text": "loadbang",
                     "id": "obj-fp-guard-lb",
                     "patching_rect": [
-                        700,
-                        1148,
+                        780,
+                        1056,
                         60,
                         22
                     ]
@@ -20109,8 +20070,8 @@
                     "text": "1",
                     "id": "obj-fp-guard-lb-msg",
                     "patching_rect": [
-                        700,
-                        1176,
+                        780,
+                        1084,
                         25,
                         22
                     ]
@@ -30956,7 +30917,7 @@
                         0
                     ],
                     "destination": [
-                        "obj-fp-guard-sel-on",
+                        "obj-fp-guard-inv",
                         0
                     ]
                 }
@@ -30964,55 +30925,7 @@
             {
                 "patchline": {
                     "source": [
-                        "obj-fp-guard-sel-on",
-                        0
-                    ],
-                    "destination": [
-                        "obj-fp-guard-msg-block",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
-                        "obj-fp-guard-msg-block",
-                        0
-                    ],
-                    "destination": [
-                        "obj-fp-guard-block-send",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
-                        "obj-fp-guard-sel-on",
-                        0
-                    ],
-                    "destination": [
-                        "obj-fp-guard-delay-re",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
-                        "obj-fp-guard-delay-re",
-                        0
-                    ],
-                    "destination": [
-                        "obj-fp-guard-msg-renable",
-                        0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
-                        "obj-fp-guard-msg-renable",
+                        "obj-fp-guard-inv",
                         0
                     ],
                     "destination": [
