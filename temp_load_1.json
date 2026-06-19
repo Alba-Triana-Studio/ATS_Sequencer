@@ -1,0 +1,27 @@
+{
+	"preset_data" : [ 		{
+			"number" : 1,
+			"data" : [ 4, "obj-77", "function", "clear", 8, "obj-77", "function", "add_with_curve", 0.0, 29.350000000000001, 0, 0.0, 8, "obj-77", "function", "add_with_curve", 15000.0, 29.350000000000001, 0, 0.0, 5, "obj-77", "function", "domain", 20000.0, 6, "obj-77", "function", "range", 20.0, 40.0, 5, "obj-77", "function", "mode", 1, 4, "obj-2", "function", "clear", 8, "obj-2", "function", "add_with_curve", 0.0, 0.4, 0, 0.0, 8, "obj-2", "function", "add_with_curve", 15000.0, 0.4, 0, 0.0, 5, "obj-2", "function", "domain", 20000.0, 6, "obj-2", "function", "range", 0.0, 1.0, 5, "obj-2", "function", "mode", 1, 5, "obj-6", "number", "int", 40, 5, "obj-5", "number", "int", 20, 5, "obj-12", "number", "int", 20000 ]
+		}
+, 		{
+			"number" : 2,
+			"data" : [ 4, "obj-77", "function", "clear", 8, "obj-77", "function", "add_with_curve", 0.0, 29.350000000000001, 0, 0.0, 8, "obj-77", "function", "add_with_curve", 15000.0, 29.350000000000001, 0, 0.0, 5, "obj-77", "function", "domain", 20000.0, 6, "obj-77", "function", "range", 20.0, 40.0, 5, "obj-77", "function", "mode", 1, 4, "obj-2", "function", "clear", 8, "obj-2", "function", "add_with_curve", 0.0, 0.4, 0, 0.0, 8, "obj-2", "function", "add_with_curve", 15000.0, 0.6, 0, 0.5, 5, "obj-2", "function", "domain", 20000.0, 6, "obj-2", "function", "range", 0.0, 1.0, 5, "obj-2", "function", "mode", 1, 5, "obj-6", "number", "int", 40, 5, "obj-5", "number", "int", 20, 5, "obj-12", "number", "int", 20000 ]
+		}
+, 		{
+			"number" : 3,
+			"data" : [ 4, "obj-77", "function", "clear", 8, "obj-77", "function", "add_with_curve", 0.0, 39.5, 0, 0.0, 8, "obj-77", "function", "add_with_curve", 2000.0, 20.0, 0, 0.0, 5, "obj-77", "function", "domain", 2000.0, 6, "obj-77", "function", "range", 20.0, 40.0, 5, "obj-77", "function", "mode", 1, 4, "obj-2", "function", "clear", 8, "obj-2", "function", "add_with_curve", 0.0, 0.99, 0, 0.0, 8, "obj-2", "function", "add_with_curve", 2000.0, 0.99, 0, 0.0, 5, "obj-2", "function", "domain", 2000.0, 6, "obj-2", "function", "range", 0.0, 1.0, 5, "obj-2", "function", "mode", 1, 5, "obj-6", "number", "int", 40, 5, "obj-5", "number", "int", 20, 5, "obj-12", "number", "int", 2000 ]
+		}
+, 		{
+			"number" : 4,
+			"data" : [ 4, "obj-77", "function", "clear", 8, "obj-77", "function", "add_with_curve", 0.0, 39.5, 0, 0.0, 8, "obj-77", "function", "add_with_curve", 2000.0, 20.0, 0, 0.0, 5, "obj-77", "function", "domain", 2000.0, 6, "obj-77", "function", "range", 20.0, 40.0, 5, "obj-77", "function", "mode", 1, 4, "obj-2", "function", "clear", 8, "obj-2", "function", "add_with_curve", 0.0, 0.99, 0, 0.0, 8, "obj-2", "function", "add_with_curve", 2000.0, 0.99, 0, 0.0, 5, "obj-2", "function", "domain", 2000.0, 6, "obj-2", "function", "range", 0.0, 1.0, 5, "obj-2", "function", "mode", 1, 5, "obj-6", "number", "int", 40, 5, "obj-5", "number", "int", 20, 5, "obj-12", "number", "int", 2000 ]
+		}
+, 		{
+			"number" : 111,
+			"data" : [ 4, "obj-77", "function", "clear", 8, "obj-77", "function", "add_with_curve", 0.0, 29.350000000000001, 0, 0.0, 8, "obj-77", "function", "add_with_curve", 15000.0, 29.350000000000001, 0, 0.0, 5, "obj-77", "function", "domain", 20000.0, 6, "obj-77", "function", "range", 20.0, 40.0, 5, "obj-77", "function", "mode", 1, 4, "obj-2", "function", "clear", 8, "obj-2", "function", "add_with_curve", 0.0, 0.4, 0, 0.0, 8, "obj-2", "function", "add_with_curve", 15000.0, 0.4, 0, 0.0, 5, "obj-2", "function", "domain", 20000.0, 6, "obj-2", "function", "range", 0.0, 1.0, 5, "obj-2", "function", "mode", 1, 5, "obj-6", "number", "int", 40, 5, "obj-5", "number", "int", 20, 5, "obj-12", "number", "int", 20000 ]
+		}
+, 		{
+			"number" : 112,
+			"data" : [ 4, "obj-77", "function", "clear", 8, "obj-77", "function", "add_with_curve", 0.0, 29.350000000000001, 0, 0.0, 8, "obj-77", "function", "add_with_curve", 15000.0, 29.350000000000001, 0, 0.0, 5, "obj-77", "function", "domain", 20000.0, 6, "obj-77", "function", "range", 20.0, 40.0, 5, "obj-77", "function", "mode", 1, 4, "obj-2", "function", "clear", 8, "obj-2", "function", "add_with_curve", 0.0, 0.8, 0, 0.0, 8, "obj-2", "function", "add_with_curve", 3000.0, 0.8, 0, 0.0, 5, "obj-2", "function", "domain", 20000.0, 6, "obj-2", "function", "range", 0.0, 1.0, 5, "obj-2", "function", "mode", 1, 5, "obj-6", "number", "int", 40, 5, "obj-5", "number", "int", 20, 5, "obj-12", "number", "int", 20000 ]
+		}
+ ]
+}
