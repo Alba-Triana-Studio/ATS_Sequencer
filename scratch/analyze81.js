@@ -1,0 +1,9 @@
+const fs = require('fs');
+const data = JSON.parse(fs.readFileSync('ATS_Sequencer.maxpat', 'utf8'));
+
+let lines = data.patcher.lines.filter(l => l.patchline.source[0] === 'obj-112' && l.patchline.source[1] === 3);
+console.log("obj-112 Outlet 3 connects to:");
+lines.forEach(l => {
+    let dest = data.patcher.boxes.find(b => b.box.id === l.patchline.destination[0]);
+    console.log("  ", dest.box.id, dest.box.text || dest.box.maxclass);
+});
