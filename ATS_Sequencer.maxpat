@@ -20024,6 +20024,149 @@
                         22
                     ]
                 }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "text": "sel 1",
+                    "id": "obj-fp-guard-sel-on",
+                    "patching_rect": [
+                        700,
+                        1028,
+                        40,
+                        22
+                    ]
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "message",
+                    "text": "0",
+                    "id": "obj-fp-guard-msg-block",
+                    "patching_rect": [
+                        700,
+                        1056,
+                        25,
+                        22
+                    ]
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "text": "delay 200",
+                    "id": "obj-fp-guard-delay-re",
+                    "patching_rect": [
+                        760,
+                        1056,
+                        65,
+                        22
+                    ]
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "message",
+                    "text": "1",
+                    "id": "obj-fp-guard-msg-renable",
+                    "patching_rect": [
+                        760,
+                        1084,
+                        25,
+                        22
+                    ]
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "text": "s fp_block",
+                    "id": "obj-fp-guard-block-send",
+                    "patching_rect": [
+                        715,
+                        1112,
+                        70,
+                        22
+                    ]
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "text": "loadbang",
+                    "id": "obj-fp-guard-lb",
+                    "patching_rect": [
+                        700,
+                        1148,
+                        60,
+                        22
+                    ]
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "message",
+                    "text": "1",
+                    "id": "obj-fp-guard-lb-msg",
+                    "patching_rect": [
+                        700,
+                        1176,
+                        25,
+                        22
+                    ]
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "text": "r fp_block",
+                    "id": "obj-fp-guard-r-0",
+                    "patching_rect": [
+                        1220,
+                        120,
+                        65,
+                        22
+                    ]
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "text": "r fp_block",
+                    "id": "obj-fp-guard-r-1",
+                    "patching_rect": [
+                        1470,
+                        120,
+                        65,
+                        22
+                    ]
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "text": "gate",
+                    "id": "obj-fp-guard-pre-gate-0",
+                    "patching_rect": [
+                        1220,
+                        148,
+                        40,
+                        22
+                    ]
+                }
+            },
+            {
+                "box": {
+                    "maxclass": "newobj",
+                    "text": "gate",
+                    "id": "obj-fp-guard-pre-gate-1",
+                    "patching_rect": [
+                        1470,
+                        148,
+                        40,
+                        22
+                    ]
+                }
             }
         ],
         "lines": [
@@ -29789,18 +29932,6 @@
             {
                 "patchline": {
                     "source": [
-                        "obj-3",
-                        1
-                    ],
-                    "destination": [
-                        "obj-gate-0",
-                        1
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
                         "obj-gate-0",
                         0
                     ],
@@ -29951,18 +30082,6 @@
                     "destination": [
                         "obj-gate-1",
                         0
-                    ]
-                }
-            },
-            {
-                "patchline": {
-                    "source": [
-                        "obj-198",
-                        1
-                    ],
-                    "destination": [
-                        "obj-gate-1",
-                        1
                     ]
                 }
             },
@@ -30827,6 +30946,174 @@
                     "destination": [
                         "obj-269",
                         0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-109",
+                        0
+                    ],
+                    "destination": [
+                        "obj-fp-guard-sel-on",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-fp-guard-sel-on",
+                        0
+                    ],
+                    "destination": [
+                        "obj-fp-guard-msg-block",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-fp-guard-msg-block",
+                        0
+                    ],
+                    "destination": [
+                        "obj-fp-guard-block-send",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-fp-guard-sel-on",
+                        0
+                    ],
+                    "destination": [
+                        "obj-fp-guard-delay-re",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-fp-guard-delay-re",
+                        0
+                    ],
+                    "destination": [
+                        "obj-fp-guard-msg-renable",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-fp-guard-msg-renable",
+                        0
+                    ],
+                    "destination": [
+                        "obj-fp-guard-block-send",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-fp-guard-lb",
+                        0
+                    ],
+                    "destination": [
+                        "obj-fp-guard-lb-msg",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-fp-guard-lb-msg",
+                        0
+                    ],
+                    "destination": [
+                        "obj-fp-guard-block-send",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-fp-guard-r-0",
+                        0
+                    ],
+                    "destination": [
+                        "obj-fp-guard-pre-gate-0",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-fp-guard-r-1",
+                        0
+                    ],
+                    "destination": [
+                        "obj-fp-guard-pre-gate-1",
+                        0
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-3",
+                        1
+                    ],
+                    "destination": [
+                        "obj-fp-guard-pre-gate-0",
+                        1
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-fp-guard-pre-gate-0",
+                        0
+                    ],
+                    "destination": [
+                        "obj-gate-0",
+                        1
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-198",
+                        1
+                    ],
+                    "destination": [
+                        "obj-fp-guard-pre-gate-1",
+                        1
+                    ]
+                }
+            },
+            {
+                "patchline": {
+                    "source": [
+                        "obj-fp-guard-pre-gate-1",
+                        0
+                    ],
+                    "destination": [
+                        "obj-gate-1",
+                        1
                     ]
                 }
             }
