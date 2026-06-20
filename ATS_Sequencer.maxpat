@@ -50,8 +50,8 @@
 					"patching_rect" : [ 249.434981999999991, 475.940979000000027, 55.0, 53.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
-					"presentation_rect" : [ 36.487439393997192, 2647.0, 82.0, 38.0 ],
-					"text" : "PLAY PRESET"
+					"presentation_rect" : [ 26.487439393997192, 2647.0, 92.0, 38.0 ],
+					"text" : "PLAY \nSEQUENCE"
 				}
 
 			}
@@ -67,8 +67,8 @@
 					"patching_rect" : [ 234.434981999999991, 460.940979000000027, 55.0, 53.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
-					"presentation_rect" : [ 38.858489195123525, 1921.0, 82.0, 38.0 ],
-					"text" : "PLAY PRESET"
+					"presentation_rect" : [ 27.051093999999999, 1921.0, 93.807395195123519, 38.0 ],
+					"text" : "PLAY \nSEQUENCE"
 				}
 
 			}
@@ -84,8 +84,8 @@
 					"patching_rect" : [ 219.434981999999991, 445.940979000000027, 55.0, 53.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
-					"presentation_rect" : [ 35.551094000000006, 1225.972168000000238, 82.0, 38.0 ],
-					"text" : "PLAY PRESET"
+					"presentation_rect" : [ 30.551094000000006, 1225.972168000000238, 87.0, 38.0 ],
+					"text" : "PLAY \nSEQUENCE"
 				}
 
 			}
@@ -6267,7 +6267,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 249.700210999999996, 2677.525634999999966, 50.564338999999997, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 121.020078333333345, 1937.0, 50.0, 22.0 ],
+					"presentation_rect" : [ 145.140681894734712, 1937.0, 50.0, 22.0 ],
 					"text" : "MUTE"
 				}
 
@@ -6284,7 +6284,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 252.700210999999996, 2703.025634999999966, 41.0, 41.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 121.020078333333345, 1961.0, 39.0, 39.0 ],
+					"presentation_rect" : [ 145.140681894734712, 1961.0, 39.0, 39.0 ],
 					"uncheckedcolor" : [ 0.0, 0.0, 0.0, 0.0 ]
 				}
 
@@ -8039,7 +8039,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 250.87063599999999, 430.940979000000027, 50.564338999999997, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 110.460170403122902, 419.256804999999986, 50.0, 22.0 ],
+					"presentation_rect" : [ 155.005906985027423, 419.261443999999983, 50.0, 22.0 ],
 					"text" : "MUTE"
 				}
 
@@ -8056,7 +8056,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 253.87063599999999, 456.440979000000027, 41.0, 41.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 110.460170403122902, 449.261443999999983, 39.0, 39.0 ],
+					"presentation_rect" : [ 155.005906985027423, 449.261443999999983, 39.0, 39.0 ],
 					"uncheckedcolor" : [ 0.0, 0.0, 0.0, 0.0 ]
 				}
 
@@ -8673,15 +8673,15 @@
 					"fontname" : "Arial",
 					"fontsize" : 14.0,
 					"id" : "obj-18",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 204.434981999999991, 430.940979000000027, 55.0, 38.0 ],
+					"patching_rect" : [ 204.434981999999991, 430.940979000000027, 55.0, 53.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
-					"presentation_rect" : [ 27.0, 411.256804999999986, 82.0, 38.0 ],
-					"text" : "PLAY \nMODE"
+					"presentation_rect" : [ 18.0, 411.256804999999986, 91.0, 38.0 ],
+					"text" : "PLAY \nSEQUENCE"
 				}
 
 			}
@@ -12059,15 +12059,15 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-autoplay-label",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1230.0, 50.0, 100.0, 33.0 ],
+					"patching_rect" : [ 1230.0, 50.0, 100.0, 47.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
-					"presentation_rect" : [ 58.471970409154892, 645.0, 100.0, 33.0 ],
-					"text" : "Play Preset\nAuto"
+					"presentation_rect" : [ 58.471970409154892, 645.0, 126.0, 33.0 ],
+					"text" : "Play Preset\n(click in the preset)"
 				}
 
 			}
