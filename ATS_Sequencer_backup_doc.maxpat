@@ -14111,37 +14111,6 @@
 			}
 , 			{
 				"box" : 				{
-					"fontface" : 1,
-					"fontsize" : 16.0,
-					"id" : "obj_doc_btn_new",
-					"maxclass" : "textbutton",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 1723.0, 600.0, 323.0, 40.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 1730.456881503271006, 595.0, 303.121965604070738, 40.0 ],
-					"text" : "📖 Documentación / Quick Start"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"hidden" : 1,
-					"id" : "obj_doc_msg_new",
-					"linecount" : 4,
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 1723.0, 650.0, 323.0, 62.0 ],
-					"text" : ";\rmax launchbrowser https://github.com/Alba-Triana-Studio/ATS_Sequencer/blob/main/Quick_Readme.md"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"angle" : 0.0,
 					"bgcolor" : [ 1, 1, 1, 0 ],
 					"border" : 2,
@@ -20154,14 +20123,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-esodd5bpi", 0 ],
 					"source" : [ "obj-yo8ur7y8c", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj_doc_msg_new", 0 ],
-					"hidden" : 1,
-					"source" : [ "obj_doc_btn_new", 0 ]
 				}
 
 			}
