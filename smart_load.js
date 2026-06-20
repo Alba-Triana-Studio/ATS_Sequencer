@@ -47,6 +47,7 @@ function anything() {
     // Create a temporary file to load
     var outFile = new File("temp_load_" + setupIndex + ".json", "write", "TEXT");
     if (outFile.isopen) {
+        outFile.eof = 0; // Truncar el archivo para evitar corrupción de JSON
         outFile.writestring(newDataStr);
         outFile.close();
         
