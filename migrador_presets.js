@@ -96,7 +96,43 @@ maxApi.addHandler('migrate', () => {
                 const newId = newPresets[i].box.id;
                 const newBoxRef = newPatch.patcher.boxes.find(b => b.box.id === newId);
                 if (newBoxRef) {
-                    newBoxRef.box.preset_data = oldPresetsData[i];
+                    const oldCols = 10;
+                    const newCols = 20;
+                    // Mapping old rows to new rows based on the new layout:
+                    // 0: M1 -> 0
+                    // 1: M2 -> 1
+                    // 2: M3 -> 4
+                    // 3: M4 -> 6
+                    // 4: M5 -> 7
+                    // 5: M6 -> 10
+                    // 6: M7 -> 13
+                    // 7: M8 -> 16
+                    // 8: M9 -> 17
+                    // 9: T1 -> 18
+                    // 10: T2 -> 19
+                    // 11: T3 -> 20
+                    // 12: Full Piece -> 21
+                    const rowMapping = {
+                        0: 0, 1: 1, 2: 4, 3: 6, 4: 7, 5: 10, 6: 13,
+                        7: 16, 8: 17, 9: 18, 10: 19, 11: 20, 12: 21
+                    };
+                    const mappedData = oldPresetsData[i].map(item => {
+                        if (typeof item === 'object' && item.number) {
+                            let oldIdx = item.number;
+                            let oldRow = Math.floor((oldIdx - 1) / oldCols);
+                            let oldCol = (oldIdx - 1) % oldCols;
+                            
+                            // Map to the new row if it exists in mapping, otherwise leave it in the same row
+                            let newRow = rowMapping[oldRow] !== undefined ? rowMapping[oldRow] : oldRow;
+                            
+                            let newIdx = newRow * newCols + oldCol + 1;
+                            let newItem = Object.assign({}, item);
+                            newItem.number = newIdx;
+                            return newItem;
+                        }
+                        return item;
+                    });
+                    newBoxRef.box.preset_data = mappedData;
                     migratedCount++;
                 }
             }

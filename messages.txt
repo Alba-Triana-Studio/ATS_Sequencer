@@ -1,0 +1,101 @@
+obj-163 :: set $1
+obj-151 :: 0
+obj-146 :: 0
+obj-139 :: 0
+obj-136 :: 0
+obj-135 :: set $1
+obj-132 :: 0
+obj-124 :: set $1
+obj-123 :: set $1
+obj-120 :: set $1
+obj-119 :: set $1
+obj-40 :: 0
+obj-645 :: minimum $1
+obj-646 :: maximum $1
+obj-647 :: maximum $1
+obj-664 :: xyc 0 0. 0.
+obj-676 :: xyc 0 0. 0.
+obj-718 :: 0
+obj-746 :: -
+obj-747 :: set $1
+obj-763 :: 0 150
+obj-767 :: 0
+obj-777 :: clear
+obj-482 :: minimum $1
+obj-483 :: maximum $1
+obj-484 :: maximum $1
+obj-479 :: minimum $1
+obj-480 :: maximum $1
+obj-481 :: maximum $1
+obj-475 :: minimum $1
+obj-474 :: maximum $1
+obj-473 :: maximum $1
+obj-457 :: xyc 0 0. -0.8
+obj-443 :: xyc 0 0. 0.
+obj-430 :: xyc 0 0. 0.38
+obj-406 :: xyc 0 0. 0.
+obj-390 :: xyc 0 0. 0.85
+obj-418 :: xyc 0 0. 0.
+obj-248 :: 0
+obj-279 :: -
+obj-280 :: set $1
+obj-296 :: 0 150
+obj-300 :: 0
+obj-311 :: clear
+obj-121 :: 0
+obj-157 :: -
+obj-158 :: set $1
+obj-176 :: 0 150
+obj-181 :: 0
+obj-191 :: clear
+obj-114 :: 127
+obj-26 :: 0
+obj-16 :: 0
+obj-33 :: 0
+obj-41 :: stop
+obj-43 :: reset
+obj-91 :: stop
+obj-129 :: start
+obj-96 :: -
+obj-94 :: set $1
+obj-78 :: 0 150
+obj-37 :: 0
+obj-62 :: clear
+obj-833 :: clearall
+obj-835 :: clearall
+obj-837 :: clearall
+obj-839 :: clearall
+obj-841 :: write
+obj-843 :: read
+obj-845 :: write
+obj-847 :: read
+obj-849 :: write
+obj-851 :: read
+obj-853 :: write
+obj-855 :: read
+obj-msg-zero-0 :: 0
+obj-msg-one-0 :: 1
+obj-msg-fade-0 :: 0. 50
+obj-msg-zero-1 :: 0
+obj-msg-one-1 :: 1
+obj-msg-fade-1 :: 0. 50
+obj-msg-zero-2 :: 0
+obj-msg-one-2 :: 1
+obj-msg-fade-2 :: 0. 50
+obj-msg-zero-3 :: 0
+obj-msg-one-3 :: 1
+obj-msg-fade-3 :: 0. 50
+obj-msg-global-stop :: 0
+obj-msg-global-fade :: 0. 50
+obj-fp-guard-lb-msg :: 1
+obj-enzmsg-0 :: 0
+obj-enzmsg-1 :: 0
+obj-enzmsg-2 :: 0
+obj-enzmsg-3 :: 0
+obj-2b-lb0 :: 0
+obj-2b-fp0 :: 0
+obj-2b-msg-0 :: 0
+obj-2b-msg-1 :: 1
+obj-2b-msg-2 :: 2
+obj-2b-msg-3 :: 3
+obj_doc_msg_new :: ;max launchbrowser https://github.com/Alba-Triana-Studio/ATS_Sequencer/blob/main/Quick_Readme.md

@@ -1,0 +1,289 @@
+obj-467 :: scale 0. 1. -20 0
+obj-450 :: scale 0. 1. -20 0
+obj-395 :: +~
+obj-385 :: +~ 0.1
+obj-383 :: +~ 0.1
+obj-345 :: vst~ C74_VST3:/MAnalyzer
+obj-343 :: vst~ "C74_VST3:/Youlean Loudness Meter 2"
+obj-384 :: - 5.7
+obj-333 :: r preset
+obj-328 :: s luz frec
+obj-466 :: s Mslide frec
+obj-441 :: s clockms
+obj-464 :: p prespopup
+obj-336 :: s preset#
+obj-269 :: s rectrigger
+obj-358 :: s #exact4
+obj-353 :: s #exact3
+obj-351 :: s #exact2
+obj-349 :: s #exact1
+obj-283 :: r 4Fpitch
+obj-275 :: r 3Fpitch
+obj-274 :: r 2Fpitch
+obj-266 :: r 1Fpitch
+obj-250 :: send~ #rec_out_r
+obj-261 :: send~ #rec_out_l
+obj-260 :: receive~ mixout4
+obj-259 :: receive~ mixout3
+obj-258 :: receive~ mixout2
+obj-256 :: dac~ 1 2 3 4 5 6
+obj-152 :: sel 1
+obj-153 :: t i i
+obj-149 :: sel 1
+obj-150 :: t i i
+obj-144 :: sel 1
+obj-145 :: t i i
+obj-137 :: sel 1
+obj-138 :: t i i
+obj-134 :: sel 1
+obj-125 :: t i i
+obj-640 :: sel 1
+obj-639 :: t i i
+obj-112 :: p mastertoggles
+obj-668 :: t b f
+obj-669 :: t b f
+obj-670 :: sprintf xyc %ld %.2f %.2f
+obj-680 :: t b f
+obj-681 :: t b f
+obj-682 :: sprintf xyc %ld %.2f %.2f
+obj-704 :: r 4gpitch
+obj-707 :: change 0.
+obj-708 :: change 0.
+obj-709 :: s 4amp
+obj-712 :: s 4gpitch
+obj-713 :: curve~
+obj-714 :: curve~
+obj-716 :: del 50
+obj-719 :: t b i
+obj-726 :: loadbang
+obj-730 :: s mute4
+obj-731 :: == 0
+obj-737 :: OSCnote
+obj-738 :: r 4gpitch
+obj-744 :: receive~ 4lvl
+obj-745 :: loadbang
+obj-764 :: t b b
+obj-765 :: sel 0 1
+obj-768 :: s zero4
+obj-770 :: t b i
+obj-771 :: sprintf range %ld %ld
+obj-786 :: prepend domain
+obj-505 :: round 100
+obj-461 :: t b f
+obj-462 :: t b f
+obj-463 :: sprintf xyc %ld %.2f %.2f
+obj-447 :: t b f
+obj-448 :: t b f
+obj-449 :: sprintf xyc %ld %.2f %.2f
+obj-434 :: t b f
+obj-435 :: t b f
+obj-436 :: sprintf xyc %ld %.2f %.2f
+obj-410 :: t b f
+obj-411 :: t b f
+obj-412 :: sprintf xyc %ld %.2f %.2f
+obj-398 :: t b f
+obj-399 :: t b f
+obj-400 :: sprintf xyc %ld %.2f %.2f
+obj-422 :: t b f
+obj-423 :: t b f
+obj-424 :: sprintf xyc %ld %.2f %.2f
+obj-235 :: r 3gpitch
+obj-238 :: change 0.
+obj-239 :: change 0.
+obj-240 :: s 3amp
+obj-243 :: s 3gpitch
+obj-244 :: curve~
+obj-245 :: curve~
+obj-249 :: t b i
+obj-257 :: loadbang
+obj-262 :: s mute3
+obj-263 :: == 0
+obj-270 :: OSCnote
+obj-271 :: r 3gpitch
+obj-277 :: receive~ 3lvl
+obj-278 :: loadbang
+obj-297 :: t b b
+obj-298 :: sel 0 1
+obj-301 :: s zero3
+obj-303 :: t b i
+obj-305 :: sprintf range %ld %ld
+obj-320 :: prepend domain
+obj-68 :: r 2gpitch
+obj-66 :: r 1gpitch
+obj-208 :: change 0.
+obj-209 :: change 0.
+obj-210 :: s 2amp
+obj-216 :: s 2gpitch
+obj-220 :: curve~
+obj-221 :: curve~
+obj-122 :: t b i
+obj-140 :: s mute2
+obj-141 :: == 0
+obj-147 :: OSCnote
+obj-148 :: r 2gpitch
+obj-155 :: receive~ 2lvl
+obj-156 :: loadbang
+obj-178 :: t b b
+obj-179 :: sel 0 1
+obj-182 :: s zero2
+obj-184 :: t b i
+obj-185 :: sprintf range %ld %ld
+obj-200 :: prepend domain
+obj-115 :: del 50
+obj-111 :: loadbang
+obj-108 :: s mastervol
+obj-30 :: + 1
+obj-53 :: loadbang
+obj-55 :: s stereotoggle
+obj-52 :: soundmachine
+obj-46 :: t b i
+obj-99 :: + 1000
+obj-32 :: t b b b
+obj-34 :: t b i
+obj-35 :: sel 1
+obj-36 :: ==
+obj-38 :: loadbang
+obj-42 :: clocker 100
+obj-177 :: s mute1
+obj-162 :: == 0
+obj-126 :: gate~ 2
+obj-127 :: loadbang
+obj-128 :: receive~ mixout1
+obj-93 :: t i b b
+obj-95 :: r stereotoggle
+obj-105 :: OSCnote
+obj-17 :: r 1gpitch
+obj-50 :: receive~ 1lvl
+obj-97 :: loadbang
+obj-80 :: t b b
+obj-60 :: sel 0 1
+obj-48 :: change 0.
+obj-47 :: change 0.
+obj-29 :: s zero1
+obj-31 :: s 1amp
+obj-25 :: s 1gpitch
+obj-24 :: curve~
+obj-23 :: curve~
+obj-19 :: t b i
+obj-13 :: sprintf range %ld %ld
+obj-9 :: prepend domain
+obj-autoplay-send :: s autoplay
+obj-r-autoplay-0 :: r autoplay
+obj-gate-0 :: gate
+obj-tbbb-0 :: t b b b
+obj-delay-start-0 :: delay 100
+obj-add1000-0 :: + 100
+obj-delay-stop-0 :: delay
+obj-r-autoplay-1 :: r autoplay
+obj-gate-1 :: gate
+obj-tbbb-1 :: t b b b
+obj-delay-start-1 :: delay 100
+obj-add1000-1 :: + 100
+obj-delay-stop-1 :: delay
+obj-r-autoplay-2 :: r autoplay
+obj-gate-2 :: gate
+obj-tbbb-2 :: t b b b
+obj-delay-start-2 :: delay 100
+obj-add1000-2 :: + 100
+obj-delay-stop-2 :: delay
+obj-r-autoplay-3 :: r autoplay
+obj-gate-3 :: gate
+obj-tbbb-3 :: t b b b
+obj-delay-start-3 :: delay 100
+obj-add1000-3 :: + 100
+obj-delay-stop-3 :: delay
+obj-r-autoplay-stop :: r autoplay
+obj-sel-zero :: sel 0
+obj-delay-mute :: delay
+obj-10000 :: t b
+obj-10001 :: opendialog
+obj-10002 :: js smart_load.js 1
+obj-10003 :: t b
+obj-10004 :: opendialog
+obj-10005 :: js smart_load.js 2
+obj-10006 :: t b
+obj-10007 :: opendialog
+obj-10008 :: js smart_load.js 3
+obj-10009 :: t b
+obj-10010 :: opendialog
+obj-10011 :: js smart_load.js 4
+obj-fp-guard-inv :: == 0
+obj-fp-guard-block-send :: s fp_block
+obj-fp-guard-lb :: loadbang
+obj-fp-guard-r-0 :: r fp_block
+obj-fp-guard-r-1 :: r fp_block
+obj-fp-guard-pre-gate-0 :: gate
+obj-fp-guard-pre-gate-1 :: gate
+obj-fp-guard-r-2 :: r fp_block
+obj-fp-guard-pre-gate-2 :: gate
+obj-fp-guard-r-3 :: r fp_block
+obj-fp-guard-pre-gate-3 :: gate
+obj-engate-0 :: gate
+obj-enzsel-0 :: sel 0
+obj-engate-1 :: gate
+obj-enzsel-1 :: sel 0
+obj-engate-2 :: gate
+obj-enzsel-2 :: sel 0
+obj-engate-3 :: gate
+obj-enzsel-3 :: sel 0
+obj-2b-ractive :: r playactive
+obj-2b-plus1 :: + 1
+obj-2b-lb :: loadbang
+obj-2b-fpsel :: sel 1
+obj-2b-rfp :: r fp_block
+obj-2b-spa-lb :: s playactive
+obj-2b-spa-fp :: s playactive
+obj-2b-psswitch :: switch 4
+obj-2b-domswitch :: switch 4
+obj-2b-tbbb-0 :: t b b b
+obj-2b-gact-0 :: gate
+obj-2b-spa-0 :: s playactive
+obj-2b-tbbb-1 :: t b b b
+obj-2b-gact-1 :: gate
+obj-2b-spa-1 :: s playactive
+obj-2b-tbbb-2 :: t b b b
+obj-2b-gact-2 :: gate
+obj-2b-spa-2 :: s playactive
+obj-2b-tbbb-3 :: t b b b
+obj-2b-gact-3 :: gate
+obj-2b-spa-3 :: s playactive
+obj-3ph-send :: s setphase0
+obj-mx5tzq6di :: * 1000.
+obj-1t3h3j83z :: / 1000.
+obj-i7zy4n5jg :: prepend set
+obj-2t3ccds1y :: * 1000.
+obj-dnsqopshf :: / 1000.
+obj-4hflnnlkl :: prepend set
+obj-7sbcivixq :: * 1000.
+obj-m7yi42pvd :: / 1000.
+obj-4t5h0d4ok :: prepend set
+obj-gjt7l5zdl :: * 1000.
+obj-u3i72wnv7 :: / 1000.
+obj-v60osaa87 :: prepend set
+obj-59dzgzjpe :: * 1000.
+obj-1kwldhzhc :: / 1000.
+obj-70t15q9im :: prepend set
+obj-esodd5bpi :: * 1000.
+obj-tdz1qcmgu :: / 1000.
+obj-pt2y9ylm7 :: prepend set
+obj-j74anr8kb :: * 1000.
+obj-3h1ea2ims :: / 1000.
+obj-6vetkogrm :: prepend set
+obj-g16xfd1wi :: * 1000.
+obj-2mdj21p73 :: / 1000.
+obj-mvz96otzd :: prepend set
+obj-tyrssdfl5 :: * 1000.
+obj-m09utl895 :: / 1000.
+obj-ktek75n02 :: prepend set
+obj-tqugz621u :: * 1000.
+obj-ohqcid1yr :: / 1000.
+obj-7b3fmv8dz :: prepend set
+obj-oclp783qz :: * 1000.
+obj-ny61s7jhx :: / 1000.
+obj-v8kldzpti :: prepend set
+obj-ngqifyhl5 :: * 1000.
+obj-pcgt85p41 :: / 1000.
+obj-jx8nc1z5j :: prepend set
+obj-5b1onwccc :: * 1000.
+obj-xe2aqygkh :: / 1000.
+obj-h5wvk71m2 :: prepend set

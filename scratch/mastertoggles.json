@@ -95,7 +95,7 @@
           150,
           48
         ],
-        "text": "volver a 73 preset init y ti de la izq\n"
+        "text": "volver a 121 preset init y ti de la izq\n"
       }
     },
     {
@@ -223,6 +223,7 @@
         "fontname": "Arial",
         "fontsize": 13,
         "id": "obj-83",
+        "linecount": 2,
         "maxclass": "message",
         "numinlets": 2,
         "numoutlets": 1,
@@ -235,7 +236,7 @@
           29.5,
           23
         ],
-        "text": "73"
+        "text": "121"
       }
     },
     {
@@ -270,7 +271,7 @@
           29.5,
           22
         ],
-        "text": "81"
+        "text": "130"
       }
     },
     {
@@ -444,6 +445,7 @@
         "fontname": "Arial",
         "fontsize": 13,
         "id": "obj-434",
+        "linecount": 2,
         "maxclass": "message",
         "numinlets": 2,
         "numoutlets": 1,
@@ -456,7 +458,7 @@
           29.5,
           23
         ],
-        "text": "73"
+        "text": "121"
       }
     },
     {
@@ -464,6 +466,7 @@
         "fontname": "Arial",
         "fontsize": 12,
         "id": "obj-433",
+        "linecount": 2,
         "maxclass": "newobj",
         "numinlets": 2,
         "numoutlets": 2,
@@ -477,7 +480,7 @@
           41,
           22
         ],
-        "text": "sel 81"
+        "text": "sel 130"
       }
     },
     {
@@ -890,6 +893,7 @@
         "fontname": "Arial",
         "fontsize": 12,
         "id": "obj-358",
+        "linecount": 2,
         "maxclass": "newobj",
         "numinlets": 1,
         "numoutlets": 2,
@@ -903,7 +907,7 @@
           35,
           22
         ],
-        "text": "t i 73"
+        "text": "t i 121"
       }
     },
     {

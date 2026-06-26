@@ -1,0 +1,50 @@
+obj-395 :: +~
+obj-385 :: +~ 0.1
+obj-383 :: +~ 0.1
+obj-345 :: vst~ C74_VST3:/MAnalyzer
+obj-343 :: vst~ "C74_VST3:/Youlean Loudness Meter 2"
+obj-670 :: sprintf xyc %ld %.2f %.2f
+obj-682 :: sprintf xyc %ld %.2f %.2f
+obj-771 :: sprintf range %ld %ld
+obj-463 :: sprintf xyc %ld %.2f %.2f
+obj-449 :: sprintf xyc %ld %.2f %.2f
+obj-436 :: sprintf xyc %ld %.2f %.2f
+obj-412 :: sprintf xyc %ld %.2f %.2f
+obj-400 :: sprintf xyc %ld %.2f %.2f
+obj-424 :: sprintf xyc %ld %.2f %.2f
+obj-305 :: sprintf range %ld %ld
+obj-185 :: sprintf range %ld %ld
+obj-30 :: + 1
+obj-99 :: + 1000
+obj-13 :: sprintf range %ld %ld
+obj-add1000-0 :: + 200
+obj-add1000-1 :: + 200
+obj-add1000-2 :: + 200
+obj-add1000-3 :: + 200
+obj-2b-plus1 :: + 1
+obj-mx5tzq6di :: * 1000.
+obj-1t3h3j83z :: / 1000.
+obj-2t3ccds1y :: * 1000.
+obj-dnsqopshf :: / 1000.
+obj-7sbcivixq :: * 1000.
+obj-m7yi42pvd :: / 1000.
+obj-gjt7l5zdl :: * 1000.
+obj-u3i72wnv7 :: / 1000.
+obj-59dzgzjpe :: * 1000.
+obj-1kwldhzhc :: / 1000.
+obj-esodd5bpi :: * 1000.
+obj-tdz1qcmgu :: / 1000.
+obj-j74anr8kb :: * 1000.
+obj-3h1ea2ims :: / 1000.
+obj-g16xfd1wi :: * 1000.
+obj-2mdj21p73 :: / 1000.
+obj-tyrssdfl5 :: * 1000.
+obj-m09utl895 :: / 1000.
+obj-tqugz621u :: * 1000.
+obj-ohqcid1yr :: / 1000.
+obj-oclp783qz :: * 1000.
+obj-ny61s7jhx :: / 1000.
+obj-ngqifyhl5 :: * 1000.
+obj-pcgt85p41 :: / 1000.
+obj-5b1onwccc :: * 1000.
+obj-xe2aqygkh :: / 1000.
