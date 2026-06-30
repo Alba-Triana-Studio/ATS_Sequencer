@@ -69,16 +69,21 @@ function anything() {
                 }
             }
         }
-        newDataStr = JSON.stringify(data, null, '\t');
+        newDataStr = JSON.stringify(data); // compacto: evita inflar el tamaño con tabs
     } catch(e) {
         post("Error parsing JSON in smart_load: " + e + "\n");
     }
-    
+
     // Create a temporary file to load
     var outFile = new File("temp_load_" + setupIndex + ".json", "write", "TEXT");
     if (outFile.isopen) {
         outFile.eof = 0; // Truncar el archivo para evitar corrupción de JSON
-        outFile.writestring(newDataStr);
+        // writestring de Max tiene un tope de ~32767 bytes por llamada;
+        // escribimos en bloques para no truncar archivos grandes.
+        var chunkSize = 8192;
+        for (var p = 0; p < newDataStr.length; p += chunkSize) {
+            outFile.writestring(newDataStr.substring(p, p + chunkSize));
+        }
         outFile.close();
         
         // Output the command to read the newly translated file
