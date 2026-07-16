@@ -44,31 +44,9 @@ function anything() {
         }
     }
     
-    // Check if the file is old (no matrix_size) and map the preset numbers
+    // Parse to compact the JSON and avoid inflating size with tabs
     try {
         var data = JSON.parse(newDataStr);
-        if (!data.matrix_size || data.matrix_size !== "20x30") {
-            post("Loading old 10x17 preset file. Mapping to top-right corner...\n");
-            if (data.preset_data) {
-                var oldCols = 10;
-                var newCols = 20;
-                for (var j = 0; j < data.preset_data.length; j++) {
-                    var item = data.preset_data[j];
-                    if (item && item.number) {
-                        var oldIdx = item.number;
-                        var oldRow = Math.floor((oldIdx - 1) / oldCols);
-                        var oldCol = (oldIdx - 1) % oldCols;
-                        
-                        // Map to top left: newRow = oldRow, newCol = oldCol
-                        var newRow = oldRow;
-                        var newCol = oldCol;
-                        
-                        var newIdx = newRow * newCols + newCol + 1;
-                        item.number = newIdx;
-                    }
-                }
-            }
-        }
         newDataStr = JSON.stringify(data); // compacto: evita inflar el tamaño con tabs
     } catch(e) {
         post("Error parsing JSON in smart_load: " + e + "\n");
