@@ -27,14 +27,18 @@ Esta sección afecta y monitorea todo el sistema de generación de la pieza:
 
 La pieza está compuesta por canales o *Setups* en paralelo. Cada bloque contiene los siguientes módulos:
 
-#### A. Reproducción y Muteo
-- **PLAY / MUTE:** Switches para activar individualmente la secuencia del canal o silenciar todo lo que emite. Es útil para probar modos sin detener todo el sistema ("Solo por mute").
+> **Controles compartidos:** **Time Domain (s)**, **Freq. Domain (Hz)** (mínimo y máximo) y **Clear** existen únicamente en el panel del **Oscilador 1** y se aplican a los cuatro canales. El preset guarda un solo juego de estos valores y lo reparte al recuperarse; los osciladores 2, 3 y 4 ya no los administran por separado.
+
+#### A. Reproducción, Muteo y Solo
+- **PLAY (solo en el Oscilador 1):** Un único switch arranca y detiene los cuatro osciladores a la vez. El reloj y la duración del ciclo los marca el *Time Domain* del Oscilador 1.
+- **MUTE:** Silencia la salida de ese canal sin detener el sistema.
+- **SOLO:** Aísla ese canal. Es **exclusivo**: al activarlo se apaga el SOLO de los demás canales. Mientras haya un SOLO activo solo suena ese canal, aunque esté muteado; al apagarlo vuelve a mandar el MUTE de cada canal.
 
 #### B. Matriz de Presets (El Secuenciador)
-- **Matriz de columnas 1 a 10:** Es el cerebro del secuenciador individual. Cada columna en esta cuadrícula (`preset`) corresponde a un modo o "preset" almacenado. Las filas controlan los modos de vibración y la matriz guarda toda la configuración de estados (frecuencias, amplitudes, curvas) para ser llamados durante el avance temporal de la secuencia.
-- **Gestión de Archivos (Novedad):** Cada matriz ahora cuenta con un sistema robusto de almacenamiento en disco:
-  - **Guardar:** Permite exportar el banco completo de presets de ese canal a un archivo externo en formato JSON o de texto, para respaldarlo o transferirlo a otra sesión.
-  - **Cargar:** Permite importar un archivo de presets previamente guardado.
+- **Matriz única (Oscilador 1):** Es el cerebro del secuenciador. Cada celda de la cuadrícula (`preset`) guarda un estado completo de **los cuatro canales** (frecuencias, amplitudes, curvas y dominios de tiempo), que se recuperan juntos durante el avance temporal de la secuencia. Los osciladores 2, 3 y 4 ya no tienen matriz propia.
+- **Gestión de Archivos:**
+  - **Guardar:** Exporta el banco completo de presets (los 4 canales) a un archivo externo en formato JSON.
+  - **Cargar:** Importa un archivo de presets previamente guardado. Si el archivo es de una versión anterior (una matriz por canal), su contenido se carga en el **canal 1** y los canales 2, 3 y 4 quedan vacíos, con la amplitud plana a 0 en todos los slots.
   - **Clear all presets:** Botón de emergencia para borrar inmediatamente todas las celdas guardadas en la matriz y comenzar desde cero.
 
 #### C. Moldeado de Onda (Envolventes)
@@ -49,7 +53,7 @@ Para crear transiciones de sonido suaves a nivel percusivo o continuo, cada setu
 Al lado de cada sistema de control, hay herramientas visuales para corroborar qué ocurre físicamente:
 - **Time Domain (s):** Visualizador osciloscópico de onda, donde se ve la forma de onda producida en relación al tiempo (segundos).
 - **Freq. Domain (Hz):** Visualizador espectral que ayuda a constatar cuáles frecuencias están emitiéndose realmente y en qué magnitud (Hertz).
-- **Clear:** Botones que limpian y reinician la visualización o el trazado de los scopes.
+- **Clear:** Un único botón (Oscilador 1) que limpia y reinicia el trazado de las gráficas de los cuatro canales.
 - **dB:** Medidores individuales de nivel que muestran los decibeles de ganancia en la salida final de dicho canal o "Setup".
 
 ---
@@ -67,6 +71,10 @@ Al lado de cada sistema de control, hay herramientas visuales para corroborar qu
 ### 3. Migración y Rescate de Presets (Novedad)
 
 Si posees archivos `.maxpat` de versiones antiguas del secuenciador (anteriores a la existencia de los botones "Guardar/Cargar") y deseas rescatar los presets que quedaron incrustados en su código, se ha creado la utilidad complementaria **`Migrador_de_Presets.maxpat`**.
+
+> **Nota tras la unificación de matrices:** el migrador exige que el archivo destino tenga **4 matrices**, así que ya no acepta el `ATS_Sequencer.maxpat` actual (dará el error *"El archivo nuevo tiene 1 presets. Se requieren 4"*). El camino ahora es en dos pasos:
+> 1. Usa como **archivo NUEVO** un respaldo previo a la unificación (p. ej. `ATS_Sequencer_backup_*_preunify.maxpat`) y migra ahí la matriz que quieras rescatar.
+> 2. Abre ese respaldo, pulsa **Guardar** en la matriz rescatada para obtener un `.maxpresets`, y cárgalo en el parche actual con **Cargar**: entrará en el canal 1 y dejará los canales 2–4 vacíos.
 
 #### Cómo utilizar el Migrador:
 1. **Precaución:** Asegúrate de cerrar tu parche principal (`ATS_Sequencer.maxpat`) antes de proceder.

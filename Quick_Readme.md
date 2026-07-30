@@ -5,13 +5,14 @@
 - **Reloj (hours, min, s, ms):** Muestra el tiempo transcurrido de la secuencia de forma global.
 - **STEREO / Phase-lock:** Controles globales. STEREO activa la salida por ambos canales; Phase-lock sincroniza los osciladores al arrancar para evitar *clicks*.
 - **Tuning (1, 2, 3) y Luz (≠ 76.2 / ≠ 38.1):** Configuraciones de afinación base y adaptación de frecuencias estroboscópicas.
-- **PLAY / MUTE (por canal):** Activa o silencia independientemente los canales (Setups 1 al 4).
-- **Time Domain (s) / Freq. Domain (Hz):** Osciloscopio en el dominio del tiempo (segundos) y espectrómetro de frecuencias (Hertz) para monitorear la salida visual de cada canal.
+- **PLAY (Oscilador 1):** Un único botón para los cuatro canales: arranca y detiene los 4 osciladores a la vez.
+- **MUTE / SOLO (por canal):** Silencia un canal (MUTE) o aísla uno solo (SOLO). El SOLO es exclusivo: activarlo en un canal apaga el de los demás; con un SOLO activo, ese canal suena aunque esté muteado.
+- **Time Domain (s) / Freq. Domain (Hz) / Clear (solo en Oscilador 1):** Definen la duración de la secuencia (segundos) y el rango de frecuencias (Hz mínimo y máximo) de los ejes de las gráficas, y **Clear** limpia los trazados. Son globales: se aplican a los cuatro osciladores a la vez.
 
 ## 💾 Gestión de Presets
-Cada canal tiene su propia matriz de almacenamiento de estados:
-- **Guardar:** Exporta toda la matriz de presets actual del canal a un archivo JSON en tu disco.
-- **Cargar:** Importa un archivo JSON de presets previamente guardado.
+Hay **una sola matriz** (la del Oscilador 1) y cada preset guarda los cuatro canales a la vez:
+- **Guardar:** Exporta toda la matriz de presets (los 4 canales) a un archivo JSON en tu disco.
+- **Cargar:** Importa un archivo JSON de presets previamente guardado. Los archivos de versiones anteriores (una matriz por canal) se cargan en el **canal 1** y dejan los canales 2, 3 y 4 vacíos (amplitud plana a 0).
 - **Clear all presets:** Borra absolutamente toda la matriz. *¡Usar con precaución!*
 - **Guardado Manual Rápido:** Para sobreescribir o guardar un preset manualmente, mantén presionado `Shift` y haz clic en la celda deseada de la matriz.
 
@@ -30,4 +31,5 @@ Las gráficas permiten dibujar la evolución de la frecuencia o la amplitud en e
 - **Play Full Piece:** Inicia la ejecución automática de toda la pieza desde el tiempo cero, activando la sincronía global y corriendo las automatizaciones.
 - **Play open presets:** Reproduce y avanza continuamente la secuencia de presets habilitados.
 - **Play Preset (En la matriz):** Haz clic directamente en un preset (cuadro rojo/gris) de la matriz para cargar y reproducir instantáneamente esa configuración sonora específica.
-- **Uso de MUTE / PLAY (Canal):** Muy útiles para escuchar un canal aislado en modo "Solo", silenciando los demás sin necesidad de detener el reloj general o borrar presets.
+- **PLAY:** Arranca los cuatro osciladores con el preset seleccionado. El reloj y el tiempo de ciclo los marca el **Oscilador 1** (su *Time Domain*).
+- **Uso de MUTE / SOLO (Canal):** Para escuchar un canal aislado usa su **SOLO**; para quitar canales de la mezcla usa **MUTE**. Ninguno detiene el reloj general ni altera los presets.
