@@ -41,6 +41,23 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontname" : "Arial",
+					"fontsize" : 18.0,
+					"id" : "obj-74",
+					"linecount" : 24,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 2891.550100482788366, 482.15008499999999, 224.0, 489.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 9,
+					"presentation_rect" : [ 707.0, 839.0, 726.0, 187.0 ],
+					"text" : "PLAY\n- Play: Reproduce la fila desde la celda seleccionada.\n- Play all sequence: Reproduce la fila de la celda seleccionada DESDE EL PRINCIPIO\n- Play Full Piece: Reproduce la fila \"Play Full Piece\" desde el principio si no esta vacia.\n- Play bar: Al seleccionarlo se reproduce cada celda que clickeas.\n\nEDIT\n- Para editar, asegurate de seleccionar la curva que quieres editar haciendo click en \n  FR o    AMP en el boton azul/fuscia al lado derecho de cada curva."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontname" : "Arial",
 					"fontsize" : 8.0,
 					"format" : 6,
 					"id" : "obj-45",
@@ -7249,9 +7266,9 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 2876.550100482788366, 838.843955591720714, 224.0, 127.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 4,
-					"presentation_rect" : [ 707.0, 1032.0, 327.0, 87.0 ],
-					"text" : "                     Configuración para Max 8\n\nalt+click en el control del volumen de la derecha para que llegue a 0."
+					"presentation_linecount" : 3,
+					"presentation_rect" : [ 707.0, 1192.0, 615.0, 67.0 ],
+					"text" : "                   Configuración para Max 8\n\nalt+click en el control del volumen de la derecha para que llegue a 0."
 				}
 
 			}
@@ -8673,15 +8690,15 @@
 					"fontname" : "Arial",
 					"fontsize" : 18.0,
 					"id" : "obj-374",
-					"linecount" : 17,
+					"linecount" : 16,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 2876.550100482788366, 467.15008499999999, 224.0, 348.0 ],
+					"patching_rect" : [ 2876.550100482788366, 467.15008499999999, 224.0, 328.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 8,
-					"presentation_rect" : [ 707.0, 846.0, 726.0, 167.0 ],
-					"text" : "                     HOTKEYS\n\n- Borrar puntos en tablas: Hold Shift y click en punto deseado\n- Curvas con mouse en tablas: Hold ALT, click sobre línea y mover mouse arriba o abajo.\n- Save preset: Hold Shift y click en preset deseado.\n-  Zoom in & zoom out: CMD + '+' / '-'\n\nTo see full patch notes leave presentation mode: CMD + Option (alt) + E"
+					"presentation_linecount" : 7,
+					"presentation_rect" : [ 707.0, 1038.0, 1014.0, 147.0 ],
+					"text" : "HOTKEYS\n- Borrar puntos en tablas: Hold Shift y click en punto deseado\n- Curvas con mouse en tablas: Hold ALT, click sobre línea y mover mouse arriba o abajo.\n- Save preset: Hold Shift y click en preset deseado.\n-  Zoom in & zoom out: CMD + '+' / '-'\n\nTo see full patch notes leave presentation mode: CMD + Option (alt) + E"
 				}
 
 			}
@@ -9470,7 +9487,7 @@
 					"presentation" : 1,
 					"presentation_linecount" : 2,
 					"presentation_rect" : [ 170.0, 287.535005912368774, 126.0, 33.0 ],
-					"text" : "Play Preset\n(click in the preset)",
+					"text" : "Play Bar\n(click in the preset)",
 					"textjustification" : 2
 				}
 
