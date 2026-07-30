@@ -42,6 +42,15 @@ La pieza está compuesta por canales o *Setups* en paralelo. Cada bloque contien
   - **Clear all presets:** Botón de emergencia para borrar inmediatamente todas las celdas guardadas en la matriz y comenzar desde cero.
 
 #### C. Moldeado de Onda (Envolventes)
+
+> **Gráfica unificada:** desde esta versión cada canal tiene **una sola gráfica de control** en la que se superponen las dos envolventes: la de **frecuencia en cyan** (moviéndose dentro del rango de *Freq. Domain (Hz)*) y la de **amplitud en fucsia** (siempre de 0 a 1). Cada curva conserva su propio eje vertical, así que ninguna deforma a la otra. Bajo la gráfica hay tres botones:
+> - **FREQ** y **AMP** — encienden/apagan la visualización de cada curva.
+> - **Editar: FREQ / Editar: AMP** — selecciona cuál de las dos capas recibe el clic del ratón (dibujar, mover o borrar puntos). El color del botón indica la curva activa.
+>
+> **Un solo grupo de controles de dibujo:** encima de la gráfica queda una única fila *Time (s) / Freq. / Curve / Draw*, que también sigue al botón **Editar**. El rótulo del valor alterna entre **Freq.** y **Amplitude** según la capa activa, y cada capa conserva sus propios valores de tiempo, valor y curva (son dos juegos de cajas superpuestos, de los que solo se muestra el que corresponde).
+>
+> El cambio es únicamente de visualización: los objetos de envolvente son los mismos, siguen conectados a la matriz de presets y a los `curve~`, así que **guardado, cargado y reproducción no cambian en absoluto**.
+
 Para crear transiciones de sonido suaves a nivel percusivo o continuo, cada setup tiene generadores de envolventes:
 - **Freq. / PITCH:** Establece la frecuencia base (Hz) o tono que producirá ese canal.
 - **Amplitude:** Nivel de intensidad que alcanzará el canal en dicho momento.

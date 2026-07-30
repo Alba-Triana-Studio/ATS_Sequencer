@@ -17,7 +17,17 @@ Hay **una sola matriz** (la del Oscilador 1) y cada preset guarda los cuatro can
 - **Guardado Manual Rápido:** Para sobreescribir o guardar un preset manualmente, mantén presionado `Shift` y haz clic en la celda deseada de la matriz.
 
 ## 📈 Dibujo en Gráficas (Envolventes)
-Las gráficas permiten dibujar la evolución de la frecuencia o la amplitud en el tiempo.
+Cada canal tiene **una sola gráfica** en la que conviven las dos envolventes:
+- **Cyan = frecuencia** (se mueve dentro del rango *Freq. Domain (Hz)*).
+- **Fucsia = amplitud** (conserva su rango de 0 a 1).
+
+Debajo de la gráfica hay tres botones:
+- **FREQ / AMP:** encienden y apagan la visualización de cada curva.
+- **Editar: FREQ ⇄ Editar: AMP:** elige cuál de las dos curvas responde al ratón. El color del botón (cyan o fucsia) indica la curva que estás editando. La leyenda numérica del eje corresponde siempre a la escala de frecuencia; la amplitud siempre va de 0 a 1.
+
+Encima de la gráfica hay **un solo grupo de controles de dibujo** (*Time (s) / Freq. / Curve / Draw*). Ese grupo también obedece al botón **Editar**: cuando editas frecuencia el rótulo dice **Freq.**, y al pasar a amplitud dice **Amplitude**. Cada modo recuerda sus propios valores de tiempo, valor y curva, así que puedes ir y volver sin perder lo que tenías escrito.
+
+Los pasos para dibujar son los mismos de siempre:
 1. Ajusta los valores de destino en las cajas numéricas de **Freq / PITCH** o **Amplitude**.
 2. Define la duración de esta transición en la caja **Time (s)** (en segundos).
 3. Ajusta el valor del suavizado en **Curve**.

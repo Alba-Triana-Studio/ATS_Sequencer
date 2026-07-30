@@ -6545,7 +6545,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						264.44443577528,
-						1652.6530696578525,
+						2288.888813853264,
 						50,
 						22
 					],
@@ -6583,7 +6583,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						267.40739864110947,
-						1677.838254017403,
+						2314.0739982128143,
 						39,
 						39
 					],
@@ -6746,7 +6746,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						15.284034175502768,
-						1580.7842758045886,
+						2217.02002,
 						129,
 						24
 					],
@@ -8342,7 +8342,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						253.6624920114424,
-						1204.3629235334247,
+						1547.498657,
 						50,
 						22
 					],
@@ -8380,7 +8380,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						253.6624920114424,
-						1228.3629235334247,
+						1571.498657,
 						39,
 						39
 					],
@@ -8543,7 +8543,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						13.46923855016054,
-						1156.8642665334246,
+						1500,
 						125.16371089967893,
 						24
 					],
@@ -8927,32 +8927,15 @@
 					"presentation": 1,
 					"presentation_rect": [
 						402,
-						1145.5300198814202,
-						714,
+						1488.6657533479956,
+						777,
 						281
 					],
 					"range": [
 						0,
 						1000
 					],
-					"snap2grid": 3,
-					"varname": "fnFreq3",
-					"linecolor": [
-						0,
-						0.85,
-						1,
-						1
-					],
-					"gridcolor": [
-						0.5,
-						0.5,
-						0.5,
-						0.35
-					],
-					"linethickness": 2,
-					"pointsize": 3.5,
-					"hidden": 0,
-					"ignoreclick": 0
+					"snap2grid": 3
 				}
 			},
 			{
@@ -9308,7 +9291,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						248,
-						761.964277,
+						819,
 						50,
 						22
 					],
@@ -9346,7 +9329,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						251,
-						787.964277,
+						845,
 						39,
 						39
 					],
@@ -9509,7 +9492,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						14,
-						719.964277,
+						777,
 						129,
 						24
 					],
@@ -11515,7 +11498,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						339,
-						1137.5300198814202,
+						1480.6657533479956,
 						50,
 						22
 					]
@@ -11542,7 +11525,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						337,
-						736.6300303479957,
+						793.6657533479956,
 						50,
 						22
 					]
@@ -11679,7 +11662,13 @@
 						44,
 						20
 					],
-					"presentation": 0,
+					"presentation": 1,
+					"presentation_rect": [
+						607,
+						2508.6657533479956,
+						44,
+						20
+					],
 					"text": "Draw"
 				}
 			},
@@ -11697,7 +11686,13 @@
 						44,
 						20
 					],
-					"presentation": 0,
+					"presentation": 1,
+					"presentation_rect": [
+						554,
+						2508.6657533479956,
+						44,
+						20
+					],
 					"text": "Curve"
 				}
 			},
@@ -11717,14 +11712,12 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						495,
-						1515.4300091525843,
+						492,
+						2508.6657533479956,
 						63,
 						20
 					],
-					"text": "Amplitude",
-					"hidden": 1,
-					"varname": "rowAl4"
+					"text": "Amplitude"
 				}
 			},
 			{
@@ -11741,7 +11734,13 @@
 						65,
 						20
 					],
-					"presentation": 0,
+					"presentation": 1,
+					"presentation_rect": [
+						404,
+						2508.6657533479956,
+						65,
+						20
+					],
 					"text": "Time (s)"
 				}
 			},
@@ -11781,13 +11780,11 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						616,
-						1535.4300091525843,
+						612,
+						2528.6657533479956,
 						20,
 						20
-					],
-					"hidden": 1,
-					"varname": "rowAd4"
+					]
 				}
 			},
 			{
@@ -11814,8 +11811,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						558,
-						1535.4300091525843,
+						555,
+						2528.6657533479956,
 						46,
 						22
 					],
@@ -11834,8 +11831,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number",
-					"hidden": 1
+					"varname": "number"
 				}
 			},
 			{
@@ -11862,8 +11858,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						495,
-						1535.4300091525843,
+						492,
+						2528.6657533479956,
 						53,
 						22
 					],
@@ -11881,8 +11877,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[1]",
-					"hidden": 1
+					"varname": "number[1]"
 				}
 			},
 			{
@@ -11987,8 +11982,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						1118,
-						1820.4300091525843,
+						343,
+						2812.6657533479956,
 						57,
 						26
 					]
@@ -12011,10 +12006,10 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						1122,
-						1591.4300091525843,
-						47,
-						225
+						349,
+						2555.6657533479956,
+						47.118164,
+						256.051819
 					]
 				}
 			},
@@ -12035,7 +12030,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						349,
-						1683.4300091525843,
+						2319.6657533479956,
 						34,
 						27
 					],
@@ -12071,32 +12066,15 @@
 					"presentation": 1,
 					"presentation_rect": [
 						404,
-						1567.4300091525843,
-						709,
+						2203.6657533479956,
+						772,
 						281
 					],
 					"range": [
 						35,
 						85
 					],
-					"snap2grid": 3,
-					"varname": "fnFreq4",
-					"linecolor": [
-						0,
-						0.85,
-						1,
-						1
-					],
-					"gridcolor": [
-						0.5,
-						0.5,
-						0.5,
-						0.35
-					],
-					"linethickness": 2,
-					"pointsize": 3.5,
-					"hidden": 0,
-					"ignoreclick": 0
+					"snap2grid": 3
 				}
 			},
 			{
@@ -12116,10 +12094,10 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						1122,
-						1569.4300091525843,
-						47,
-						20
+						349,
+						2527.6657533479956,
+						47.118164,
+						24
 					],
 					"text": "AMP"
 				}
@@ -12128,7 +12106,7 @@
 				"box": {
 					"classic_curve": 1,
 					"domain": 0.009999999776483,
-					"grid": 0,
+					"grid": 3,
 					"gridstep_x": 1000,
 					"gridstep_y": 0.01,
 					"id": "obj-785",
@@ -12153,35 +12131,11 @@
 					"presentation": 1,
 					"presentation_rect": [
 						404,
-						1567.4300091525843,
-						709,
-						281
+						2555.6657533479956,
+						772,
+						285
 					],
-					"snap2grid": 3,
-					"varname": "fnAmp4",
-					"linecolor": [
-						1,
-						0.15,
-						0.8,
-						1
-					],
-					"bgcolor": [
-						0,
-						0,
-						0,
-						0
-					],
-					"gridcolor": [
-						0,
-						0,
-						0,
-						0
-					],
-					"legend": 0,
-					"linethickness": 2,
-					"pointsize": 3.5,
-					"hidden": 0,
-					"ignoreclick": 1
+					"snap2grid": 3
 				}
 			},
 			{
@@ -12200,8 +12154,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						1038,
-						1189.6642893739245,
+						1148.000017106533,
+						1532.8000228404999,
 						78,
 						20
 					],
@@ -12222,7 +12176,13 @@
 						44,
 						20
 					],
-					"presentation": 0,
+					"presentation": 1,
+					"presentation_rect": [
+						604,
+						1795.6657533479956,
+						44,
+						20
+					],
 					"text": "Draw"
 				}
 			},
@@ -12240,7 +12200,13 @@
 						44,
 						20
 					],
-					"presentation": 0,
+					"presentation": 1,
+					"presentation_rect": [
+						551,
+						1795.6657533479956,
+						44,
+						20
+					],
 					"text": "Curve"
 				}
 			},
@@ -12261,13 +12227,11 @@
 					"presentation": 1,
 					"presentation_rect": [
 						489,
-						1098.5300198814202,
+						1795.6657533479956,
 						63,
 						20
 					],
-					"text": "Amplitude",
-					"hidden": 1,
-					"varname": "rowAl3"
+					"text": "Amplitude"
 				}
 			},
 			{
@@ -12284,7 +12248,13 @@
 						65,
 						20
 					],
-					"presentation": 0,
+					"presentation": 1,
+					"presentation_rect": [
+						402,
+						1795.6657533479956,
+						65,
+						20
+					],
 					"text": "Time (s)"
 				}
 			},
@@ -12325,12 +12295,10 @@
 					"presentation": 1,
 					"presentation_rect": [
 						610,
-						1118.5300198814202,
+						1815.6657533479956,
 						20,
 						20
-					],
-					"hidden": 1,
-					"varname": "rowAd3"
+					]
 				}
 			},
 			{
@@ -12358,7 +12326,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						552,
-						1118.5300198814202,
+						1815.6657533479956,
 						46,
 						22
 					],
@@ -12377,8 +12345,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[6]",
-					"hidden": 1
+					"varname": "number[6]"
 				}
 			},
 			{
@@ -12406,7 +12373,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						489,
-						1118.5300198814202,
+						1815.6657533479956,
 						53,
 						22
 					],
@@ -12424,8 +12391,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[7]",
-					"hidden": 1
+					"varname": "number[7]"
 				}
 			},
 			{
@@ -12485,7 +12451,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						604,
-						1098.5300198814202,
+						1441.6657533479956,
 						44,
 						20
 					],
@@ -12509,7 +12475,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						551,
-						1098.5300198814202,
+						1441.6657533479956,
 						44,
 						20
 					],
@@ -12533,13 +12499,11 @@
 					"presentation": 1,
 					"presentation_rect": [
 						489,
-						1098.5300198814202,
+						1441.6657533479956,
 						63,
 						20
 					],
-					"text": "Freq.",
-					"hidden": 0,
-					"varname": "rowFl3"
+					"text": "Freq."
 				}
 			},
 			{
@@ -12559,7 +12523,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						402,
-						1098.5300198814202,
+						1441.6657533479956,
 						65,
 						20
 					],
@@ -12603,12 +12567,10 @@
 					"presentation": 1,
 					"presentation_rect": [
 						610,
-						1118.5300198814202,
+						1461.6657533479956,
 						20,
 						20
-					],
-					"hidden": 0,
-					"varname": "rowFd3"
+					]
 				}
 			},
 			{
@@ -12636,7 +12598,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						552,
-						1118.5300198814202,
+						1461.6657533479956,
 						46,
 						22
 					],
@@ -12655,8 +12617,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[9]",
-					"hidden": 0
+					"varname": "number[9]"
 				}
 			},
 			{
@@ -12684,7 +12645,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						489,
-						1118.5300198814202,
+						1461.6657533479956,
 						53,
 						22
 					],
@@ -12702,8 +12663,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[10]",
-					"hidden": 0
+					"varname": "number[10]"
 				}
 			},
 			{
@@ -12760,7 +12720,13 @@
 						44,
 						20
 					],
-					"presentation": 0,
+					"presentation": 1,
+					"presentation_rect": [
+						610,
+						1086.6657533479956,
+						44,
+						20
+					],
 					"text": "Draw"
 				}
 			},
@@ -12778,7 +12744,13 @@
 						44,
 						20
 					],
-					"presentation": 0,
+					"presentation": 1,
+					"presentation_rect": [
+						557,
+						1086.6657533479956,
+						44,
+						20
+					],
 					"text": "Curve"
 				}
 			},
@@ -12799,13 +12771,11 @@
 					"presentation": 1,
 					"presentation_rect": [
 						495,
-						671.6300303479957,
+						1086.6657533479956,
 						63,
 						20
 					],
-					"text": "Amplitude",
-					"hidden": 1,
-					"varname": "rowAl2"
+					"text": "Amplitude"
 				}
 			},
 			{
@@ -12822,7 +12792,13 @@
 						65,
 						20
 					],
-					"presentation": 0,
+					"presentation": 1,
+					"presentation_rect": [
+						408,
+						1086.6657533479956,
+						65,
+						20
+					],
 					"text": "Time (s)"
 				}
 			},
@@ -12863,12 +12839,10 @@
 					"presentation": 1,
 					"presentation_rect": [
 						616,
-						691.6300303479957,
+						1106.6657533479956,
 						20,
 						20
-					],
-					"hidden": 1,
-					"varname": "rowAd2"
+					]
 				}
 			},
 			{
@@ -12896,7 +12870,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						558,
-						691.6300303479957,
+						1106.6657533479956,
 						46,
 						22
 					],
@@ -12915,8 +12889,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[12]",
-					"hidden": 1
+					"varname": "number[12]"
 				}
 			},
 			{
@@ -12944,7 +12917,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						495,
-						691.6300303479957,
+						1106.6657533479956,
 						53,
 						22
 					],
@@ -12962,8 +12935,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[13]",
-					"hidden": 1
+					"varname": "number[13]"
 				}
 			},
 			{
@@ -13023,7 +12995,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						610,
-						671.6300303479957,
+						728.6657533479956,
 						44,
 						20
 					],
@@ -13047,7 +13019,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						557,
-						671.6300303479957,
+						728.6657533479956,
 						44,
 						20
 					],
@@ -13071,13 +13043,11 @@
 					"presentation": 1,
 					"presentation_rect": [
 						495,
-						671.6300303479957,
+						728.6657533479956,
 						63,
 						20
 					],
-					"text": "Freq.",
-					"hidden": 0,
-					"varname": "rowFl2"
+					"text": "Freq."
 				}
 			},
 			{
@@ -13097,7 +13067,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						408,
-						671.6300303479957,
+						728.6657533479956,
 						65,
 						20
 					],
@@ -13141,12 +13111,10 @@
 					"presentation": 1,
 					"presentation_rect": [
 						616,
-						691.6300303479957,
+						748.6657533479956,
 						20,
 						20
-					],
-					"hidden": 0,
-					"varname": "rowFd2"
+					]
 				}
 			},
 			{
@@ -13174,7 +13142,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						558,
-						691.6300303479957,
+						748.6657533479956,
 						46,
 						22
 					],
@@ -13193,8 +13161,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[15]",
-					"hidden": 0
+					"varname": "number[15]"
 				}
 			},
 			{
@@ -13222,7 +13189,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						495,
-						691.6300303479957,
+						748.6657533479956,
 						53,
 						22
 					],
@@ -13240,8 +13207,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[16]",
-					"hidden": 0
+					"varname": "number[16]"
 				}
 			},
 			{
@@ -13298,7 +13264,13 @@
 						44,
 						20
 					],
-					"presentation": 0,
+					"presentation": 1,
+					"presentation_rect": [
+						605,
+						357.66575334799563,
+						44,
+						20
+					],
 					"text": "Draw"
 				}
 			},
@@ -13316,7 +13288,13 @@
 						44,
 						20
 					],
-					"presentation": 0,
+					"presentation": 1,
+					"presentation_rect": [
+						552,
+						357.66575334799563,
+						44,
+						20
+					],
 					"text": "Curve"
 				}
 			},
@@ -13336,14 +13314,12 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						496,
-						8.665753347995633,
+						491,
+						357.66575334799563,
 						68,
 						20
 					],
-					"text": "Amplitude",
-					"hidden": 1,
-					"varname": "rowAl1"
+					"text": "Amplitude"
 				}
 			},
 			{
@@ -13360,7 +13336,13 @@
 						65,
 						20
 					],
-					"presentation": 0,
+					"presentation": 1,
+					"presentation_rect": [
+						404,
+						357.66575334799563,
+						65,
+						20
+					],
 					"text": "Time (s)"
 				}
 			},
@@ -13400,13 +13382,11 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						616,
-						28.665753347995633,
+						612,
+						377.66575334799563,
 						20,
 						20
-					],
-					"hidden": 1,
-					"varname": "rowAd1"
+					]
 				}
 			},
 			{
@@ -13433,8 +13413,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						558,
-						28.665753347995633,
+						553,
+						377.66575334799563,
 						46,
 						22
 					],
@@ -13453,8 +13433,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[18]",
-					"hidden": 1
+					"varname": "number[18]"
 				}
 			},
 			{
@@ -13481,8 +13460,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						496,
-						28.665753347995633,
+						491,
+						377.66575334799563,
 						53,
 						22
 					],
@@ -13500,8 +13479,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[19]",
-					"hidden": 1
+					"varname": "number[19]"
 				}
 			},
 			{
@@ -13613,9 +13591,7 @@
 						63,
 						20
 					],
-					"text": "Freq.",
-					"hidden": 0,
-					"varname": "rowFl1"
+					"text": "Freq."
 				}
 			},
 			{
@@ -13682,9 +13658,7 @@
 						28.665753347995633,
 						20,
 						20
-					],
-					"hidden": 0,
-					"varname": "rowFd1"
+					]
 				}
 			},
 			{
@@ -13731,8 +13705,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[21]",
-					"hidden": 0
+					"varname": "number[21]"
 				}
 			},
 			{
@@ -13779,8 +13752,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[22]",
-					"hidden": 0
+					"varname": "number[22]"
 				}
 			},
 			{
@@ -13865,8 +13837,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						605.2648733983169,
-						1189.6642893739245,
+						623.2000092864037,
+						1532.8000228404999,
 						58,
 						20
 					],
@@ -13889,8 +13861,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						941.956770307309,
-						1189.6642893739245,
+						989.6000147461891,
+						1532.8000228404999,
 						60,
 						20
 					],
@@ -13920,7 +13892,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						332,
-						1188.5300198814202,
+						1531.6657533479956,
 						68,
 						26
 					]
@@ -13948,8 +13920,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						1121,
-						1398.5300198814202,
+						339,
+						2105.6657533479956,
 						57,
 						26
 					]
@@ -13972,10 +13944,10 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						1125,
-						1169.5300198814202,
-						47,
-						225
+						346,
+						1842.6657533479956,
+						47.118164,
+						256.051819
 					]
 				}
 			},
@@ -13996,7 +13968,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						355,
-						1227.5300198814202,
+						1570.6657533479956,
 						34,
 						27
 					],
@@ -14034,7 +14006,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						352,
-						1221.5300198814202,
+						1564.6657533479956,
 						39.846157,
 						37.490295
 					],
@@ -14059,10 +14031,10 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						1125,
-						1147.5300198814202,
-						47,
-						20
+						339,
+						1815.6657533479956,
+						47.118164,
+						24
 					],
 					"text": "AMP"
 				}
@@ -14085,7 +14057,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						332,
-						1167.5300198814202,
+						1510.6657533479956,
 						63,
 						24
 					],
@@ -14096,7 +14068,7 @@
 				"box": {
 					"classic_curve": 1,
 					"domain": 0.009999999776483,
-					"grid": 0,
+					"grid": 3,
 					"gridstep_x": 1000,
 					"gridstep_y": 0.01,
 					"id": "obj-319",
@@ -14121,35 +14093,11 @@
 					"presentation": 1,
 					"presentation_rect": [
 						402,
-						1145.5300198814202,
-						714,
-						281
+						1842.6657533479956,
+						777,
+						285
 					],
-					"snap2grid": 3,
-					"varname": "fnAmp3",
-					"linecolor": [
-						1,
-						0.15,
-						0.8,
-						1
-					],
-					"bgcolor": [
-						0,
-						0,
-						0,
-						0
-					],
-					"gridcolor": [
-						0,
-						0,
-						0,
-						0
-					],
-					"legend": 0,
-					"linethickness": 2,
-					"pointsize": 3.5,
-					"hidden": 0,
-					"ignoreclick": 1
+					"snap2grid": 3
 				}
 			},
 			{
@@ -14169,10 +14117,10 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						1126,
-						81.66575334799563,
-						47,
-						225
+						344,
+						418.66575334799563,
+						47.118164,
+						256.051819
 					]
 				}
 			},
@@ -14199,7 +14147,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						335,
-						794.6300303479957,
+						851.6657533479956,
 						68,
 						26
 					]
@@ -14256,8 +14204,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						1122,
-						310.66575334799563,
+						340,
+						679.6657533479956,
 						57,
 						26
 					]
@@ -14285,8 +14233,8 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						1122,
-						975.6300303479957,
+						346,
+						1398.6657533479956,
 						57,
 						26
 					]
@@ -14309,10 +14257,10 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						1126,
-						750.6300303479957,
-						47,
-						221
+						351,
+						1136.6657533479956,
+						47.118164,
+						256.051819
 					]
 				}
 			},
@@ -14333,7 +14281,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						356,
-						834.6300303479957,
+						891.6657533479956,
 						34,
 						27
 					],
@@ -14371,7 +14319,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						353,
-						829.6300303479957,
+						886.6657533479956,
 						39.846157,
 						37.490295
 					],
@@ -14407,32 +14355,15 @@
 					"presentation": 1,
 					"presentation_rect": [
 						408,
-						726.6300303479957,
-						709,
+						783.6657533479956,
+						772,
 						277
 					],
 					"range": [
 						20,
 						40
 					],
-					"snap2grid": 3,
-					"varname": "fnFreq2",
-					"linecolor": [
-						0,
-						0.85,
-						1,
-						1
-					],
-					"gridcolor": [
-						0.5,
-						0.5,
-						0.5,
-						0.35
-					],
-					"linethickness": 2,
-					"pointsize": 3.5,
-					"hidden": 0,
-					"ignoreclick": 0
+					"snap2grid": 3
 				}
 			},
 			{
@@ -14452,10 +14383,10 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						1126,
-						728.6300303479957,
-						47,
-						20
+						351,
+						1111.6657533479956,
+						47.118164,
+						24
 					],
 					"text": "AMP"
 				}
@@ -14478,7 +14409,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						337,
-						767.6300303479957,
+						824.6657533479956,
 						63,
 						24
 					],
@@ -14489,7 +14420,7 @@
 				"box": {
 					"classic_curve": 1,
 					"domain": 0.009999999776483,
-					"grid": 0,
+					"grid": 3,
 					"gridstep_x": 1000,
 					"gridstep_y": 0.01,
 					"id": "obj-199",
@@ -14514,35 +14445,11 @@
 					"presentation": 1,
 					"presentation_rect": [
 						408,
-						726.6300303479957,
-						709,
-						277
+						1136.6657533479956,
+						772,
+						281
 					],
-					"snap2grid": 3,
-					"varname": "fnAmp2",
-					"linecolor": [
-						1,
-						0.15,
-						0.8,
-						1
-					],
-					"bgcolor": [
-						0,
-						0,
-						0,
-						0
-					],
-					"gridcolor": [
-						0,
-						0,
-						0,
-						0
-					],
-					"legend": 0,
-					"linethickness": 2,
-					"pointsize": 3.5,
-					"hidden": 0,
-					"ignoreclick": 1
+					"snap2grid": 3
 				}
 			},
 			{
@@ -15140,31 +15047,14 @@
 					"presentation_rect": [
 						404,
 						57.66575334799563,
-						713,
+						776,
 						281
 					],
 					"range": [
 						25,
 						28
 					],
-					"snap2grid": 3,
-					"varname": "fnFreq1",
-					"linecolor": [
-						0,
-						0.85,
-						1,
-						1
-					],
-					"gridcolor": [
-						0.5,
-						0.5,
-						0.5,
-						0.35
-					],
-					"linethickness": 2,
-					"pointsize": 3.5,
-					"hidden": 0,
-					"ignoreclick": 0
+					"snap2grid": 3
 				}
 			},
 			{
@@ -15184,10 +15074,10 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						1126,
-						59.66575334799563,
-						47,
-						20
+						344,
+						391.66575334799563,
+						47.118164,
+						24
 					],
 					"text": "AMP"
 				}
@@ -15221,7 +15111,7 @@
 				"box": {
 					"classic_curve": 1,
 					"domain": 0.009999999776483,
-					"grid": 0,
+					"grid": 3,
 					"gridstep_x": 1000,
 					"gridstep_y": 0.01,
 					"id": "obj-2",
@@ -15246,35 +15136,11 @@
 					"presentation": 1,
 					"presentation_rect": [
 						404,
-						57.66575334799563,
-						713,
-						281
+						408.66575334799563,
+						776,
+						282
 					],
-					"snap2grid": 3,
-					"varname": "fnAmp1",
-					"linecolor": [
-						1,
-						0.15,
-						0.8,
-						1
-					],
-					"bgcolor": [
-						0,
-						0,
-						0,
-						0
-					],
-					"gridcolor": [
-						0,
-						0,
-						0,
-						0
-					],
-					"legend": 0,
-					"linethickness": 2,
-					"pointsize": 3.5,
-					"hidden": 0,
-					"ignoreclick": 1
+					"snap2grid": 3
 				}
 			},
 			{
@@ -17753,13 +17619,11 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						408,
-						1535.4300091525843,
+						404,
+						2528.6657533479956,
 						77,
 						22
-					],
-					"hidden": 1,
-					"varname": "rowAt4"
+					]
 				}
 			},
 			{
@@ -17891,12 +17755,10 @@
 					"presentation": 1,
 					"presentation_rect": [
 						402,
-						1118.5300198814202,
+						1815.6657533479956,
 						77,
 						22
-					],
-					"hidden": 1,
-					"varname": "rowAt3"
+					]
 				}
 			},
 			{
@@ -17974,12 +17836,10 @@
 					"presentation": 1,
 					"presentation_rect": [
 						402,
-						1118.5300198814202,
+						1461.6657533479956,
 						77,
 						22
-					],
-					"hidden": 0,
-					"varname": "rowFt3"
+					]
 				}
 			},
 			{
@@ -18057,12 +17917,10 @@
 					"presentation": 1,
 					"presentation_rect": [
 						408,
-						691.6300303479957,
+						1106.6657533479956,
 						77,
 						22
-					],
-					"hidden": 1,
-					"varname": "rowAt2"
+					]
 				}
 			},
 			{
@@ -18140,12 +17998,10 @@
 					"presentation": 1,
 					"presentation_rect": [
 						408,
-						691.6300303479957,
+						748.6657533479956,
 						77,
 						22
-					],
-					"hidden": 0,
-					"varname": "rowFt2"
+					]
 				}
 			},
 			{
@@ -18222,13 +18078,11 @@
 					],
 					"presentation": 1,
 					"presentation_rect": [
-						408,
-						28.665753347995633,
+						404,
+						377.66575334799563,
 						77,
 						22
-					],
-					"hidden": 1,
-					"varname": "rowAt1"
+					]
 				}
 			},
 			{
@@ -18309,9 +18163,7 @@
 						28.665753347995633,
 						77,
 						22
-					],
-					"hidden": 0,
-					"varname": "rowFt1"
+					]
 				}
 			},
 			{
@@ -19249,7 +19101,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						346,
-						1677.4300091525843,
+						2313.6657533479956,
 						39.846157,
 						37.490295
 					],
@@ -19280,7 +19132,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						339,
-						1718.4300091525843,
+						2354.6657533479956,
 						53,
 						23
 					]
@@ -19307,7 +19159,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						339,
-						1590.4300091525843,
+						2226.6657533479956,
 						50,
 						22
 					]
@@ -19330,7 +19182,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						610,
-						1515.4300091525843,
+						2151.6657533479956,
 						44,
 						20
 					],
@@ -19354,7 +19206,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						557,
-						1515.4300091525843,
+						2151.6657533479956,
 						44,
 						20
 					],
@@ -19378,13 +19230,11 @@
 					"presentation": 1,
 					"presentation_rect": [
 						495,
-						1515.4300091525843,
+						2151.6657533479956,
 						63,
 						20
 					],
-					"text": "Freq.",
-					"hidden": 0,
-					"varname": "rowFl4"
+					"text": "Freq."
 				}
 			},
 			{
@@ -19404,7 +19254,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						408,
-						1515.4300091525843,
+						2151.6657533479956,
 						65,
 						20
 					],
@@ -19448,12 +19298,10 @@
 					"presentation": 1,
 					"presentation_rect": [
 						616,
-						1535.4300091525843,
+						2171.6657533479956,
 						20,
 						20
-					],
-					"hidden": 0,
-					"varname": "rowFd4"
+					]
 				}
 			},
 			{
@@ -19481,7 +19329,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						558,
-						1535.4300091525843,
+						2171.6657533479956,
 						46,
 						22
 					],
@@ -19500,8 +19348,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[3]",
-					"hidden": 0
+					"varname": "number[3]"
 				}
 			},
 			{
@@ -19529,7 +19376,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						495,
-						1535.4300091525843,
+						2171.6657533479956,
 						53,
 						22
 					],
@@ -19547,8 +19394,7 @@
 							"parameter_type": 0
 						}
 					},
-					"varname": "number[4]",
-					"hidden": 0
+					"varname": "number[4]"
 				}
 			},
 			{
@@ -19574,7 +19420,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						333,
-						1643.4300091525843,
+						2279.6657533479956,
 						68,
 						26
 					]
@@ -19598,7 +19444,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						333,
-						1619.4300091525843,
+						2255.6657533479956,
 						63,
 						24
 					],
@@ -19626,12 +19472,10 @@
 					"presentation": 1,
 					"presentation_rect": [
 						408,
-						1535.4300091525843,
+						2171.6657533479956,
 						77,
 						22
-					],
-					"hidden": 0,
-					"varname": "rowFt4"
+					]
 				}
 			},
 			{
@@ -20138,7 +19982,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						18.144573,
-						714.8826730000001,
+						771.918396,
 						315.5555452108383,
 						124
 					],
@@ -20169,9 +20013,9 @@
 					"presentation": 1,
 					"presentation_rect": [
 						6.979625892711645,
-						666.33,
+						723.365723,
 						1197,
-						417.3
+						702
 					],
 					"proportion": 0.39
 				}
@@ -20200,7 +20044,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						17.051098,
-						1152.3629235334247,
+						1495.498657,
 						316.2962859272957,
 						127
 					],
@@ -20231,9 +20075,9 @@
 					"presentation": 1,
 					"presentation_rect": [
 						6.844580209291394,
-						1084.63,
+						1427.7657334665755,
 						1200,
-						421.9
+						714
 					],
 					"proportion": 0.39
 				}
@@ -20262,7 +20106,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						17.051098,
-						1580.7842758045886,
+						2217.02002,
 						316,
 						148
 					],
@@ -20293,9 +20137,9 @@
 					"presentation": 1,
 					"presentation_rect": [
 						7.200000107288361,
-						1507.5300000000002,
+						2143.7657441954116,
 						1199.6445801020031,
-						418.9
+						721
 					],
 					"proportion": 0.39
 				}
@@ -21115,7 +20959,7 @@
 						7.179626,
 						4,
 						1193,
-						661.33
+						718
 					],
 					"proportion": 0.39
 				}
@@ -21344,7 +21188,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						206,
-						787.964277,
+						845,
 						39,
 						39
 					]
@@ -21367,7 +21211,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						205,
-						761.964277,
+						819,
 						45,
 						22
 					],
@@ -21531,7 +21375,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						209,
-						1228.3629235334247,
+						1571.498657,
 						39,
 						39
 					]
@@ -21554,7 +21398,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						208,
-						1203.8642665334246,
+						1547,
 						45,
 						22
 					],
@@ -21718,7 +21562,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						222,
-						1677.8382538045885,
+						2314.073998,
 						39,
 						39
 					]
@@ -21741,7 +21585,7 @@
 					"presentation": 1,
 					"presentation_rect": [
 						221,
-						1652.7642558045886,
+						2289,
 						45,
 						22
 					],
@@ -22651,2862 +22495,6 @@
 						22
 					],
 					"text": "|| 0"
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-lbl-v-1",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"text": "Ver curvas",
-					"fontsize": 12,
-					"patching_rect": [
-						3200,
-						60,
-						100,
-						20
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						404,
-						357.66575334799563,
-						130,
-						20
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-lbl-e-1",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"text": "Editar",
-					"fontsize": 12,
-					"patching_rect": [
-						3340,
-						60,
-						100,
-						20
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						540,
-						357.66575334799563,
-						120,
-						20
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-bfreq-1",
-					"maxclass": "textbutton",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"",
-						"",
-						"int"
-					],
-					"mode": 1,
-					"text": "FREQ",
-					"texton": "FREQ",
-					"fontsize": 11,
-					"rounded": 4,
-					"usebgoncolor": 1,
-					"bgcolor": [
-						0.85,
-						0.88,
-						0.9,
-						1
-					],
-					"textcolor": [
-						0.25,
-						0.25,
-						0.25,
-						1
-					],
-					"bgoncolor": [
-						0,
-						0.85,
-						1,
-						1
-					],
-					"textoncolor": [
-						0,
-						0,
-						0,
-						1
-					],
-					"patching_rect": [
-						3200,
-						90,
-						62,
-						22
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						404,
-						377.66575334799563,
-						62,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-bamp-1",
-					"maxclass": "textbutton",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"",
-						"",
-						"int"
-					],
-					"mode": 1,
-					"text": "AMP",
-					"texton": "AMP",
-					"fontsize": 11,
-					"rounded": 4,
-					"usebgoncolor": 1,
-					"bgcolor": [
-						0.85,
-						0.88,
-						0.9,
-						1
-					],
-					"textcolor": [
-						0.25,
-						0.25,
-						0.25,
-						1
-					],
-					"bgoncolor": [
-						1,
-						0.15,
-						0.8,
-						1
-					],
-					"textoncolor": [
-						1,
-						1,
-						1,
-						1
-					],
-					"patching_rect": [
-						3270,
-						90,
-						62,
-						22
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						470,
-						377.66575334799563,
-						62,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-bedit-1",
-					"maxclass": "textbutton",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"",
-						"",
-						"int"
-					],
-					"mode": 1,
-					"text": "Editar: FREQ",
-					"texton": "Editar: AMP",
-					"fontsize": 11,
-					"rounded": 4,
-					"usebgoncolor": 1,
-					"bgcolor": [
-						0,
-						0.85,
-						1,
-						1
-					],
-					"textcolor": [
-						0,
-						0,
-						0,
-						1
-					],
-					"bgoncolor": [
-						1,
-						0.15,
-						0.8,
-						1
-					],
-					"textoncolor": [
-						1,
-						1,
-						1,
-						1
-					],
-					"patching_rect": [
-						3340,
-						90,
-						120,
-						22
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						540,
-						377.66575334799563,
-						120,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-lbl-v-2",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"text": "Ver curvas",
-					"fontsize": 12,
-					"patching_rect": [
-						3200,
-						580,
-						100,
-						20
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						408,
-						1029.6300303479957,
-						130,
-						20
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-lbl-e-2",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"text": "Editar",
-					"fontsize": 12,
-					"patching_rect": [
-						3340,
-						580,
-						100,
-						20
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						544,
-						1029.6300303479957,
-						120,
-						20
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-bfreq-2",
-					"maxclass": "textbutton",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"",
-						"",
-						"int"
-					],
-					"mode": 1,
-					"text": "FREQ",
-					"texton": "FREQ",
-					"fontsize": 11,
-					"rounded": 4,
-					"usebgoncolor": 1,
-					"bgcolor": [
-						0.85,
-						0.88,
-						0.9,
-						1
-					],
-					"textcolor": [
-						0.25,
-						0.25,
-						0.25,
-						1
-					],
-					"bgoncolor": [
-						0,
-						0.85,
-						1,
-						1
-					],
-					"textoncolor": [
-						0,
-						0,
-						0,
-						1
-					],
-					"patching_rect": [
-						3200,
-						610,
-						62,
-						22
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						408,
-						1049.6300303479957,
-						62,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-bamp-2",
-					"maxclass": "textbutton",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"",
-						"",
-						"int"
-					],
-					"mode": 1,
-					"text": "AMP",
-					"texton": "AMP",
-					"fontsize": 11,
-					"rounded": 4,
-					"usebgoncolor": 1,
-					"bgcolor": [
-						0.85,
-						0.88,
-						0.9,
-						1
-					],
-					"textcolor": [
-						0.25,
-						0.25,
-						0.25,
-						1
-					],
-					"bgoncolor": [
-						1,
-						0.15,
-						0.8,
-						1
-					],
-					"textoncolor": [
-						1,
-						1,
-						1,
-						1
-					],
-					"patching_rect": [
-						3270,
-						610,
-						62,
-						22
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						474,
-						1049.6300303479957,
-						62,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-bedit-2",
-					"maxclass": "textbutton",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"",
-						"",
-						"int"
-					],
-					"mode": 1,
-					"text": "Editar: FREQ",
-					"texton": "Editar: AMP",
-					"fontsize": 11,
-					"rounded": 4,
-					"usebgoncolor": 1,
-					"bgcolor": [
-						0,
-						0.85,
-						1,
-						1
-					],
-					"textcolor": [
-						0,
-						0,
-						0,
-						1
-					],
-					"bgoncolor": [
-						1,
-						0.15,
-						0.8,
-						1
-					],
-					"textoncolor": [
-						1,
-						1,
-						1,
-						1
-					],
-					"patching_rect": [
-						3340,
-						610,
-						120,
-						22
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						544,
-						1049.6300303479957,
-						120,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-lbl-v-3",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"text": "Ver curvas",
-					"fontsize": 12,
-					"patching_rect": [
-						3200,
-						1100,
-						100,
-						20
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						402,
-						1452.5300198814202,
-						130,
-						20
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-lbl-e-3",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"text": "Editar",
-					"fontsize": 12,
-					"patching_rect": [
-						3340,
-						1100,
-						100,
-						20
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						538,
-						1452.5300198814202,
-						120,
-						20
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-bfreq-3",
-					"maxclass": "textbutton",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"",
-						"",
-						"int"
-					],
-					"mode": 1,
-					"text": "FREQ",
-					"texton": "FREQ",
-					"fontsize": 11,
-					"rounded": 4,
-					"usebgoncolor": 1,
-					"bgcolor": [
-						0.85,
-						0.88,
-						0.9,
-						1
-					],
-					"textcolor": [
-						0.25,
-						0.25,
-						0.25,
-						1
-					],
-					"bgoncolor": [
-						0,
-						0.85,
-						1,
-						1
-					],
-					"textoncolor": [
-						0,
-						0,
-						0,
-						1
-					],
-					"patching_rect": [
-						3200,
-						1130,
-						62,
-						22
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						402,
-						1472.5300198814202,
-						62,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-bamp-3",
-					"maxclass": "textbutton",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"",
-						"",
-						"int"
-					],
-					"mode": 1,
-					"text": "AMP",
-					"texton": "AMP",
-					"fontsize": 11,
-					"rounded": 4,
-					"usebgoncolor": 1,
-					"bgcolor": [
-						0.85,
-						0.88,
-						0.9,
-						1
-					],
-					"textcolor": [
-						0.25,
-						0.25,
-						0.25,
-						1
-					],
-					"bgoncolor": [
-						1,
-						0.15,
-						0.8,
-						1
-					],
-					"textoncolor": [
-						1,
-						1,
-						1,
-						1
-					],
-					"patching_rect": [
-						3270,
-						1130,
-						62,
-						22
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						468,
-						1472.5300198814202,
-						62,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-bedit-3",
-					"maxclass": "textbutton",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"",
-						"",
-						"int"
-					],
-					"mode": 1,
-					"text": "Editar: FREQ",
-					"texton": "Editar: AMP",
-					"fontsize": 11,
-					"rounded": 4,
-					"usebgoncolor": 1,
-					"bgcolor": [
-						0,
-						0.85,
-						1,
-						1
-					],
-					"textcolor": [
-						0,
-						0,
-						0,
-						1
-					],
-					"bgoncolor": [
-						1,
-						0.15,
-						0.8,
-						1
-					],
-					"textoncolor": [
-						1,
-						1,
-						1,
-						1
-					],
-					"patching_rect": [
-						3340,
-						1130,
-						120,
-						22
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						538,
-						1472.5300198814202,
-						120,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-lbl-v-4",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"text": "Ver curvas",
-					"fontsize": 12,
-					"patching_rect": [
-						3200,
-						1620,
-						100,
-						20
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						404,
-						1872.4300091525843,
-						130,
-						20
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-lbl-e-4",
-					"maxclass": "comment",
-					"numinlets": 1,
-					"numoutlets": 0,
-					"text": "Editar",
-					"fontsize": 12,
-					"patching_rect": [
-						3340,
-						1620,
-						100,
-						20
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						540,
-						1872.4300091525843,
-						120,
-						20
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-bfreq-4",
-					"maxclass": "textbutton",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"",
-						"",
-						"int"
-					],
-					"mode": 1,
-					"text": "FREQ",
-					"texton": "FREQ",
-					"fontsize": 11,
-					"rounded": 4,
-					"usebgoncolor": 1,
-					"bgcolor": [
-						0.85,
-						0.88,
-						0.9,
-						1
-					],
-					"textcolor": [
-						0.25,
-						0.25,
-						0.25,
-						1
-					],
-					"bgoncolor": [
-						0,
-						0.85,
-						1,
-						1
-					],
-					"textoncolor": [
-						0,
-						0,
-						0,
-						1
-					],
-					"patching_rect": [
-						3200,
-						1650,
-						62,
-						22
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						404,
-						1892.4300091525843,
-						62,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-bamp-4",
-					"maxclass": "textbutton",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"",
-						"",
-						"int"
-					],
-					"mode": 1,
-					"text": "AMP",
-					"texton": "AMP",
-					"fontsize": 11,
-					"rounded": 4,
-					"usebgoncolor": 1,
-					"bgcolor": [
-						0.85,
-						0.88,
-						0.9,
-						1
-					],
-					"textcolor": [
-						0.25,
-						0.25,
-						0.25,
-						1
-					],
-					"bgoncolor": [
-						1,
-						0.15,
-						0.8,
-						1
-					],
-					"textoncolor": [
-						1,
-						1,
-						1,
-						1
-					],
-					"patching_rect": [
-						3270,
-						1650,
-						62,
-						22
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						470,
-						1892.4300091525843,
-						62,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-bedit-4",
-					"maxclass": "textbutton",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"",
-						"",
-						"int"
-					],
-					"mode": 1,
-					"text": "Editar: FREQ",
-					"texton": "Editar: AMP",
-					"fontsize": 11,
-					"rounded": 4,
-					"usebgoncolor": 1,
-					"bgcolor": [
-						0,
-						0.85,
-						1,
-						1
-					],
-					"textcolor": [
-						0,
-						0,
-						0,
-						1
-					],
-					"bgoncolor": [
-						1,
-						0.15,
-						0.8,
-						1
-					],
-					"textoncolor": [
-						1,
-						1,
-						1,
-						1
-					],
-					"patching_rect": [
-						3340,
-						1650,
-						120,
-						22
-					],
-					"presentation": 1,
-					"presentation_rect": [
-						540,
-						1892.4300091525843,
-						120,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tp",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "thispatcher",
-					"patching_rect": [
-						3200,
-						40,
-						90,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selF-1",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						3200,
-						130,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mFh-1",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script hide fnFreq1",
-					"patching_rect": [
-						3200,
-						160,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mFs-1",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show fnFreq1",
-					"patching_rect": [
-						3410,
-						160,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tauto-1",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"bang",
-						"bang"
-					],
-					"text": "t b b",
-					"patching_rect": [
-						3630,
-						160,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mautoset-1",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "set 1",
-					"patching_rect": [
-						3700,
-						190,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mautoval-1",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "1",
-					"patching_rect": [
-						3630,
-						190,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tA-1",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"int",
-						"int"
-					],
-					"text": "t i i",
-					"patching_rect": [
-						3200,
-						220,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selA-1",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						3280,
-						250,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mAh-1",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script hide fnAmp1",
-					"patching_rect": [
-						3280,
-						280,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mAs-1",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show fnAmp1",
-					"patching_rect": [
-						3490,
-						280,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tAl-1",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"bang",
-						"int"
-					],
-					"text": "t b i",
-					"patching_rect": [
-						3200,
-						250,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tE-1",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"int",
-						"int"
-					],
-					"text": "t i i",
-					"patching_rect": [
-						3630,
-						250,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-iE-1",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"int"
-					],
-					"text": "i",
-					"patching_rect": [
-						3200,
-						280,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-and-1",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"int"
-					],
-					"text": "&&",
-					"patching_rect": [
-						3200,
-						320,
-						50,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selC-1",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						3200,
-						350,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mIgn-1",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script ignoreclick fnAmp1",
-					"patching_rect": [
-						3200,
-						380,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mRes-1",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script respondtoclick fnAmp1",
-					"patching_rect": [
-						3440,
-						380,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-lb-1",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"outlettype": [
-						"bang"
-					],
-					"text": "loadbang",
-					"patching_rect": [
-						3820,
-						130,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-del-1",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"bang"
-					],
-					"text": "del 1200",
-					"patching_rect": [
-						3820,
-						160,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tinit-1",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						"bang"
-					],
-					"text": "t b b b",
-					"patching_rect": [
-						3820,
-						190,
-						80,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mi0-1",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "0",
-					"patching_rect": [
-						3820,
-						220,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mi1-1",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "1",
-					"patching_rect": [
-						3880,
-						220,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mi2-1",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "1",
-					"patching_rect": [
-						3940,
-						220,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selF-2",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						3200,
-						650,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mFh-2",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script hide fnFreq2",
-					"patching_rect": [
-						3200,
-						680,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mFs-2",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show fnFreq2",
-					"patching_rect": [
-						3410,
-						680,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tauto-2",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"bang",
-						"bang"
-					],
-					"text": "t b b",
-					"patching_rect": [
-						3630,
-						680,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mautoset-2",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "set 1",
-					"patching_rect": [
-						3700,
-						710,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mautoval-2",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "1",
-					"patching_rect": [
-						3630,
-						710,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tA-2",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"int",
-						"int"
-					],
-					"text": "t i i",
-					"patching_rect": [
-						3200,
-						740,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selA-2",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						3280,
-						770,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mAh-2",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script hide fnAmp2",
-					"patching_rect": [
-						3280,
-						800,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mAs-2",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show fnAmp2",
-					"patching_rect": [
-						3490,
-						800,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tAl-2",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"bang",
-						"int"
-					],
-					"text": "t b i",
-					"patching_rect": [
-						3200,
-						770,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tE-2",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"int",
-						"int"
-					],
-					"text": "t i i",
-					"patching_rect": [
-						3630,
-						770,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-iE-2",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"int"
-					],
-					"text": "i",
-					"patching_rect": [
-						3200,
-						800,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-and-2",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"int"
-					],
-					"text": "&&",
-					"patching_rect": [
-						3200,
-						840,
-						50,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selC-2",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						3200,
-						870,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mIgn-2",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script ignoreclick fnAmp2",
-					"patching_rect": [
-						3200,
-						900,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mRes-2",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script respondtoclick fnAmp2",
-					"patching_rect": [
-						3440,
-						900,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-lb-2",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"outlettype": [
-						"bang"
-					],
-					"text": "loadbang",
-					"patching_rect": [
-						3820,
-						650,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-del-2",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"bang"
-					],
-					"text": "del 1200",
-					"patching_rect": [
-						3820,
-						680,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tinit-2",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						"bang"
-					],
-					"text": "t b b b",
-					"patching_rect": [
-						3820,
-						710,
-						80,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mi0-2",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "0",
-					"patching_rect": [
-						3820,
-						740,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mi1-2",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "1",
-					"patching_rect": [
-						3880,
-						740,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mi2-2",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "1",
-					"patching_rect": [
-						3940,
-						740,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selF-3",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						3200,
-						1170,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mFh-3",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script hide fnFreq3",
-					"patching_rect": [
-						3200,
-						1200,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mFs-3",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show fnFreq3",
-					"patching_rect": [
-						3410,
-						1200,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tauto-3",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"bang",
-						"bang"
-					],
-					"text": "t b b",
-					"patching_rect": [
-						3630,
-						1200,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mautoset-3",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "set 1",
-					"patching_rect": [
-						3700,
-						1230,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mautoval-3",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "1",
-					"patching_rect": [
-						3630,
-						1230,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tA-3",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"int",
-						"int"
-					],
-					"text": "t i i",
-					"patching_rect": [
-						3200,
-						1260,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selA-3",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						3280,
-						1290,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mAh-3",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script hide fnAmp3",
-					"patching_rect": [
-						3280,
-						1320,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mAs-3",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show fnAmp3",
-					"patching_rect": [
-						3490,
-						1320,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tAl-3",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"bang",
-						"int"
-					],
-					"text": "t b i",
-					"patching_rect": [
-						3200,
-						1290,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tE-3",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"int",
-						"int"
-					],
-					"text": "t i i",
-					"patching_rect": [
-						3630,
-						1290,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-iE-3",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"int"
-					],
-					"text": "i",
-					"patching_rect": [
-						3200,
-						1320,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-and-3",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"int"
-					],
-					"text": "&&",
-					"patching_rect": [
-						3200,
-						1360,
-						50,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selC-3",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						3200,
-						1390,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mIgn-3",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script ignoreclick fnAmp3",
-					"patching_rect": [
-						3200,
-						1420,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mRes-3",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script respondtoclick fnAmp3",
-					"patching_rect": [
-						3440,
-						1420,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-lb-3",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"outlettype": [
-						"bang"
-					],
-					"text": "loadbang",
-					"patching_rect": [
-						3820,
-						1170,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-del-3",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"bang"
-					],
-					"text": "del 1200",
-					"patching_rect": [
-						3820,
-						1200,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tinit-3",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						"bang"
-					],
-					"text": "t b b b",
-					"patching_rect": [
-						3820,
-						1230,
-						80,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mi0-3",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "0",
-					"patching_rect": [
-						3820,
-						1260,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mi1-3",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "1",
-					"patching_rect": [
-						3880,
-						1260,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mi2-3",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "1",
-					"patching_rect": [
-						3940,
-						1260,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selF-4",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						3200,
-						1690,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mFh-4",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script hide fnFreq4",
-					"patching_rect": [
-						3200,
-						1720,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mFs-4",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show fnFreq4",
-					"patching_rect": [
-						3410,
-						1720,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tauto-4",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"bang",
-						"bang"
-					],
-					"text": "t b b",
-					"patching_rect": [
-						3630,
-						1720,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mautoset-4",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "set 1",
-					"patching_rect": [
-						3700,
-						1750,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mautoval-4",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "1",
-					"patching_rect": [
-						3630,
-						1750,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tA-4",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"int",
-						"int"
-					],
-					"text": "t i i",
-					"patching_rect": [
-						3200,
-						1780,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selA-4",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						3280,
-						1810,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mAh-4",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script hide fnAmp4",
-					"patching_rect": [
-						3280,
-						1840,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mAs-4",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show fnAmp4",
-					"patching_rect": [
-						3490,
-						1840,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tAl-4",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"bang",
-						"int"
-					],
-					"text": "t b i",
-					"patching_rect": [
-						3200,
-						1810,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tE-4",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 2,
-					"outlettype": [
-						"int",
-						"int"
-					],
-					"text": "t i i",
-					"patching_rect": [
-						3630,
-						1810,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-iE-4",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"int"
-					],
-					"text": "i",
-					"patching_rect": [
-						3200,
-						1840,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-and-4",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"int"
-					],
-					"text": "&&",
-					"patching_rect": [
-						3200,
-						1880,
-						50,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selC-4",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						3200,
-						1910,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mIgn-4",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script ignoreclick fnAmp4",
-					"patching_rect": [
-						3200,
-						1940,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mRes-4",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script respondtoclick fnAmp4",
-					"patching_rect": [
-						3440,
-						1940,
-						200,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-lb-4",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"outlettype": [
-						"bang"
-					],
-					"text": "loadbang",
-					"patching_rect": [
-						3820,
-						1690,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-del-4",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"bang"
-					],
-					"text": "del 1200",
-					"patching_rect": [
-						3820,
-						1720,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-tinit-4",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						"bang"
-					],
-					"text": "t b b b",
-					"patching_rect": [
-						3820,
-						1750,
-						80,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mi0-4",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "0",
-					"patching_rect": [
-						3820,
-						1780,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mi1-4",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "1",
-					"patching_rect": [
-						3880,
-						1780,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mi2-4",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "1",
-					"patching_rect": [
-						3940,
-						1780,
-						40,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-lb-clean",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 1,
-					"outlettype": [
-						"bang"
-					],
-					"text": "loadbang",
-					"patching_rect": [
-						4100,
-						40,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-del-clean",
-					"maxclass": "newobj",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						"bang"
-					],
-					"text": "del 2000",
-					"patching_rect": [
-						4100,
-						70,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mclean",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "clean",
-					"patching_rect": [
-						4100,
-						100,
-						60,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selR-1",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						4300,
-						400,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mrowF-1",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show rowFt1, script show number[22], script show number[21], script show rowFd1, script show rowFl1, script hide rowAt1, script hide number[19], script hide number[18], script hide rowAd1, script hide rowAl1",
-					"patching_rect": [
-						4300,
-						430,
-						620,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mrowA-1",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show rowAt1, script show number[19], script show number[18], script show rowAd1, script show rowAl1, script hide rowFt1, script hide number[22], script hide number[21], script hide rowFd1, script hide rowFl1",
-					"patching_rect": [
-						4300,
-						460,
-						620,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selR-2",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						4300,
-						520,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mrowF-2",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show rowFt2, script show number[16], script show number[15], script show rowFd2, script show rowFl2, script hide rowAt2, script hide number[13], script hide number[12], script hide rowAd2, script hide rowAl2",
-					"patching_rect": [
-						4300,
-						550,
-						620,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mrowA-2",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show rowAt2, script show number[13], script show number[12], script show rowAd2, script show rowAl2, script hide rowFt2, script hide number[16], script hide number[15], script hide rowFd2, script hide rowFl2",
-					"patching_rect": [
-						4300,
-						580,
-						620,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selR-3",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						4300,
-						640,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mrowF-3",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show rowFt3, script show number[10], script show number[9], script show rowFd3, script show rowFl3, script hide rowAt3, script hide number[7], script hide number[6], script hide rowAd3, script hide rowAl3",
-					"patching_rect": [
-						4300,
-						670,
-						620,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mrowA-3",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show rowAt3, script show number[7], script show number[6], script show rowAd3, script show rowAl3, script hide rowFt3, script hide number[10], script hide number[9], script hide rowFd3, script hide rowFl3",
-					"patching_rect": [
-						4300,
-						700,
-						620,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-selR-4",
-					"maxclass": "newobj",
-					"numinlets": 1,
-					"numoutlets": 3,
-					"outlettype": [
-						"bang",
-						"bang",
-						""
-					],
-					"text": "sel 0 1",
-					"patching_rect": [
-						4300,
-						760,
-						70,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mrowF-4",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show rowFt4, script show number[4], script show number[3], script show rowFd4, script show rowFl4, script hide rowAt4, script hide number[1], script hide number, script hide rowAd4, script hide rowAl4",
-					"patching_rect": [
-						4300,
-						790,
-						620,
-						22
-					]
-				}
-			},
-			{
-				"box": {
-					"id": "obj-vw-mrowA-4",
-					"maxclass": "message",
-					"numinlets": 2,
-					"numoutlets": 1,
-					"outlettype": [
-						""
-					],
-					"text": "script show rowAt4, script show number[1], script show number, script show rowAd4, script show rowAl4, script hide rowFt4, script hide number[4], script hide number[3], script hide rowFd4, script hide rowFl4",
-					"patching_rect": [
-						4300,
-						820,
-						620,
-						22
-					]
 				}
 			}
 		],
@@ -38957,2010 +35945,6 @@
 						0
 					]
 				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selF-1",
-						0
-					],
-					"source": [
-						"obj-vw-bfreq-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mFh-1",
-						0
-					],
-					"source": [
-						"obj-vw-selF-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mFs-1",
-						0
-					],
-					"source": [
-						"obj-vw-selF-1",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mFh-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mFs-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tauto-1",
-						0
-					],
-					"source": [
-						"obj-vw-selF-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mautoset-1",
-						0
-					],
-					"source": [
-						"obj-vw-tauto-1",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mautoval-1",
-						0
-					],
-					"source": [
-						"obj-vw-tauto-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bedit-1",
-						0
-					],
-					"source": [
-						"obj-vw-mautoset-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tA-1",
-						0
-					],
-					"source": [
-						"obj-vw-bamp-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selA-1",
-						0
-					],
-					"source": [
-						"obj-vw-tA-1",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mAh-1",
-						0
-					],
-					"source": [
-						"obj-vw-selA-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mAs-1",
-						0
-					],
-					"source": [
-						"obj-vw-selA-1",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mAh-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mAs-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tAl-1",
-						0
-					],
-					"source": [
-						"obj-vw-tA-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-and-1",
-						1
-					],
-					"source": [
-						"obj-vw-tAl-1",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-iE-1",
-						0
-					],
-					"source": [
-						"obj-vw-tAl-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-and-1",
-						0
-					],
-					"source": [
-						"obj-vw-iE-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tE-1",
-						0
-					],
-					"source": [
-						"obj-vw-bedit-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tE-1",
-						0
-					],
-					"source": [
-						"obj-vw-mautoval-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-iE-1",
-						1
-					],
-					"source": [
-						"obj-vw-tE-1",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-and-1",
-						0
-					],
-					"source": [
-						"obj-vw-tE-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selC-1",
-						0
-					],
-					"source": [
-						"obj-vw-and-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mIgn-1",
-						0
-					],
-					"source": [
-						"obj-vw-selC-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mRes-1",
-						0
-					],
-					"source": [
-						"obj-vw-selC-1",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mIgn-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mRes-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-del-1",
-						0
-					],
-					"source": [
-						"obj-vw-lb-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tinit-1",
-						0
-					],
-					"source": [
-						"obj-vw-del-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mi2-1",
-						0
-					],
-					"source": [
-						"obj-vw-tinit-1",
-						2
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mi1-1",
-						0
-					],
-					"source": [
-						"obj-vw-tinit-1",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mi0-1",
-						0
-					],
-					"source": [
-						"obj-vw-tinit-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bfreq-1",
-						0
-					],
-					"source": [
-						"obj-vw-mi2-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bamp-1",
-						0
-					],
-					"source": [
-						"obj-vw-mi1-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bedit-1",
-						0
-					],
-					"source": [
-						"obj-vw-mi0-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selF-2",
-						0
-					],
-					"source": [
-						"obj-vw-bfreq-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mFh-2",
-						0
-					],
-					"source": [
-						"obj-vw-selF-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mFs-2",
-						0
-					],
-					"source": [
-						"obj-vw-selF-2",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mFh-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mFs-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tauto-2",
-						0
-					],
-					"source": [
-						"obj-vw-selF-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mautoset-2",
-						0
-					],
-					"source": [
-						"obj-vw-tauto-2",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mautoval-2",
-						0
-					],
-					"source": [
-						"obj-vw-tauto-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bedit-2",
-						0
-					],
-					"source": [
-						"obj-vw-mautoset-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tA-2",
-						0
-					],
-					"source": [
-						"obj-vw-bamp-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selA-2",
-						0
-					],
-					"source": [
-						"obj-vw-tA-2",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mAh-2",
-						0
-					],
-					"source": [
-						"obj-vw-selA-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mAs-2",
-						0
-					],
-					"source": [
-						"obj-vw-selA-2",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mAh-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mAs-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tAl-2",
-						0
-					],
-					"source": [
-						"obj-vw-tA-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-and-2",
-						1
-					],
-					"source": [
-						"obj-vw-tAl-2",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-iE-2",
-						0
-					],
-					"source": [
-						"obj-vw-tAl-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-and-2",
-						0
-					],
-					"source": [
-						"obj-vw-iE-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tE-2",
-						0
-					],
-					"source": [
-						"obj-vw-bedit-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tE-2",
-						0
-					],
-					"source": [
-						"obj-vw-mautoval-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-iE-2",
-						1
-					],
-					"source": [
-						"obj-vw-tE-2",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-and-2",
-						0
-					],
-					"source": [
-						"obj-vw-tE-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selC-2",
-						0
-					],
-					"source": [
-						"obj-vw-and-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mIgn-2",
-						0
-					],
-					"source": [
-						"obj-vw-selC-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mRes-2",
-						0
-					],
-					"source": [
-						"obj-vw-selC-2",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mIgn-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mRes-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-del-2",
-						0
-					],
-					"source": [
-						"obj-vw-lb-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tinit-2",
-						0
-					],
-					"source": [
-						"obj-vw-del-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mi2-2",
-						0
-					],
-					"source": [
-						"obj-vw-tinit-2",
-						2
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mi1-2",
-						0
-					],
-					"source": [
-						"obj-vw-tinit-2",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mi0-2",
-						0
-					],
-					"source": [
-						"obj-vw-tinit-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bfreq-2",
-						0
-					],
-					"source": [
-						"obj-vw-mi2-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bamp-2",
-						0
-					],
-					"source": [
-						"obj-vw-mi1-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bedit-2",
-						0
-					],
-					"source": [
-						"obj-vw-mi0-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selF-3",
-						0
-					],
-					"source": [
-						"obj-vw-bfreq-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mFh-3",
-						0
-					],
-					"source": [
-						"obj-vw-selF-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mFs-3",
-						0
-					],
-					"source": [
-						"obj-vw-selF-3",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mFh-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mFs-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tauto-3",
-						0
-					],
-					"source": [
-						"obj-vw-selF-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mautoset-3",
-						0
-					],
-					"source": [
-						"obj-vw-tauto-3",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mautoval-3",
-						0
-					],
-					"source": [
-						"obj-vw-tauto-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bedit-3",
-						0
-					],
-					"source": [
-						"obj-vw-mautoset-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tA-3",
-						0
-					],
-					"source": [
-						"obj-vw-bamp-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selA-3",
-						0
-					],
-					"source": [
-						"obj-vw-tA-3",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mAh-3",
-						0
-					],
-					"source": [
-						"obj-vw-selA-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mAs-3",
-						0
-					],
-					"source": [
-						"obj-vw-selA-3",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mAh-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mAs-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tAl-3",
-						0
-					],
-					"source": [
-						"obj-vw-tA-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-and-3",
-						1
-					],
-					"source": [
-						"obj-vw-tAl-3",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-iE-3",
-						0
-					],
-					"source": [
-						"obj-vw-tAl-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-and-3",
-						0
-					],
-					"source": [
-						"obj-vw-iE-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tE-3",
-						0
-					],
-					"source": [
-						"obj-vw-bedit-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tE-3",
-						0
-					],
-					"source": [
-						"obj-vw-mautoval-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-iE-3",
-						1
-					],
-					"source": [
-						"obj-vw-tE-3",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-and-3",
-						0
-					],
-					"source": [
-						"obj-vw-tE-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selC-3",
-						0
-					],
-					"source": [
-						"obj-vw-and-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mIgn-3",
-						0
-					],
-					"source": [
-						"obj-vw-selC-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mRes-3",
-						0
-					],
-					"source": [
-						"obj-vw-selC-3",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mIgn-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mRes-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-del-3",
-						0
-					],
-					"source": [
-						"obj-vw-lb-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tinit-3",
-						0
-					],
-					"source": [
-						"obj-vw-del-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mi2-3",
-						0
-					],
-					"source": [
-						"obj-vw-tinit-3",
-						2
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mi1-3",
-						0
-					],
-					"source": [
-						"obj-vw-tinit-3",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mi0-3",
-						0
-					],
-					"source": [
-						"obj-vw-tinit-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bfreq-3",
-						0
-					],
-					"source": [
-						"obj-vw-mi2-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bamp-3",
-						0
-					],
-					"source": [
-						"obj-vw-mi1-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bedit-3",
-						0
-					],
-					"source": [
-						"obj-vw-mi0-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selF-4",
-						0
-					],
-					"source": [
-						"obj-vw-bfreq-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mFh-4",
-						0
-					],
-					"source": [
-						"obj-vw-selF-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mFs-4",
-						0
-					],
-					"source": [
-						"obj-vw-selF-4",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mFh-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mFs-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tauto-4",
-						0
-					],
-					"source": [
-						"obj-vw-selF-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mautoset-4",
-						0
-					],
-					"source": [
-						"obj-vw-tauto-4",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mautoval-4",
-						0
-					],
-					"source": [
-						"obj-vw-tauto-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bedit-4",
-						0
-					],
-					"source": [
-						"obj-vw-mautoset-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tA-4",
-						0
-					],
-					"source": [
-						"obj-vw-bamp-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selA-4",
-						0
-					],
-					"source": [
-						"obj-vw-tA-4",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mAh-4",
-						0
-					],
-					"source": [
-						"obj-vw-selA-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mAs-4",
-						0
-					],
-					"source": [
-						"obj-vw-selA-4",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mAh-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mAs-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tAl-4",
-						0
-					],
-					"source": [
-						"obj-vw-tA-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-and-4",
-						1
-					],
-					"source": [
-						"obj-vw-tAl-4",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-iE-4",
-						0
-					],
-					"source": [
-						"obj-vw-tAl-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-and-4",
-						0
-					],
-					"source": [
-						"obj-vw-iE-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tE-4",
-						0
-					],
-					"source": [
-						"obj-vw-bedit-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tE-4",
-						0
-					],
-					"source": [
-						"obj-vw-mautoval-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-iE-4",
-						1
-					],
-					"source": [
-						"obj-vw-tE-4",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-and-4",
-						0
-					],
-					"source": [
-						"obj-vw-tE-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selC-4",
-						0
-					],
-					"source": [
-						"obj-vw-and-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mIgn-4",
-						0
-					],
-					"source": [
-						"obj-vw-selC-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mRes-4",
-						0
-					],
-					"source": [
-						"obj-vw-selC-4",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mIgn-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mRes-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-del-4",
-						0
-					],
-					"source": [
-						"obj-vw-lb-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tinit-4",
-						0
-					],
-					"source": [
-						"obj-vw-del-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mi2-4",
-						0
-					],
-					"source": [
-						"obj-vw-tinit-4",
-						2
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mi1-4",
-						0
-					],
-					"source": [
-						"obj-vw-tinit-4",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mi0-4",
-						0
-					],
-					"source": [
-						"obj-vw-tinit-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bfreq-4",
-						0
-					],
-					"source": [
-						"obj-vw-mi2-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bamp-4",
-						0
-					],
-					"source": [
-						"obj-vw-mi1-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-bedit-4",
-						0
-					],
-					"source": [
-						"obj-vw-mi0-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-del-clean",
-						0
-					],
-					"source": [
-						"obj-vw-lb-clean",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mclean",
-						0
-					],
-					"source": [
-						"obj-vw-del-clean",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mclean",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selR-1",
-						0
-					],
-					"source": [
-						"obj-vw-tE-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mrowF-1",
-						0
-					],
-					"source": [
-						"obj-vw-selR-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mrowA-1",
-						0
-					],
-					"source": [
-						"obj-vw-selR-1",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mrowF-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mrowA-1",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selR-2",
-						0
-					],
-					"source": [
-						"obj-vw-tE-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mrowF-2",
-						0
-					],
-					"source": [
-						"obj-vw-selR-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mrowA-2",
-						0
-					],
-					"source": [
-						"obj-vw-selR-2",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mrowF-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mrowA-2",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selR-3",
-						0
-					],
-					"source": [
-						"obj-vw-tE-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mrowF-3",
-						0
-					],
-					"source": [
-						"obj-vw-selR-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mrowA-3",
-						0
-					],
-					"source": [
-						"obj-vw-selR-3",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mrowF-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mrowA-3",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-selR-4",
-						0
-					],
-					"source": [
-						"obj-vw-tE-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mrowF-4",
-						0
-					],
-					"source": [
-						"obj-vw-selR-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-mrowA-4",
-						0
-					],
-					"source": [
-						"obj-vw-selR-4",
-						1
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mrowF-4",
-						0
-					]
-				}
-			},
-			{
-				"patchline": {
-					"destination": [
-						"obj-vw-tp",
-						0
-					],
-					"source": [
-						"obj-vw-mrowA-4",
-						0
-					]
-				}
 			}
 		],
 		"parameters": {
@@ -41200,6 +36184,21 @@
 			},
 			{
 				"boxes": [
+					"obj-389",
+					"obj-375",
+					"obj-379",
+					"obj-391",
+					"obj-396",
+					"obj-387",
+					"obj-388",
+					"obj-n5auwlees",
+					"obj-10",
+					"obj-39",
+					"obj-45"
+				]
+			},
+			{
+				"boxes": [
 					"obj-7bdffdhlv",
 					"obj-404",
 					"obj-408",
@@ -41213,6 +36212,21 @@
 					"obj-61",
 					"obj-160",
 					"obj-159"
+				]
+			},
+			{
+				"boxes": [
+					"obj-429",
+					"obj-425",
+					"obj-426",
+					"obj-431",
+					"obj-432",
+					"obj-427",
+					"obj-428",
+					"obj-vz66rk2iu",
+					"obj-196",
+					"obj-154",
+					"obj-22"
 				]
 			},
 			{
@@ -41234,6 +36248,21 @@
 			},
 			{
 				"boxes": [
+					"obj-456",
+					"obj-452",
+					"obj-453",
+					"obj-458",
+					"obj-459",
+					"obj-454",
+					"obj-3hxgrvvq7",
+					"obj-455",
+					"obj-316",
+					"obj-276",
+					"obj-237"
+				]
+			},
+			{
+				"boxes": [
 					"obj-yo8ur7y8c",
 					"obj-674",
 					"obj-678",
@@ -41248,6 +36277,21 @@
 					"obj-749",
 					"obj-382",
 					"obj-748"
+				]
+			},
+			{
+				"boxes": [
+					"obj-706",
+					"obj-743",
+					"obj-782",
+					"obj-662",
+					"obj-u8jkizm94",
+					"obj-666",
+					"obj-661",
+					"obj-665",
+					"obj-660",
+					"obj-663",
+					"obj-659"
 				]
 			},
 			{
@@ -41480,70 +36524,6 @@
 					"obj-col-m4-18",
 					"obj-col-m4-19",
 					"obj-col-m4-20"
-				]
-			},
-			{
-				"boxes": [
-					"obj-10",
-					"obj-39",
-					"obj-45"
-				]
-			},
-			{
-				"boxes": [
-					"obj-vw-lbl-v-1",
-					"obj-vw-lbl-e-1",
-					"obj-vw-bfreq-1",
-					"obj-vw-bamp-1",
-					"obj-vw-bedit-1"
-				]
-			},
-			{
-				"boxes": [
-					"obj-196",
-					"obj-154",
-					"obj-22"
-				]
-			},
-			{
-				"boxes": [
-					"obj-vw-lbl-v-2",
-					"obj-vw-lbl-e-2",
-					"obj-vw-bfreq-2",
-					"obj-vw-bamp-2",
-					"obj-vw-bedit-2"
-				]
-			},
-			{
-				"boxes": [
-					"obj-316",
-					"obj-276",
-					"obj-237"
-				]
-			},
-			{
-				"boxes": [
-					"obj-vw-lbl-v-3",
-					"obj-vw-lbl-e-3",
-					"obj-vw-bfreq-3",
-					"obj-vw-bamp-3",
-					"obj-vw-bedit-3"
-				]
-			},
-			{
-				"boxes": [
-					"obj-782",
-					"obj-743",
-					"obj-706"
-				]
-			},
-			{
-				"boxes": [
-					"obj-vw-lbl-v-4",
-					"obj-vw-lbl-e-4",
-					"obj-vw-bfreq-4",
-					"obj-vw-bamp-4",
-					"obj-vw-bedit-4"
 				]
 			}
 		],
