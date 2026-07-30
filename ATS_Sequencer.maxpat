@@ -12758,11 +12758,11 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 3160.0, 685.0, 66.0, 60.0 ],
+					"patching_rect" : [ 3160.0, 685.0, 66.0, 78.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
-					"presentation_rect" : [ 3.0, 4.0, 78.0, 42.0 ],
-					"text" : "TOTAL\nTime Min",
+					"presentation_rect" : [ 3.0, 4.0, 78.0, 60.0 ],
+					"text" : "TOTAL\nTime m:s\n",
 					"textjustification" : 2
 				}
 
