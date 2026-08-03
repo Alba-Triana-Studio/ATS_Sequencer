@@ -1,8 +1,14 @@
 autowatch = 1;
 
-// Post-proceso del archivo que acaba de escribir el objeto [preset].
-// Anade el tamano de la matriz y el marcador de formato que usa smart_load.js
-// para distinguir un .maxpresets unificado (4 canales) de uno antiguo (1 canal).
+// Post-proceso del archivo que acaba de escribir el objeto [preset]:
+// anade el tamano de la matriz y el marcador de formato "unified4".
+//
+// OJO: este objeto (obj-append-mat-1) esta conectado al 5o outlet de [preset],
+// que NO notifica escrituras ("Connect to Object to Capture Attributes"): el
+// patch nunca llama a write(), asi que ningun .maxpresets guardado desde el
+// boton Guardar lleva el marcador. Por eso smart_load.js deduce el formato del
+// contenido y no del marcador. Queda como utilidad manual: mandarle
+// "write <ruta>" a este objeto para marcar un archivo ya escrito.
 function write(filepath) {
     var f = new File(filepath, "read");
     if (!f.isopen) {

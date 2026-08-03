@@ -62,7 +62,22 @@ function split(d) {
 
 let bad = 0, ampNonZero = 0;
 const src0 = JSON.parse(fs.readFileSync(target, 'utf8'));
-console.log('presets:', out.preset_data.length, '(origen', src0.preset_data.length + ')');
+const unified = ctx.isUnified(JSON.parse(fs.readFileSync(target, 'utf8')));
+console.log('formato:', unified ? 'UNIFICADO' : 'LEGACY',
+            '| presets:', out.preset_data.length, '(origen', src0.preset_data.length + ')');
+
+// Primer bloque de una grafica en el archivo de origen: el que escribio el
+// objeto [preset] con los datos reales. Si hay mas bloques son residuo de una
+// conversion legacy y el cargador debe descartarlos.
+function firstBlockOf(entries, id) {
+  let pts = null;
+  for (const e of entries) {
+    if (e[1] !== id) continue;
+    if (e[3] === 'clear') { if (pts) break; pts = []; }
+    else if (e[3] === 'add_with_curve') (pts = pts || []).push([e[4], e[5]]);
+  }
+  return pts;
+}
 
 for (const pr of out.preset_data) {
   const entries = split(pr.data);
@@ -70,25 +85,47 @@ for (const pr of out.preset_data) {
     if (e[0] === '<<BAD>>') { console.log('  ESTRUCTURA INVALIDA preset', pr.number, e); bad++; break; }
     if (!known.has(e[1])) { console.log('  id desconocido:', e[1]); bad++; }
   }
-  // cada canal 2-4 debe existir y su amplitud debe ser plana a 0
-  for (let c = 1; c < 4; c++) {
-    const A = MAPS[c][4];
-    const pts = entries.filter(e => e[1] === A && e[3] === 'add_with_curve');
-    if (!pts.length) { console.log('  falta amp del canal', c + 1, 'en preset', pr.number); bad++; }
-    for (const pt of pts) if (pt[5] !== 0) ampNonZero++;
+  // las 4 parejas de graficas deben existir, y ninguna repetida: un bloque
+  // repetido pisa al anterior al recallar y vacia el canal (bug de 2026-08-03)
+  for (let c = 0; c < 4; c++) {
+    for (const id of [MAPS[c][3], MAPS[c][4]]) {
+      if (!entries.some(e => e[1] === id)) { console.log('  falta grafica', id, 'en preset', pr.number); bad++; }
+      const clears = entries.filter(e => e[1] === id && e[3] === 'clear').length;
+      if (clears > 1) { console.log('  grafica', id, 'repetida', clears, 'veces en preset', pr.number); bad++; }
+    }
+    if (c === 0) continue;
     // End Time y Freq Min/Max son globales: no deben aparecer para los canales 2-4
     for (const gone of [MAPS[c][0], MAPS[c][1], MAPS[c][2]])
       if (entries.some(e => e[1] === gone)) { console.log('  ' + gone + ' no deberia estar en el preset'); bad++; }
-    // el domain de la grafica debe coincidir con el End Time del canal 1
+    if (unified) continue;
+    // en un archivo antiguo los canales 2-4 se rellenan en silencio y con el
+    // domain del canal 1; en uno unificado llevan los datos reales del usuario
+    const A = MAPS[c][4];
+    for (const pt of entries.filter(e => e[1] === A && e[3] === 'add_with_curve')) if (pt[5] !== 0) ampNonZero++;
     const dom1 = entries.find(e => e[1] === MAPS[0][0] && e[3] === 'int');
     const domA = entries.find(e => e[1] === A && e[3] === 'domain');
     if (dom1 && domA && domA[4] !== dom1[4]) { console.log('  domain canal', c + 1, 'distinto del End Time del canal 1'); bad++; }
   }
-  // el canal 1 debe conservar sus datos originales
-  if (!entries.some(e => e[1] === 'obj-2' && e[3] === 'add_with_curve')) {
+  const orig = split(src0.preset_data.find(x => x.number === pr.number).data);
+  // el canal 1 debe conservar los datos que traia el archivo (un slot puede
+  // haberse guardado vacio: ahi no hay nada que conservar)
+  const ampSrc = orig.some(e => e[3] === 'add_with_curve' &&
+                                (e[1] === 'obj-2' || e[1] === MAPS[1][4] || e[1] === MAPS[2][4] || e[1] === MAPS[3][4]));
+  if (ampSrc && !entries.some(e => e[1] === 'obj-2' && e[3] === 'add_with_curve')) {
     console.log('  preset', pr.number, 'perdio la amplitud del canal 1'); bad++;
+  }
+  // en un archivo unificado cada grafica debe quedar igual que su bloque real
+  if (unified) {
+    for (let c = 0; c < 4; c++) for (const id of [MAPS[c][3], MAPS[c][4]]) {
+      const a = firstBlockOf(entries, id), first = firstBlockOf(orig, id);
+      if (first && JSON.stringify(a) !== JSON.stringify(first)) {
+        console.log('  preset', pr.number, id, 'no coincide con el bloque real del archivo',
+                    JSON.stringify(a), '!=', JSON.stringify(first)); bad++;
+      }
+    }
   }
 }
 console.log(bad === 0 && ampNonZero === 0
-  ? 'OK: estructura valida, canales 2-4 en silencio, canal 1 intacto'
+  ? (unified ? 'OK: estructura valida, 4 canales sin duplicados, datos reales intactos'
+             : 'OK: estructura valida, canales 2-4 en silencio, canal 1 intacto')
   : 'FALLOS: ' + bad + ' errores, ' + ampNonZero + ' puntos de amp != 0');

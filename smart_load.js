@@ -2,10 +2,16 @@ autowatch = 1;
 
 // Cargador de .maxpresets para la matriz unificada (obj-3 guarda los 4 canales).
 //
-//  - Archivo nuevo  ("ats_format":"unified4"): se carga tal cual.
-//  - Archivo antiguo (una sola matriz): sus objetos se remapean al CANAL 1 y se
-//    rellenan los canales 2, 3 y 4 con envolventes planas a 0 (vacios/silencio)
-//    en todos los slots de preset.
+//  - Archivo unificado (trae graficas de 2 o mas canales): se carga tal cual,
+//    tras descartar objetos que ya no son clientes y reparar bloques repetidos.
+//  - Archivo antiguo (una sola pareja Freq/Amp): sus objetos se remapean al
+//    CANAL 1 y se rellenan los canales 2, 3 y 4 con envolventes planas a 0
+//    (vacios/silencio) en todos los slots de preset.
+//
+// El formato se deduce del CONTENIDO, no de un marcador: el objeto [preset]
+// escribe el archivo por su cuenta y no admite campos extra, asi que ningun
+// archivo guardado desde el patch lleva "ats_format". Se sigue aceptando el
+// marcador si aparece (archivos generados por scripts).
 
 // [End Time, Freq Min, Freq Max, Pitch Curve, Amp Curve] por canal
 var MAPS = [
@@ -24,7 +30,7 @@ function knownIds() {
     var s = {};
     for (var i = 0; i < 5; i++) s[MAPS[0][i]] = true;
     for (var c = 1; c < 4; c++) { s[MAPS[c][3]] = true; s[MAPS[c][4]] = true; }
-    s['obj-append-mat-1'] = true; // cliente del outlet de escritura
+    s['obj-append-mat-1'] = true; // cliente conectado al outlet de atributos
     return s;
 }
 
@@ -47,6 +53,29 @@ function flatten(entries) {
     return out;
 }
 
+// El estado de cada objeto se guarda como un bloque de entradas consecutivas
+// (una grafica es "clear, add_with_curve..., domain, range, mode").
+function blocksOf(entries) {
+    var out = [];
+    for (var i = 0; i < entries.length; i++) {
+        var id = entries[i][1];
+        if (!out.length || out[out.length - 1].id !== id) out.push({ id: id, entries: [] });
+        out[out.length - 1].entries.push(entries[i]);
+    }
+    return out;
+}
+
+// Que canales traen grafica (pitch o amplitud) en este preset.
+function graphChannels(entries) {
+    var present = [false, false, false, false];
+    for (var e = 0; e < entries.length; e++) {
+        var id = entries[e][1];
+        for (var c = 0; c < 4; c++)
+            if (id === MAPS[c][3] || id === MAPS[c][4]) present[c] = true;
+    }
+    return present;
+}
+
 // Detecta de que canal proviene un archivo antiguo contando ids de cada mapa.
 function detectChannel(entries) {
     var best = 0, bestHits = -1;
@@ -58,6 +87,21 @@ function detectChannel(entries) {
         if (hits > bestHits) { bestHits = hits; best = c; }
     }
     return best;
+}
+
+// Un archivo unificado trae las graficas de varios canales; uno antiguo solo
+// las de uno (da igual cual, cada matriz vieja guardaba su propia pareja).
+function isUnified(data) {
+    if (data.ats_format === "unified4") return true;
+    var presets = data.preset_data || [];
+    var seen = [false, false, false, false];
+    for (var n = 0; n < presets.length; n++) {
+        var present = graphChannels(splitEntries(presets[n].data || []));
+        for (var c = 0; c < 4; c++) if (present[c]) seen[c] = true;
+    }
+    var count = 0;
+    for (var i = 0; i < 4; i++) if (seen[i]) count++;
+    return count >= 2;
 }
 
 function scalarOf(entries, id, fallback) {
@@ -90,26 +134,64 @@ function emptyChannel(c, end, fmin, fmax) {
 // Descarta entradas de objetos que ya no son clientes de la matriz: un preset
 // unificado guardado con una version anterior traia tambien las cajas de End
 // Time / Freq de los canales 2-4, y recuperarlas provocaria errores en Max.
-function filterClients(data) {
-    var known = knownIds();
+function keepClients(entries, stats) {
+    var known = knownIds(), kept = [];
+    for (var e = 0; e < entries.length; e++) {
+        if (known[entries[e][1]]) kept.push(entries[e]);
+        else stats.obsolete++;
+    }
+    return kept;
+}
+
+// Repara presets dañados por la conversion legacy: traen el bloque real de una
+// grafica y, mas atras, otro bloque plano del mismo objeto. Al recargar manda
+// el ultimo (el vacio), asi que nos quedamos siempre con el primero. Todos los
+// bloques empiezan por "clear", asi que quedarse con uno solo es seguro.
+function dropRepeatedBlocks(entries, stats) {
+    var blocks = blocksOf(entries), seen = {}, out = [];
+    for (var b = 0; b < blocks.length; b++) {
+        if (seen[blocks[b].id]) { stats.repeated++; continue; }
+        seen[blocks[b].id] = true;
+        out = out.concat(blocks[b].entries);
+    }
+    return out;
+}
+
+// Un canal sin grafica en este preset se dejaria con la curva del preset
+// anterior al recallar: se rellena con una envolvente plana en silencio.
+function fillMissingChannels(entries, stats) {
+    var present = graphChannels(entries);
+    var end  = scalarOf(entries, MAPS[0][0], DEFAULTS.end);
+    var fmin = scalarOf(entries, MAPS[0][1], DEFAULTS.fmin);
+    var fmax = scalarOf(entries, MAPS[0][2], DEFAULTS.fmax);
+    for (var c = 0; c < 4; c++) {
+        if (!present[c]) { entries = entries.concat(emptyChannel(c, end, fmin, fmax)); stats.filled++; }
+    }
+    return entries;
+}
+
+function loadUnified(data) {
     var presets = data.preset_data || [];
-    var dropped = 0;
+    var stats = { obsolete: 0, repeated: 0, filled: 0 };
+
     for (var n = 0; n < presets.length; n++) {
         var entries = splitEntries(presets[n].data || []);
-        var kept = [];
-        for (var e = 0; e < entries.length; e++) {
-            if (known[entries[e][1]]) kept.push(entries[e]); else dropped++;
-        }
-        presets[n].data = flatten(kept);
+        entries = keepClients(entries, stats);
+        entries = dropRepeatedBlocks(entries, stats);
+        entries = fillMissingChannels(entries, stats);
+        presets[n].data = flatten(entries);
     }
+
     post("smart_load: archivo unificado (" + presets.length + " presets" +
-         (dropped ? ", " + dropped + " entradas obsoletas descartadas" : "") + ")\n");
+         (stats.obsolete ? ", " + stats.obsolete + " entradas obsoletas descartadas" : "") +
+         (stats.repeated ? ", " + stats.repeated + " graficas duplicadas reparadas" : "") +
+         (stats.filled ? ", " + stats.filled + " canales vacios rellenados" : "") + ")\n");
     return data;
 }
 
 function convertLegacy(data) {
-    var known = knownIds();
     var presets = data.preset_data || [];
+    var stats = { obsolete: 0, repeated: 0, filled: 0 };
     var src = null;
 
     for (var n = 0; n < presets.length; n++) {
@@ -124,19 +206,10 @@ function convertLegacy(data) {
             if (/^obj-append-mat-/.test(String(entries[e][1]))) entries[e][1] = 'obj-append-mat-1';
         }
 
-        // Descartar entradas de objetos que ya no son clientes de la matriz
-        var kept = [];
-        for (var e2 = 0; e2 < entries.length; e2++)
-            if (known[entries[e2][1]]) kept.push(entries[e2]);
-
-        var end  = scalarOf(kept, MAPS[0][0], DEFAULTS.end);
-        var fmin = scalarOf(kept, MAPS[0][1], DEFAULTS.fmin);
-        var fmax = scalarOf(kept, MAPS[0][2], DEFAULTS.fmax);
-
-        for (var c = 1; c < 4; c++)
-            kept = kept.concat(emptyChannel(c, end, fmin, fmax));
-
-        presets[n].data = flatten(kept);
+        entries = keepClients(entries, stats);
+        entries = dropRepeatedBlocks(entries, stats);
+        entries = fillMissingChannels(entries, stats); // canales 2-4 vacios
+        presets[n].data = flatten(entries);
     }
 
     post("smart_load: archivo antiguo (canal " + (src + 1) + ") -> canal 1; " +
@@ -168,11 +241,7 @@ function anything() {
         return;
     }
 
-    if (data.ats_format !== "unified4") {
-        data = convertLegacy(data);
-    } else {
-        data = filterClients(data);
-    }
+    data = isUnified(data) ? loadUnified(data) : convertLegacy(data);
 
     var out = JSON.stringify(data);
     var outFile = new File("temp_load_1.json", "write", "TEXT");
