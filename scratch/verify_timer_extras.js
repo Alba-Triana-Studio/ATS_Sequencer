@@ -29,14 +29,19 @@ else ok('obj-59 (PLAY global) -> obj-tt-sel');
 const stale = inTo('obj-tt-sel').filter(l => l.source[0] !== 'obj-59');
 if (stale.length) bad('obj-tt-sel aun recibe de ' + stale.map(l => l.source[0]).join(','));
 else ok('obj-tt-sel no tiene otras fuentes');
-if (!conn('obj-tt-sel', 0, 'obj-tt-clocker', 0) || !conn('obj-tt-sel', 1, 'obj-tt-stop', 0))
-  bad('cadena sel->clocker/stop rota');
-else ok('sel 1 0 -> clocker / stop intacta');
+// El arranque pasa por obj-ct-start (t b b): primero congela el acumulado de las celdas
+// anteriores y luego arranca el clocker (ver scratch/patch_cell_offset.js).
+if (!conn('obj-tt-sel', 0, 'obj-ct-start', 0) || !conn('obj-ct-start', 0, 'obj-tt-clocker', 0) ||
+    !conn('obj-tt-sel', 1, 'obj-tt-stop', 0))
+  bad('cadena sel->arranque/stop rota');
+else ok('sel 1 0 -> obj-ct-start -> clocker / stop intacta');
 
 /* 2. cadenas nuevas */
 console.log('\n2. Cadenas nuevas');
 const chains = [
-  ['TOTAL ms', [['obj-tt-clocker', 0], ['obj-ttx-tot-i', 0], ['obj-ttx-tot-set', 0], ['obj-ttx-disp-totms', 0]]],
+  // el clocker pasa por [+ acumulado] (obj-ct-add) antes de llegar a las cajas de lectura
+  ['TOTAL ms', [['obj-tt-clocker', 0], ['obj-ct-add', 0], ['obj-ct-out', 1], ['obj-ttx-tot-i', 0],
+                ['obj-ttx-tot-set', 0], ['obj-ttx-disp-totms', 0]]],
   ['PRESET ms', [['obj-85', 0], ['obj-ttx-pre-i', 0], ['obj-ttx-pre-set', 0], ['obj-ttx-disp-prems', 0]]],
   ['COLUMN', [['obj-3', 1], ['obj-ttx-col-clip', 0], ['obj-ttx-col-sub', 0], ['obj-ttx-col-mod', 0],
               ['obj-ttx-col-add', 0], ['obj-ttx-col-set', 0], ['obj-ttx-disp-col', 0]]]
@@ -51,9 +56,13 @@ for (const [name, ch] of chains) {
   }
   if (good) ok(name + ': ' + ch.map(c => c[0]).join(' -> '));
 }
-if (!conn('obj-tt-sel', 0, 'obj-ttx-tot-zero', 0) || !conn('obj-ttx-tot-zero', 0, 'obj-ttx-disp-totms', 0))
-  bad('reset "set 0" del TOTAL ms no conectado');
-else ok('TOTAL ms se pone a 0 al arrancar');
+// Al arrancar, el TOTAL ya no se pone a 0: obj-ct-tlat repinta el acumulado de las celdas
+// anteriores. Los mensajes `set 0` / `set 0:00.0` quedan sin disparo a proposito.
+if (conn('obj-tt-sel', 0, 'obj-ttx-tot-zero', 0) || conn('obj-tt-sel', 0, 'obj-ttx-tot-zero-ms', 0))
+  bad('los `set 0` volverian a poner el TOTAL a cero al arrancar');
+else if (!conn('obj-ct-tlat', 0, 'obj-ct-out', 0))
+  bad('el acumulado no se repinta al arrancar');
+else ok('al arrancar, el TOTAL se repinta con el acumulado (no con 0)');
 
 /* 3. inlets/outlets fuera de rango + solapamientos en presentacion */
 console.log('\n3. Estructura / presentacion');

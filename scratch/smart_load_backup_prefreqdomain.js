@@ -21,28 +21,15 @@ var MAPS = [
     ['obj-781', 'obj-774', 'obj-772', 'obj-780', 'obj-785']   // canal 4
 ];
 
-// Freq. Domain (Hz) POR GRAFICA: [min, max, modo] de cada canal. `modo` es 0 = sigue al
-// Freq. Domain general (obj-5/obj-6), 1 = la grafica tiene el suyo propio ("Own").
-// Los canales 2-4 reutilizan las cajas que ya existian en la vista de edicion; el canal 1
-// estrena las suyas porque antes usaba las generales directamente.
-var FDOM = [
-    ['obj-fd-min-0', 'obj-fd-max-0', 'obj-fd-ovr-0'],  // canal 1
-    ['obj-188',      'obj-186',      'obj-fd-ovr-1'],  // canal 2
-    ['obj-308',      'obj-306',      'obj-fd-ovr-2'],  // canal 3
-    ['obj-774',      'obj-772',      'obj-fd-ovr-3']   // canal 4
-];
-
 var DEFAULTS = { end: 140000, fmin: 25, fmax: 28 };
 
-// Clientes reales de la matriz unificada: los 5 objetos del canal 1 (End Time es global y se
-// propaga a los otros canales), las dos graficas de cada uno de los canales 2, 3 y 4, y el
-// Freq. Domain propio de los cuatro.
+// Clientes reales de la matriz unificada: los 5 objetos del canal 1 (End Time y
+// Freq Min/Max son globales y se propagan a los otros canales) mas las dos
+// graficas de cada uno de los canales 2, 3 y 4.
 function knownIds() {
     var s = {};
     for (var i = 0; i < 5; i++) s[MAPS[0][i]] = true;
     for (var c = 1; c < 4; c++) { s[MAPS[c][3]] = true; s[MAPS[c][4]] = true; }
-    for (var d = 0; d < 4; d++)
-        for (var j = 0; j < 3; j++) s[FDOM[d][j]] = true;
     s['obj-append-mat-1'] = true; // cliente conectado al outlet de atributos
     return s;
 }
@@ -183,52 +170,28 @@ function fillMissingChannels(entries, stats) {
     return entries;
 }
 
-function hasId(entries, id) {
-    for (var e = 0; e < entries.length; e++) if (entries[e][1] === id) return true;
-    return false;
-}
-
-// Compatibilidad con archivos guardados ANTES del Freq. Domain por grafica: no traen las
-// cajas propias ni el modo de cada canal, asi que al recallar se quedarian con lo que
-// hubiera puesto el preset anterior. Se rellenan con modo 0 ("Global") y con los valores
-// del Freq. Domain general de ese mismo preset, que es exactamente lo que hacia el patch
-// antiguo: un unico dominio para las cuatro graficas.
-function fillFreqDomain(entries, stats) {
-    var fmin = scalarOf(entries, MAPS[0][1], DEFAULTS.fmin);
-    var fmax = scalarOf(entries, MAPS[0][2], DEFAULTS.fmax);
-    for (var c = 0; c < 4; c++) {
-        var f = FDOM[c];
-        if (!hasId(entries, f[2])) { entries = entries.concat([[5, f[2], 'number', 'int', 0]]);    stats.fdom++; }
-        if (!hasId(entries, f[0])) { entries = entries.concat([[5, f[0], 'number', 'int', fmin]]); stats.fdom++; }
-        if (!hasId(entries, f[1])) { entries = entries.concat([[5, f[1], 'number', 'int', fmax]]); stats.fdom++; }
-    }
-    return entries;
-}
-
 function loadUnified(data) {
     var presets = data.preset_data || [];
-    var stats = { obsolete: 0, repeated: 0, filled: 0, fdom: 0 };
+    var stats = { obsolete: 0, repeated: 0, filled: 0 };
 
     for (var n = 0; n < presets.length; n++) {
         var entries = splitEntries(presets[n].data || []);
         entries = keepClients(entries, stats);
         entries = dropRepeatedBlocks(entries, stats);
         entries = fillMissingChannels(entries, stats);
-        entries = fillFreqDomain(entries, stats);
         presets[n].data = flatten(entries);
     }
 
     post("smart_load: archivo unificado (" + presets.length + " presets" +
          (stats.obsolete ? ", " + stats.obsolete + " entradas obsoletas descartadas" : "") +
          (stats.repeated ? ", " + stats.repeated + " graficas duplicadas reparadas" : "") +
-         (stats.filled ? ", " + stats.filled + " canales vacios rellenados" : "") +
-         (stats.fdom ? ", " + stats.fdom + " valores de Freq. Domain por grafica rellenados" : "") + ")\n");
+         (stats.filled ? ", " + stats.filled + " canales vacios rellenados" : "") + ")\n");
     return data;
 }
 
 function convertLegacy(data) {
     var presets = data.preset_data || [];
-    var stats = { obsolete: 0, repeated: 0, filled: 0, fdom: 0 };
+    var stats = { obsolete: 0, repeated: 0, filled: 0 };
     var src = null;
 
     for (var n = 0; n < presets.length; n++) {
@@ -246,7 +209,6 @@ function convertLegacy(data) {
         entries = keepClients(entries, stats);
         entries = dropRepeatedBlocks(entries, stats);
         entries = fillMissingChannels(entries, stats); // canales 2-4 vacios
-        entries = fillFreqDomain(entries, stats);      // las 4 graficas en "Global"
         presets[n].data = flatten(entries);
     }
 
