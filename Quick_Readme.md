@@ -31,6 +31,8 @@ Debajo de la gráfica hay tres botones:
 
 Encima de la gráfica hay **un solo grupo de controles de dibujo** (*Time (s) / Freq. / Curve / Draw*). Ese grupo también obedece al botón **Editar**: cuando editas frecuencia el rótulo dice **Freq.**, y al pasar a amplitud dice **Amplitude**. Cada modo recuerda sus propios valores de tiempo, valor y curva, así que puedes ir y volver sin perder lo que tenías escrito.
 
+- **Clear curve (por gráfica):** al final de ese mismo menú de edición, debajo de *Curve / Draw*, hay un botón rojo que deja el lienzo vacío. Borra **solo esa gráfica** y **solo la capa que estés editando**: en *Editar: FR* se lleva la curva de frecuencia y respeta la de amplitud, y al revés en *Editar: AMP*. El eje X mantiene el *Time Domain* del canal, así que puedes seguir dibujando enseguida. Un clic basta y **no hay deshacer**; tampoco guarda el preset, así que si te equivocas recuperas la celda con un clic normal en la matriz, y si quieres conservarla vacía haz `Shift` + clic.
+
 Los pasos para dibujar son los mismos de siempre:
 1. Ajusta los valores de destino en las cajas numéricas de **Freq / PITCH** o **Amplitude**.
 2. Define la duración de esta transición en la caja **Time (s)** (en segundos).

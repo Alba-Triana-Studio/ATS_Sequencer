@@ -62,6 +62,10 @@ La pieza está compuesta por canales o *Setups* en paralelo. Cada bloque contien
 >
 > El cambio es únicamente de visualización: los objetos de envolvente son los mismos, siguen conectados a la matriz de presets y a los `curve~`, así que **guardado, cargado y reproducción no cambian en absoluto**.
 
+> **Clear curve (por gráfica):** al final del menú de edición de la derecha, debajo de la fila *Curve / Draw*, cada gráfica tiene un botón rojo **Clear curve** que vacía **solo esa gráfica** y **solo la capa que esté seleccionada** en *Editar*: si estás en **Editar: FR** borra la curva de frecuencia y deja intacta la de amplitud, y al revés en **Editar: AMP**. Es la versión por canal y por capa del botón *Clear* general del panel principal, que sigue borrando las diez curvas de golpe.
+>
+> Internamente el botón no guarda estado propio: lee el modo de edición vigente desde un `i` (`obj-cl-i-N`) cuya entrada fría cuelga del mismo `t i i` que alimenta al botón *Editar* (`obj-vw-tE-N`), y un `sel 0 1` (`obj-cl-sel-N`) manda `clear` a `fnFreqN` o a `fnAmpN`. El atributo `domain` de `function` sobrevive al mensaje `clear`, así que el eje X conserva el *Time Domain* del canal y se puede seguir dibujando de inmediato. **No hay deshacer** y **no guarda el preset**: si quieres conservar la gráfica vacía, haz `Shift` + clic en la celda; si te equivocas, vuelve a cargar la celda con un clic normal.
+
 > **Freq. Domain por gráfica:** en el panel izquierdo de cada gráfica, encima del botón *Adaptar al tiempo*, hay un botón de dos estados (**Hz: Global** / **Hz: Own**) y dos cajas con el mínimo y el máximo de frecuencia de **esa** gráfica.
 > - En **Global** (estado por defecto) la gráfica sigue al *Freq. Domain (Hz)* del panel principal: cada cambio del general entra en el canal y **repinta** sus dos cajas, de modo que siempre se ve el rango vigente.
 > - Al escribir un valor en cualquiera de las dos cajas la gráfica pasa sola a **Own**: a partir de ahí el general ya no la toca, por mucho que se modifique.
