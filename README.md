@@ -6,7 +6,7 @@ Este documento describe el funcionamiento y la interfaz gráfica del parche **AT
 
 ## Estructura General
 
-La interfaz está dividida principalmente en una sección de **Controles Globales** para monitorear e iniciar toda la pieza, y una serie de paneles o **Canales (Setups)** que operan individualmente (hasta 4 sistemas)
+La interfaz está dividida principalmente en una sección de **Controles Globales** para monitorear e iniciar toda la pieza, y una serie de paneles o **Canales (Setups)** que operan individualmente (hasta 5 sistemas: **cuatro de sonido y, en el último panel, el de la luz**)
 
 ---
 
@@ -28,18 +28,24 @@ Esta sección afecta y monitorea todo el sistema de generación de la pieza:
 
 La pieza está compuesta por canales o *Setups* en paralelo. Cada bloque contiene los siguientes módulos:
 
-> **Controles compartidos:** **Time Domain (s)**, **Freq. Domain (Hz)** (mínimo y máximo) y **Clear** existen únicamente en el panel del **Oscilador 1** y se aplican a los cuatro canales. El preset guarda un solo juego de estos valores y lo reparte al recuperarse; los osciladores 2, 3 y 4 ya no los administran por separado. El *Freq. Domain* admite además una excepción por gráfica: ver **Freq. Domain por gráfica**.
+> **Cuántos paneles hay y en qué orden:** de arriba abajo se ven **cinco gráficas**. Las **cuatro primeras son de sonido** y la **última es la de la luz** (su caja *PITCH* alimenta la frecuencia estroboscópica). El cuarto panel de sonido se añadió después que los demás, así que su numeración interna es la **5**: manda `5gpitch` / `5amp`, se silencia con `mute5` y su nivel llega por `5lvl`. La luz conserva el número **4** y todo su cableado original, incluida su salida por el canal **derecho** de la tarjeta (los cuatro canales de sonido salen por el **izquierdo**).
+>
+> Ese desfase entre el orden en pantalla y el número interno solo se nota si abres el parche por dentro o miras un `.maxpresets`; en la interfaz los cinco paneles son idénticos y todos los controles globales (PLAY, *Time Domain*, *Freq. Domain*, *Clear*, *Adaptar TODOS*, la matriz de presets y el SOLO exclusivo) los abarcan a los cinco.
+>
+> **Motor de sonido del cuarto panel:** vive en `P5Sound.maxpat` (copia de `P1Sound.maxpat`, el sintetizador de referencia) y ocupa el quinto slot de `SoundMachine.maxpat`. Usa los controladores MIDI **8 y 9**, que estaban libres — los canales 1 a 4 ocupan del 0 al 7.
+
+> **Controles compartidos:** **Time Domain (s)**, **Freq. Domain (Hz)** (mínimo y máximo) y **Clear** existen únicamente en el panel del **Oscilador 1** y se aplican a los cinco canales. El preset guarda un solo juego de estos valores y lo reparte al recuperarse; los osciladores 2 a 5 ya no los administran por separado. El *Freq. Domain* admite además una excepción por gráfica: ver **Freq. Domain por gráfica**.
 
 #### A. Reproducción, Muteo y Solo
-- **PLAY (solo en el Oscilador 1):** Un único switch arranca y detiene los cuatro osciladores a la vez. El reloj y la duración del ciclo los marca el *Time Domain* del Oscilador 1.
+- **PLAY (solo en el Oscilador 1):** Un único switch arranca y detiene los cinco osciladores a la vez. El reloj y la duración del ciclo los marca el *Time Domain* del Oscilador 1.
 - **MUTE:** Silencia la salida de ese canal sin detener el sistema.
 - **SOLO:** Aísla ese canal. Es **exclusivo**: al activarlo se apaga el SOLO de los demás canales. Mientras haya un SOLO activo solo suena ese canal, aunque esté muteado; al apagarlo vuelve a mandar el MUTE de cada canal.
 
 #### B. Matriz de Presets (El Secuenciador)
-- **Matriz única (Oscilador 1):** Es el cerebro del secuenciador. Cada celda de la cuadrícula (`preset`) guarda un estado completo de **los cuatro canales** (frecuencias, amplitudes, curvas y dominios de tiempo), que se recuperan juntos durante el avance temporal de la secuencia. Los osciladores 2, 3 y 4 ya no tienen matriz propia.
+- **Matriz única (Oscilador 1):** Es el cerebro del secuenciador. Cada celda de la cuadrícula (`preset`) guarda un estado completo de **los cinco canales** (frecuencias, amplitudes, curvas y dominios de tiempo), que se recuperan juntos durante el avance temporal de la secuencia. Los osciladores 2 a 5 ya no tienen matriz propia.
 - **Gestión de Archivos:**
-  - **Guardar:** Exporta el banco completo de presets (los 4 canales) a un archivo externo en formato JSON.
-  - **Cargar:** Importa un archivo de presets previamente guardado. Si el archivo es de una versión anterior (una matriz por canal), su contenido se carga en el **canal 1** y los canales 2, 3 y 4 quedan vacíos, con la amplitud plana a 0 en todos los slots.
+  - **Guardar:** Exporta el banco completo de presets (los 5 canales) a un archivo externo en formato JSON.
+  - **Cargar:** Importa un archivo de presets previamente guardado. Si el archivo es de una versión anterior (una matriz por canal), su contenido se carga en el **canal 1** y los demás quedan vacíos, con la amplitud plana a 0 en todos los slots. Los archivos guardados cuando el patch tenía cuatro canales también siguen sirviendo: el canal nuevo entra vacío.
   - **Clear all presets:** Botón de emergencia para borrar inmediatamente todas las celdas guardadas en la matriz y comenzar desde cero.
 
 > **Tiempo acumulado por celda:** las cajas **TOTAL (m:s)** y **TOTAL (ms)** de la banda superior indican en qué punto de la secuencia está la celda seleccionada, no el tiempo desde que se pulsó Play. Al hacer clic en una celda, el TOTAL muestra la **suma del *Time Domain* de las celdas anteriores de su misma fila** (las celdas vacías cuentan 0), y al arrancar con **PLAY** el reloj sigue contando desde ese acumulado. Cada **fila es una secuencia independiente**: la primera celda de cualquier fila arranca en 0 y las filas anteriores no se suman. Al encadenar celdas durante la reproducción el reloj no se reinicia: sigue avanzando de forma continua.
@@ -61,11 +67,11 @@ La pieza está compuesta por canales o *Setups* en paralelo. Cada bloque contien
 > - Al escribir un valor en cualquiera de las dos cajas la gráfica pasa sola a **Own**: a partir de ahí el general ya no la toca, por mucho que se modifique.
 > - Un clic en el botón la devuelve a **Global** y le reaplica inmediatamente el general.
 >
-> Cada celda de la matriz guarda, por canal, el modo y los dos valores propios, así que un preset puede tener tres gráficas compartiendo el dominio general y una cuarta con su propio rango. Al recuperar una celda el orden es siempre el mismo: primero se restauran los cuatro modos (y con ellos se abren o cierran las compuertas), después se reparte el general entre las gráficas en *Global*, y por último se reaplican los valores propios de las que están en *Own*.
+> Cada celda de la matriz guarda, por canal, el modo y los dos valores propios, así que un preset puede tener cuatro gráficas compartiendo el dominio general y una quinta con su propio rango. Al recuperar una celda el orden es siempre el mismo: primero se restauran los cinco modos (y con ellos se abren o cierran las compuertas), después se reparte el general entre las gráficas en *Global*, y por último se reaplican los valores propios de las que están en *Own*.
 >
-> **Compatibilidad:** los archivos `.maxpresets` guardados antes de este cambio no traen esta información. Al cargarlos, `smart_load.js` la completa celda a celda con modo *Global* y con el *Freq. Domain* general de esa misma celda — exactamente el comportamiento anterior, un único dominio para las cuatro gráficas —, así que los bancos antiguos siguen cargando sin tocar nada.
+> **Compatibilidad:** los archivos `.maxpresets` guardados antes de este cambio no traen esta información. Al cargarlos, `smart_load.js` la completa celda a celda con modo *Global* y con el *Freq. Domain* general de esa misma celda — exactamente el comportamiento anterior, un único dominio para todas las gráficas —, así que los bancos antiguos siguen cargando sin tocar nada.
 
-> **Adaptar al tiempo:** cambiar el *Time Domain (s)* alarga o acorta el eje X, pero los puntos ya dibujados conservan su posición absoluta, así que la curva deja de ocupar toda la gráfica. El botón **Adaptar al tiempo**, encima del rótulo **PITCH** de cada gráfica, reescala las dos curvas de ese canal para que ocupen **exactamente** el tiempo actual, conservando su forma. En el panel principal, junto a *Time Domain (s)*, el botón **Adaptar TODOS** hace lo mismo sobre los cuatro canales a la vez. Cubre los tres casos:
+> **Adaptar al tiempo:** cambiar el *Time Domain (s)* alarga o acorta el eje X, pero los puntos ya dibujados conservan su posición absoluta, así que la curva deja de ocupar toda la gráfica. El botón **Adaptar al tiempo**, encima del rótulo **PITCH** de cada gráfica, reescala las dos curvas de ese canal para que ocupen **exactamente** el tiempo actual, conservando su forma. En el panel principal, junto a *Time Domain (s)*, el botón **Adaptar TODOS** hace lo mismo sobre los cinco canales a la vez. Cubre los tres casos:
 > - la curva llenaba el tiempo anterior → se estira o encoge proporcionalmente al nuevo;
 > - la curva **se queda corta** (no tiene puntos a partir de cierto momento) → se estira hasta el final de la gráfica;
 > - la curva **se sale** del tiempo actual → se comprime hasta caber.
@@ -83,7 +89,7 @@ Para crear transiciones de sonido suaves a nivel percusivo o continuo, cada setu
 Al lado de cada sistema de control, hay herramientas visuales para corroborar qué ocurre físicamente:
 - **Time Domain (s):** Visualizador osciloscópico de onda, donde se ve la forma de onda producida en relación al tiempo (segundos).
 - **Freq. Domain (Hz):** Visualizador espectral que ayuda a constatar cuáles frecuencias están emitiéndose realmente y en qué magnitud (Hertz).
-- **Clear:** Un único botón (Oscilador 1) que limpia y reinicia el trazado de las gráficas de los cuatro canales.
+- **Clear:** Un único botón (Oscilador 1) que limpia y reinicia el trazado de las gráficas de los cinco canales.
 - **dB:** Medidores individuales de nivel que muestran los decibeles de ganancia en la salida final de dicho canal o "Setup".
 
 ---

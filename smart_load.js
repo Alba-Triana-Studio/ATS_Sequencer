@@ -1,47 +1,55 @@
 autowatch = 1;
 
-// Cargador de .maxpresets para la matriz unificada (obj-3 guarda los 4 canales).
+// Cargador de .maxpresets para la matriz unificada (obj-3 guarda los 5 canales).
 //
 //  - Archivo unificado (trae graficas de 2 o mas canales): se carga tal cual,
 //    tras descartar objetos que ya no son clientes y reparar bloques repetidos.
 //  - Archivo antiguo (una sola pareja Freq/Amp): sus objetos se remapean al
-//    CANAL 1 y se rellenan los canales 2, 3 y 4 con envolventes planas a 0
+//    CANAL 1 y se rellenan los demas canales con envolventes planas a 0
 //    (vacios/silencio) en todos los slots de preset.
 //
 // El formato se deduce del CONTENIDO, no de un marcador: el objeto [preset]
 // escribe el archivo por su cuenta y no admite campos extra, asi que ningun
 // archivo guardado desde el patch lleva "ats_format". Se sigue aceptando el
 // marcador si aparece (archivos generados por scripts).
+//
+// Los archivos guardados cuando solo habia 4 canales no traen el canal 5: se
+// rellena como canal vacio, igual que cualquier otro canal ausente.
 
-// [End Time, Freq Min, Freq Max, Pitch Curve, Amp Curve] por canal
+// [End Time, Freq Min, Freq Max, Pitch Curve, Amp Curve] por canal.
+// OJO: el indice es el numero INTERNO de canal, no el orden en pantalla. El
+// canal 4 es la LUZ (ultimo panel) y el canal 5 es el cuarto panel de sonido.
 var MAPS = [
-    ['obj-12',  'obj-5',   'obj-6',   'obj-77',  'obj-2'],    // canal 1
-    ['obj-195', 'obj-188', 'obj-186', 'obj-194', 'obj-199'],  // canal 2
-    ['obj-315', 'obj-308', 'obj-306', 'obj-314', 'obj-319'],  // canal 3
-    ['obj-781', 'obj-774', 'obj-772', 'obj-780', 'obj-785']   // canal 4
+    ['obj-12',    'obj-5',      'obj-6',      'obj-77',     'obj-2'],      // canal 1
+    ['obj-195',   'obj-188',    'obj-186',    'obj-194',    'obj-199'],    // canal 2
+    ['obj-315',   'obj-308',    'obj-306',    'obj-314',    'obj-319'],    // canal 3
+    ['obj-781',   'obj-774',    'obj-772',    'obj-780',    'obj-785'],    // canal 4 (luz)
+    ['obj-c5-2',  'obj-c5-51',  'obj-c5-50',  'obj-c5-42',  'obj-c5-7']    // canal 5
 ];
+var NCH = MAPS.length;
 
 // Freq. Domain (Hz) POR GRAFICA: [min, max, modo] de cada canal. `modo` es 0 = sigue al
 // Freq. Domain general (obj-5/obj-6), 1 = la grafica tiene el suyo propio ("Own").
-// Los canales 2-4 reutilizan las cajas que ya existian en la vista de edicion; el canal 1
+// Los canales 2-5 reutilizan las cajas que ya existian en la vista de edicion; el canal 1
 // estrena las suyas porque antes usaba las generales directamente.
 var FDOM = [
     ['obj-fd-min-0', 'obj-fd-max-0', 'obj-fd-ovr-0'],  // canal 1
     ['obj-188',      'obj-186',      'obj-fd-ovr-1'],  // canal 2
     ['obj-308',      'obj-306',      'obj-fd-ovr-2'],  // canal 3
-    ['obj-774',      'obj-772',      'obj-fd-ovr-3']   // canal 4
+    ['obj-774',      'obj-772',      'obj-fd-ovr-3'],  // canal 4 (luz)
+    ['obj-c5-51',    'obj-c5-50',    'obj-fd-ovr-4']   // canal 5
 ];
 
 var DEFAULTS = { end: 140000, fmin: 25, fmax: 28 };
 
 // Clientes reales de la matriz unificada: los 5 objetos del canal 1 (End Time es global y se
-// propaga a los otros canales), las dos graficas de cada uno de los canales 2, 3 y 4, y el
-// Freq. Domain propio de los cuatro.
+// propaga a los otros canales), las dos graficas de cada uno de los demas canales y el
+// Freq. Domain propio de todos.
 function knownIds() {
     var s = {};
     for (var i = 0; i < 5; i++) s[MAPS[0][i]] = true;
-    for (var c = 1; c < 4; c++) { s[MAPS[c][3]] = true; s[MAPS[c][4]] = true; }
-    for (var d = 0; d < 4; d++)
+    for (var c = 1; c < NCH; c++) { s[MAPS[c][3]] = true; s[MAPS[c][4]] = true; }
+    for (var d = 0; d < NCH; d++)
         for (var j = 0; j < 3; j++) s[FDOM[d][j]] = true;
     s['obj-append-mat-1'] = true; // cliente conectado al outlet de atributos
     return s;
@@ -80,10 +88,11 @@ function blocksOf(entries) {
 
 // Que canales traen grafica (pitch o amplitud) en este preset.
 function graphChannels(entries) {
-    var present = [false, false, false, false];
+    var present = [];
+    for (var i = 0; i < NCH; i++) present.push(false);
     for (var e = 0; e < entries.length; e++) {
         var id = entries[e][1];
-        for (var c = 0; c < 4; c++)
+        for (var c = 0; c < NCH; c++)
             if (id === MAPS[c][3] || id === MAPS[c][4]) present[c] = true;
     }
     return present;
@@ -92,7 +101,7 @@ function graphChannels(entries) {
 // Detecta de que canal proviene un archivo antiguo contando ids de cada mapa.
 function detectChannel(entries) {
     var best = 0, bestHits = -1;
-    for (var c = 0; c < 4; c++) {
+    for (var c = 0; c < NCH; c++) {
         var hits = 0;
         for (var e = 0; e < entries.length; e++)
             for (var i = 0; i < 5; i++)
@@ -107,13 +116,14 @@ function detectChannel(entries) {
 function isUnified(data) {
     if (data.ats_format === "unified4") return true;
     var presets = data.preset_data || [];
-    var seen = [false, false, false, false];
+    var seen = [];
+    for (var i = 0; i < NCH; i++) seen.push(false);
     for (var n = 0; n < presets.length; n++) {
         var present = graphChannels(splitEntries(presets[n].data || []));
-        for (var c = 0; c < 4; c++) if (present[c]) seen[c] = true;
+        for (var c = 0; c < NCH; c++) if (present[c]) seen[c] = true;
     }
     var count = 0;
-    for (var i = 0; i < 4; i++) if (seen[i]) count++;
+    for (var i = 0; i < NCH; i++) if (seen[i]) count++;
     return count >= 2;
 }
 
@@ -146,7 +156,7 @@ function emptyChannel(c, end, fmin, fmax) {
 
 // Descarta entradas de objetos que ya no son clientes de la matriz: un preset
 // unificado guardado con una version anterior traia tambien las cajas de End
-// Time / Freq de los canales 2-4, y recuperarlas provocaria errores en Max.
+// Time / Freq de los canales 2-5, y recuperarlas provocaria errores en Max.
 function keepClients(entries, stats) {
     var known = knownIds(), kept = [];
     for (var e = 0; e < entries.length; e++) {
@@ -177,7 +187,7 @@ function fillMissingChannels(entries, stats) {
     var end  = scalarOf(entries, MAPS[0][0], DEFAULTS.end);
     var fmin = scalarOf(entries, MAPS[0][1], DEFAULTS.fmin);
     var fmax = scalarOf(entries, MAPS[0][2], DEFAULTS.fmax);
-    for (var c = 0; c < 4; c++) {
+    for (var c = 0; c < NCH; c++) {
         if (!present[c]) { entries = entries.concat(emptyChannel(c, end, fmin, fmax)); stats.filled++; }
     }
     return entries;
@@ -196,7 +206,7 @@ function hasId(entries, id) {
 function fillFreqDomain(entries, stats) {
     var fmin = scalarOf(entries, MAPS[0][1], DEFAULTS.fmin);
     var fmax = scalarOf(entries, MAPS[0][2], DEFAULTS.fmax);
-    for (var c = 0; c < 4; c++) {
+    for (var c = 0; c < NCH; c++) {
         var f = FDOM[c];
         if (!hasId(entries, f[2])) { entries = entries.concat([[5, f[2], 'number', 'int', 0]]);    stats.fdom++; }
         if (!hasId(entries, f[0])) { entries = entries.concat([[5, f[0], 'number', 'int', fmin]]); stats.fdom++; }
@@ -245,13 +255,13 @@ function convertLegacy(data) {
 
         entries = keepClients(entries, stats);
         entries = dropRepeatedBlocks(entries, stats);
-        entries = fillMissingChannels(entries, stats); // canales 2-4 vacios
-        entries = fillFreqDomain(entries, stats);      // las 4 graficas en "Global"
+        entries = fillMissingChannels(entries, stats); // canales 2-5 vacios
+        entries = fillFreqDomain(entries, stats);      // todas las graficas en "Global"
         presets[n].data = flatten(entries);
     }
 
     post("smart_load: archivo antiguo (canal " + (src + 1) + ") -> canal 1; " +
-         "canales 2-4 vacios en " + presets.length + " presets\n");
+         "canales 2-5 vacios en " + presets.length + " presets\n");
     return data;
 }
 
