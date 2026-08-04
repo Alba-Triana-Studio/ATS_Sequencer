@@ -18,6 +18,7 @@ Hay **una sola matriz** (la del Oscilador 1) y cada preset guarda los cinco cana
 - **Guardar:** Exporta toda la matriz de presets (los 5 canales) a un archivo JSON en tu disco.
 - **Cargar:** Importa un archivo JSON de presets previamente guardado. Los archivos de versiones anteriores (una matriz por canal) se cargan en el **canal 1** y dejan los demás vacíos (amplitud plana a 0). Los `.maxpresets` de cuando había cuatro canales también cargan: el canal nuevo entra vacío.
 - **Clear all presets:** Borra absolutamente toda la matriz. *¡Usar con precaución!*
+- **Corrección de carga (agosto 2026):** se arregló un bug por el que algunas gráficas podían cargar vacías aunque el archivo sí tuviera datos. Ya no requiere ninguna acción: los `.maxpresets` guardados con **Guardar** cargan siempre con sus cinco canales intactos.
 - **Guardado Manual Rápido:** Para sobreescribir o guardar un preset manualmente, mantén presionado `Shift` y haz clic en la celda deseada de la matriz.
 
 ## 📈 Dibujo en Gráficas (Envolventes)
