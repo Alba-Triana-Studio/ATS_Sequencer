@@ -131,3 +131,47 @@ Si posees archivos `.maxpat` de versiones antiguas del secuenciador (anteriores 
 5. Selecciona en las casillas encendidas cuáles matrices deseas rescatar y cuáles deseas ignorar (puedes desmarcarlas con un clic).
 6. Presiona **3. Migrar Seleccionados**. La utilidad inyectará silenciosa y quirúrgicamente los presets elegidos en el nuevo archivo.
 7. Abre nuevamente tu `ATS_Sequencer.maxpat` y usa los botones de **Guardar** para respaldar tus presets rescatados como archivos JSON individuales.
+
+---
+
+### 4. Grabación de audio (REC / REC SPLIT)
+
+En el panel **MASTER**, bajo el `ezdac~`, hay dos botones que graban la misma señal que sale por los altavoces (L = canales 1/2/3/5, R = canal 4), un cronómetro y una línea de estado.
+
+#### REC — una sola toma continua
+1. Pulsa **REC**: se abre el diálogo *Guardar como…* para elegir carpeta y nombre.
+2. La grabación empieza al aceptar y termina al volver a pulsar el botón (**STOP**).
+3. El archivo es AIFF de 24 bits. Si cancelas el diálogo, el botón se apaga solo y no se graba nada.
+
+#### REC SPLIT — un archivo por celda
+Guarda **la misma toma partida en un archivo independiente por cada celda de la matriz de presets que se haya reproducido**.
+
+1. Pulsa **SPLIT**: se abre el mismo diálogo *Guardar como…* que el REC, con un nombre nuevo cada vez (`Toma_001`, `Toma_002`…). Elige dónde y acepta. **La grabación empieza en ese instante**, no espera a nada.
+2. A partir de ahí, **sólo se trocea lo que suene**: los tramos con el Play apagado no generan archivo.
+3. Pulsa **STOP** para terminar. El troceo tarda unos segundos y la línea de estado va indicando `SPLIT n/total`.
+
+La carpeta con el nombre que elegiste se crea en paralelo (la crea Node for Max, porque Max no tiene `mkdir`) y sólo hace falta al final, al trocear. Dentro quedan:
+
+| archivo | contenido |
+|---|---|
+| `00_maestro.aif` | la toma completa sin cortar (red de seguridad: si algo falla en el troceo se puede repetir sin volver a grabar) |
+| `00_indice.txt` | tabla con archivo, celda, fila, bar, inicio y duración en ms |
+| `01_f22_b01.aif`, `02_f22_b02.aif`… | un archivo por celda; el número inicial es el orden de reproducción (así los bucles no se pisan), `f` la fila y `b` la columna (*Bar #*) |
+
+> **El maestro se graba fuera y se mueve dentro al final.** Durante la toma se llama `Toma_001_00_maestro.aif` y vive en la carpeta *padre*, que existe con seguridad; cuando el troceo acaba se mueve dentro como `00_maestro.aif`. Así **grabar no depende de que la carpeta exista**. Si por lo que fuera no se pudo crear, todo se queda en el padre con el nombre como prefijo (`Toma_001_01_f22_b01.aif`) — nunca se pierde la toma.
+
+**Cómo se consigue que no se pierda ni una muestra.** No se para y rearranca `sfrecord~` en cada celda: la propia documentación de Max exige un nuevo `open` tras cada parada, y esa apertura de disco es asíncrona, así que cada frontera se comería unos milisegundos y el error se acumularía. En su lugar se graba **una sola toma continua** al maestro; en cada cambio de celda el parche anota el desplazamiento **en muestras** (`count~` + `snapshot~`, dominio de audio, sin deriva frente al reloj del *scheduler*), y al parar un `buffer~` trocea el maestro **fuera de tiempo real** (`replace` + `writeaiff`). Como la marca y el cambio de envolvente salen del **mismo evento**, el corte cae exactamente donde cambia el sonido, y los archivos puestos uno detrás de otro reconstruyen la toma sin huecos ni solapes.
+
+**Limitaciones conocidas**
+- **REC y SPLIT son alternativos**: comparten cronómetro y línea de estado, no los uses a la vez.
+- Guardar un preset con el Play encendido y el SPLIT armado cuenta como frontera y parte el archivo en ese punto.
+- El `send~`/`receive~` que alimenta el grabador introduce un retardo constante de un vector de señal (~1,3 ms a 48 kHz). Es idéntico para todos los archivos, así que no los desincroniza entre sí.
+
+> ⚠️ **La ruta de destino no puede llevar `:` ni `/` en el nombre de ninguna carpeta.** `:` es el separador de rutas de Max, así que `Macintosh HD:/Users/…/Grabaciones 08:2026/Toma_001` le resulta ambigua y no puede escribir ahí. Y ojo: **Finder muestra ese carácter como `/`** — una carpeta que en Finder se llama `Grabaciones 08/2026` se llama `Grabaciones 08:2026` en disco. Si eliges una así, el patch lo detecta y avisa (`✗ Ruta con ':' — renombra la carpeta`) en vez de fallar en silencio; renómbrala con un guion (`Grabaciones 08-2026`). El límite es de Max: node y el shell manejan esos nombres sin problema.
+
+**Tres trampas de Max que costaron caras aquí** (si tocas este código, léelas antes):
+- **Cuando Max no puede resolver una ruta de escritura, no falla: escribe en la carpeta del patch y reporta éxito.** Le pasa a `new File(ruta,"write")` (devuelve `isopen = true`) y también a `sfrecord~ open` (llegó a grabar 4 minutos en la carpeta del proyecto). Por eso la existencia de una carpeta se comprueba listando el directorio **padre** con `Folder` y `typelist = ["fold"]`, nunca con `File`.
+- **Un `:` dentro de un nombre de carpeta hace ilegal la ruta para Max**, y como Finder lo muestra como `/` es casi invisible. Combinado con la trampa anterior, el resultado era grabar en la carpeta del patch sin ningún error. `rec_split.js` lo detecta con `hasIllegalColon()` antes de abrir nada.
+- **No usar `savedialog types fold`.** Es un panel de *guardar* restringido a carpetas: si eliges una que ya existe, macOS pregunta *"¿reemplazar?"* y al cancelar `savedialog` banguea su tercer outlet igual que ante un error — la línea de estado pone `Cancelado` y no se graba nada. Se usa el diálogo normal con nombre auto-incremental, y la ruta devuelta va a un `print SPLIT` para poder verla en la consola de Max.
+
+Los cortes se calculan en `rec_split.js`, la carpeta la crea `rec_split_node.js` (Node for Max); el parcheo del `.maxpat` está en `scratch/patch_rec_split.js` y la comprobación sin Max en `scratch/test_rec_split.js` (22 comprobaciones, incluida la de que la grabación arranca sin esperar a node).
