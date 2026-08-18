@@ -16,10 +16,20 @@ outlets = 4;
 //     1. se graba UNA sola toma continua a un archivo maestro (imposible perder muestras),
 //     2. en cada cambio de celda el patch anota el offset en MUESTRAS (count~ + snapshot~;
 //        dominio de audio, sin deriva frente al reloj del scheduler),
-//     3. al parar se trocea OFFLINE con [buffer~] (`replace` + `writeaiff`), sin riesgo de
-//        xruns porque ya no hay nada sonando.
+//     3. al parar se trocea OFFLINE, sin riesgo de xruns porque ya no hay nada sonando.
 //   Como la marca y el cambio de envolvente salen del MISMO evento del scheduler, el corte
 //   cae exactamente donde cambia el sonido.
+//
+// EL TROCEO LO HACE NODE, NO [buffer~] (2026-08-18)
+//   buffer~ solo sabe leer un trozo por INICIO y DURACION EN MILISEGUNDOS, y los maneja con
+//   precision de float de 32 bits (~7 cifras). A los 10 minutos de toma un instante son
+//   ~600000 ms y el error de representacion ya pasa de UNA MUESTRA. Sintoma medido en tomas
+//   reales: los trozos empezaban 0 o 1 muestra antes segun su posicion en el maestro, y a
+//   varios les faltaba la ultima muestra, que salia en 0. Ningun margen de redondeo lo
+//   arregla, porque el error crece con lo grande que sea el numero. Ahora los cortes van en
+//   MUESTRAS (enteros) a rec_split_node.js, que copia los bytes del maestro: exacto por
+//   construccion y ademas identico bit a bit (buffer~ pasaba el audio por float32 y cambiaba
+//   algun bit menos significativo). Ver aiff_slice.js.
 //
 // EL ARRANQUE NO ESPERA A NADIE (leccion del 2026-08-17)
 //   Max no sabe crear directorios, asi que la carpeta la crea Node for Max. Una version
@@ -38,21 +48,22 @@ outlets = 4;
 //   sr <hz>                    -> sample rate actual (lo manda [adstatus sr])
 //   mark <muestra> <celda> <play>
 //                              -> frontera; play=1 abre tramo nuevo, play=0 cierra el abierto
-//   split                      -> desarma y trocea el maestro
+//   split                      -> desarma y manda trocear el maestro
 //   dirready / dirfail         -> respuesta de node al mkdir (solo informativa)
+//   sliceprogress / sliceok / slicefail
+//                              -> avance del troceo (solo refrescan la linea de estado)
 //   abort                      -> cancela sin trocear
 //
 // SALIDAS
 //   outlet 0 -> [sfrecord~ 2] del grabador SPLIT      (open <ruta> aiff)
-//   outlet 1 -> [buffer~ atssplit]                    (samptype / replace / crop / writeaiff)
+//   outlet 1 -> [buffer~ atssplit]                    (sin uso desde que trocea node)
 //   outlet 2 -> texto de estado (el patch le antepone `set` antes de la caja de mensaje)
-//   outlet 3 -> [node.script rec_split_node.js]       (mkdir <ruta> / move <origen> <destino>)
+//   outlet 3 -> [node.script rec_split_node.js]       (mkdir / move / slicebegin+slice+sliceend)
 
 var COLS = 20;                    // columnas por fila (igual que obj-ttx-col-mod y cell_times.js)
 var MIN_SEG_MS = 50;              // tramos mas cortos que esto se descartan (marcas espurias)
 var MASTER_NAME = "00_maestro.aif";
 var INDEX_NAME = "00_indice.txt";
-var BUF_NAME = "atssplit";
 
 var armed = false;
 var inFolder = false;             // se decide al TROCEAR, no al armar
@@ -62,9 +73,6 @@ var sampleRate = 44100;
 
 var segs = [];                    // {cell, a, b} en muestras desde el arranque de la grabacion
 var openSeg = null;
-
-var phase = 0;                    // 0 parado, 1 esperando lectura, 2 esperando escritura
-var idx = 0;
 
 function status(txt) {
     outlet(2, txt);
@@ -146,7 +154,6 @@ function folder(path) {
 
     segs = [];
     openSeg = null;
-    phase = 0;
     armed = true;
     inFolder = false;
 
@@ -206,7 +213,6 @@ function abort() {
     armed = false;
     segs = [];
     openSeg = null;
-    phase = 0;
     status("SPLIT cancelado");
 }
 
@@ -234,61 +240,42 @@ function split() {
         return;
     }
 
-    outlet(1, "samptype", "int24");
-    idx = 0;
-    startSeg();
+    // El indice primero: no depende de node, asi que existe pase lo que pase despues.
+    writeIndex();
+
+    // El troceo lo hace node (ver el comentario de arriba). Los tiempos van en MUESTRAS y
+    // la ruta siempre la ULTIMA, para poder recomponerla si Max la partiera por los espacios.
+    outlet(3, "slicebegin", master);
+    for (var i = 0; i < segs.length; i++) {
+        outlet(3, "slice", segs[i].a, segs[i].b - segs[i].a, pathFor(nameFor(i)));
+    }
+    outlet(3, "sliceend", inFolder ? base + "/" + MASTER_NAME : "-");
+    // Si el outlet de node.script no llega hasta aqui (ver scratch/patch_rec_split_reply.js),
+    // esta linea no se refresca sola: el avance real va siempre a la consola de Max.
+    status("SPLIT: troceando " + segs.length + "… (consola)");
+    post("rec_split: troceando " + segs.length + " tramos con node\n");
 }
 
-function startSeg() {
-    var s = segs[idx];
-    var startMs = samplesToMs(s.a);
-    var durMs = samplesToMs(s.b - s.a);
-    phase = 1;
-    status("SPLIT " + (idx + 1) + "/" + segs.length);
-    outlet(1, "replace", master, startMs, durMs, 2);
+// Respuestas de node. Solo refrescan la linea de estado: el troceo y el traslado del maestro
+// los termina node por su cuenta, asi que todo funciona igual si estos mensajes no llegan.
+function sliceprogress(i, total) {
+    status("SPLIT " + Math.round(i) + "/" + Math.round(total));
 }
 
-// El outlet derecho de buffer~ da un bang cuando termina una lectura O una escritura de
-// archivo; por eso hace falta la maquina de estados de `phase`.
-function done() {
-    if (phase === 1) {
-        var s = segs[idx];
-        var want = Math.round(s.b - s.a);
-        var got = frameCount();
-        // `replace` deberia redimensionar al trozo pedido. Si por lo que sea trajo mas
-        // muestras (p.ej. leyo el archivo entero), se recorta antes de escribir.
-        if (got > 0 && want > 0 && got > want + 128) {
-            post("rec_split: buffer con " + got + " frames, se esperaban " + want +
-                 "; se recorta\n");
-            outlet(1, "crop", 0, samplesToMs(s.b - s.a));
-        }
-        phase = 2;
-        outlet(1, "writeaiff", pathFor(nameFor(idx)));
-        return;
-    }
-    if (phase === 2) {
-        idx++;
-        if (idx < segs.length) {
-            startSeg();
-        } else {
-            phase = 0;
-            writeIndex();
-            // El maestro se grabo en el padre; si la carpeta existe, se lleva dentro.
-            if (inFolder) outlet(3, "move", master, base + "/" + MASTER_NAME);
-            status("SPLIT: " + segs.length + " archivos");
-            post("rec_split: " + segs.length + " archivos escritos\n");
-        }
-    }
+function sliceok(n) {
+    n = Math.round(n);
+    status("SPLIT: " + n + " archivos");
+    post("rec_split: " + n + " archivos escritos\n");
 }
 
-function frameCount() {
-    try {
-        var b = new Buffer(BUF_NAME);
-        return b.framecount();
-    } catch (e) {
-        return 0;
-    }
+function slicefail() {
+    status("✗ SPLIT: fallo al trocear");
+    post("rec_split: node no pudo trocear; el maestro esta intacto, mira la consola\n");
 }
+
+// Llegan si el outlet de node.script se conecta tambien al js; el aviso ya lo da dirready().
+function mkdirok() {}
+function mkdirfail() {}
 
 function writeIndex() {
     var f;

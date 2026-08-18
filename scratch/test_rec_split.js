@@ -1,7 +1,8 @@
 #!/usr/bin/env node
-// Simula rec_split.js fuera de Max (stubs de outlet/post/File/Folder/Buffer) y comprueba la
-// lista de tramos, los nombres, la secuencia de mensajes a buffer~ y —lo que se rompio el
+// Simula rec_split.js fuera de Max (stubs de outlet/post/File/Folder) y comprueba la lista de
+// tramos, los nombres, los mensajes de troceo que se le mandan a node y —lo que se rompio el
 // 2026-08-17— que la grabacion arranca SIN esperar a que node cree la carpeta.
+// El troceo en si (que ningun archivo pierda su ultima muestra) lo prueba test_aiff_slice.js.
 // Uso:  node scratch/test_rec_split.js
 
 const fs = require("fs");
@@ -101,30 +102,31 @@ check("inicios (ms)", s.segs.map((x) => Math.round((x.a * 1000) / SR)),
       [0, 10000, 20000, 40000]);
 check("duraciones (ms)", s.segs.map((x) => Math.round(((x.b - x.a) * 1000) / SR)),
       [10000, 10000, 5000, 7000]);
-check("samptype antes de escribir", buf()[0], [1, "samptype", "int24"]);
-check("lee del maestro del padre", buf()[1],
-      [1, "replace", "/tmp/padre/tomaA_00_maestro.aif", 0, 10000, 2]);
+check("no se toca [buffer~]: trocea node", buf().length, 0);
+check("le dice a node cual es el maestro", nodemsg()[0],
+      [3, "slicebegin", "/tmp/padre/tomaA_00_maestro.aif"]);
+check("primer trozo: inicio y duracion en MUESTRAS, ruta al final", nodemsg()[1],
+      [3, "slice", 0, seg(10000), "/tmp/padre/tomaA/01_f22_b01.aif"]);
 
 // El silencio entre el Play OFF y el siguiente Play ON (25 s -> 40 s) no genera archivo.
 const hueco = s.segs.some((x) => Math.round((x.a * 1000) / SR) === 25000);
 check("el tramo sin reproducir no se trocea", hueco, false);
 
-const nombres = [];
-for (let i = 0; i < s.segs.length; i++) {
-    s.done();                    // fin de la lectura -> writeaiff
-    const w = out[out.length - 1];
-    check("writeaiff " + (i + 1) + " es escritura", w[1], "writeaiff");
-    nombres.push(w[2]);
-    s.done();                    // fin de la escritura -> siguiente tramo
-}
-check("los trozos van DENTRO de la carpeta", nombres, [
+const trozos = nodemsg().filter((m) => m[1] === "slice");
+check("un trozo por tramo", trozos.length, 4);
+check("todos los tiempos son enteros (muestras, nunca ms)",
+      trozos.every((m) => Number.isInteger(m[2]) && Number.isInteger(m[3])), true);
+check("los trozos van DENTRO de la carpeta", trozos.map((m) => m[4]), [
     "/tmp/padre/tomaA/01_f22_b01.aif",
     "/tmp/padre/tomaA/02_f22_b02.aif",
     "/tmp/padre/tomaA/03_f22_b03.aif",
     "/tmp/padre/tomaA/04_f22_b03.aif",
 ]);
-check("el maestro se mueve dentro al terminar", nodemsg()[nodemsg().length - 1],
-      [3, "move", "/tmp/padre/tomaA_00_maestro.aif", "/tmp/padre/tomaA/00_maestro.aif"]);
+check("node cierra la tanda y se lleva el maestro dentro", nodemsg()[nodemsg().length - 1],
+      [3, "sliceend", "/tmp/padre/tomaA/00_maestro.aif"]);
+s.sliceok(4);                    // node contesta (si su outlet llega al js)
+check("la linea de estado la cierra la respuesta de node", out[out.length - 1],
+      [2, "SPLIT: 4 archivos"]);
 check("indice escrito", written["/tmp/padre/tomaA/00_indice.txt"].length, 3 + 4);
 
 // ---------- la carpeta ya existia al armar: no se pide mkdir
@@ -144,11 +146,10 @@ s3.mark(0, 1, 1);
 s3.mark(seg(3000), 1, 0);
 out.length = 0;
 s3.split();
-s3.done();
-check("sin carpeta, nombre con prefijo", out[out.length - 1][2],
-      "/tmp/padre/tomaC_01_f01_b01.aif");
-s3.done();
-check("sin carpeta no se mueve el maestro", nodemsg().length, 0);
+check("sin carpeta, nombre con prefijo",
+      nodemsg().find((m) => m[1] === "slice")[4], "/tmp/padre/tomaC_01_f01_b01.aif");
+check("sin carpeta no se mueve el maestro",
+      nodemsg().find((m) => m[1] === "sliceend")[2], "-");
 
 // ---------- sin nada reproducido
 const s4 = makeSandbox(["/tmp/padre", "/tmp/padre/tomaD"], -1);
@@ -157,18 +158,10 @@ s4.sr(SR);
 s4.mark(0, 5, 0);
 out.length = 0;
 s4.split();
-check("sin tramos no manda nada a buffer~", buf().length, 0);
+check("sin tramos no se manda trocear", nodemsg().length, 0);
 
-// ---------- recorte defensivo
-const s5 = makeSandbox(["/tmp/padre", "/tmp/padre/tomaE"], 999999999);
-s5.folder("/tmp/padre/tomaE");
-s5.sr(SR);
-s5.mark(0, 1, 1);
-s5.mark(seg(2000), 1, 0);
-out.length = 0;
-s5.split();
-s5.done();
-check("recorta si replace trajo de mas", buf()[2], [1, "crop", 0, 2000]);
+// La regresion de la ultima muestra a cero se comprueba en scratch/test_aiff_slice.js, que
+// trocea de verdad (incluido el maestro real si esta a mano) y compara byte a byte.
 
 console.log(fails ? "\n" + fails + " comprobaciones fallidas" : "\ntodo correcto");
 process.exit(fails ? 1 : 0);
